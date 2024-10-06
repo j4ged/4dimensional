@@ -38,17 +38,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 /* Logo styles */
 .navbar-brand {
     flex-shrink: 0;
     margin-right: 0;
+    z-index: 2;
 }
 
 /* Navigation container */
 .navbar-collapse {
-    flex-grow: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
 }
@@ -57,7 +61,6 @@ body {
 .navbar-nav {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
 }
 
 .nav-item {
@@ -94,11 +97,13 @@ body {
 /* Ensure the navbar-toggler (for mobile) doesn't interfere */
 .navbar-toggler {
     flex-shrink: 0;
+    z-index: 2;
 }
 
 /* Media query for smaller screens */
 @media (max-width: 991.98px) {
     .navbar-collapse {
+        position: static;
         justify-content: flex-start;
     }
     
