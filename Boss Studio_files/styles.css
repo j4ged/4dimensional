@@ -9,50 +9,71 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(192, 192, 192, 0.1); /* Light transparent gray background */
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent background */
     padding: 5px 0; /* Thinner Y-axis */
     position: relative;
     z-index: 1000; /* Ensure it stays on top when scrolling */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Bigger drop shadow */
-    backdrop-filter: blur(10px); /* Blur effect */
+    backdrop-filter: blur(3px); /* Subtle blur effect */
+    height: 65px; /* Manually setting height to control navbar size */
 }
 
+/* Navbar Links */
 .nav-link {
-    color: #6b6b6b !important; /* Normal color */
+    color: #6b6b6b !important; /* Default color */
     font-family: 'Poppins', sans-serif; /* Updated font to Poppins */
-    font-weight: 600; /* Make the font bolder */
-    padding: 10px 20px;
+    font-weight: 600; /* Bolder font */
+    padding: 10px 15px;
     background-color: transparent;
-    margin: 5px;
-    font-size: 1.3rem;
+    margin: 0 10px; /* Adjust margin to keep spacing */
+    font-size: 1.1rem; /* Slightly smaller to fit the Y-axis */
     position: relative;
-    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-width 0.3s ease;
-}
-
-.nav-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 3px; /* Thicker underline */
-    background: #34c4e8; /* Updated underline color */
-    transition: width 0.3s ease;
-    margin-top: 5px;
-}
-
-.nav-link:hover::after {
-    width: 100%; /* Animate the underline */
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #2d2d2d !important; /* Hover color change */
+    color: #2d2d2d !important; /* Hover color */
 }
 
-/* Active underline (for the current page) */
-.nav-link.active::after {
-    width: 100%; /* Active page underline should be full width */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Thicker underline */
+    bottom: -4px;
+    left: 0;
+    background-color: #34c4e8; /* Blue underline */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
 }
 
-/* Pulsating logo animation */
+.nav-link:hover::before, .nav-item.active .nav-link::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Contact Us Button */
+.navbar .btn-contact-us {
+    background-color: #34c4e8;
+    color: white;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Drop shadow */
+    transition: background-color 0.3s ease;
+}
+
+.navbar .btn-contact-us:hover {
+    background-color: #1a91b6;
+}
+
+/* Pulsating Logo */
+#pulsating-logo {
+    animation: pulsate 2s infinite;
+    width: 80px; /* Larger logo */
+}
+
 @keyframes pulsate {
     0% {
         transform: scale(1);
@@ -65,28 +86,12 @@ body {
     }
 }
 
-#pulsating-logo, #pulsating-central-logo {
-    animation: pulsate 2s infinite; /* Both logos now pulsate */
-    width: 80px; /* Size of the logo */
+/* Drop Shadow for Navbar */
+.navbar {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
 }
 
-/* Contact Us button */
-.contact-us-btn {
-    background-color: #34c4e8; /* Original blue background */
-    color: white;
-    padding: 10px 20px; /* Adjust button size */
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 50px; /* Rounded button */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Contact Us button shadow */
-}
-
-.contact-us-btn:hover {
-    background-color: #2d9eb5; /* Slightly darker blue on hover */
-}
-
-/* Bigger shadow on hover */
-.contact-us-btn:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+/* Adjusting Section Below Navbar */
+main {
+    padding-top: 80px; /* Spacing to account for fixed navbar */
 }
