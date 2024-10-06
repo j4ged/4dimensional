@@ -4,80 +4,31 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Montserrat', sans-serif; /* Existing font for other content */
+    font-family: 'Poppins', sans-serif; /* Switch to Poppins for general content */
 }
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0.75); /* Slightly more transparent background */
     padding: 5px 0; /* Thinner Y-axis */
     position: relative;
-    z-index: 1000; /* Ensure it stays on top when scrolling */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10); /* Slightly more transparent drop shadow */
-    backdrop-filter: blur(3px); /* Subtle blur effect */
-    height: 65px; /* Manually setting height to control navbar size */
+    z-index: 1000;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* More transparent drop shadow */
+    backdrop-filter: blur(8px); /* Light blur */
 }
 
-/* Navbar Links */
-.nav-link {
-    color: #6b6b6b !important; /* Default color */
-    font-family: 'Poppins', sans-serif; /* Updated font to Poppins */
-    font-weight: 600; /* Bolder font */
-    padding: 10px 15px;
-    background-color: transparent;
-    margin: 0 10px; /* Adjust margin to keep spacing */
-    font-size: 1.1rem; /* Slightly smaller to fit the Y-axis */
-    position: relative;
-    transition: color 0.3s ease, background-color 0.3s ease;
+/* Navbar logo */
+.navbar-brand img {
+    width: 100px; /* Smaller corner logo */
+    animation: none; /* No pulsate for corner logo */
 }
 
-.nav-link:hover {
-    color: #2d2d2d !important; /* Hover color */
-}
-
-.nav-link::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px; /* Thicker underline */
-    bottom: -4px;
-    left: 0;
-    background-color: #34c4e8; /* Blue underline */
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover::before, .nav-item.active .nav-link::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-/* Contact Us Button */
-.navbar .btn-contact-us {
-    background-color: #34c4e8; /* Same blue as hover line */
-    color: white;
-    font-weight: 600;
-    padding: 8px 20px;
-    border-radius: 50px; /* More rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly more transparent shadow for Contact Us button */
-    transition: background-color 0.3s ease;
-}
-
-.navbar .btn-contact-us:hover {
-    background-color: #1a91b6;
-}
-
-/* Pulsating Logo */
-#pulsating-logo {
-    animation: pulsate 2s infinite;
-    width: 50px; /* Smaller corner logo size */
-}
-
+/* Main pulsating logo */
 #pulsating-central-logo {
-    width: 80px; /* Retains the larger size for the central logo */
+    animation: pulsate 2s infinite;
 }
 
+/* Pulsating logo animation */
 @keyframes pulsate {
     0% {
         transform: scale(1);
@@ -90,12 +41,74 @@ body {
     }
 }
 
-/* Drop Shadow for Navbar */
-.navbar {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* More transparent shadow */
+/* Navbar links */
+.nav-link {
+    color: #6b6b6b !important; /* Default color */
+    font-weight: 600; /* Thicker font */
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-/* Adjusting Section Below Navbar */
-main {
-    padding-top: 80px; /* Spacing to account for fixed navbar */
+.nav-link:hover {
+    color: #2d2d2d !important; /* Darker on hover */
+}
+
+.nav-link.active {
+    color: #2d2d2d !important; /* Active page link */
+    border-bottom: 4px solid #34c4e8; /* Thicker blue underline */
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 0;
+    height: 4px; /* Thicker underline */
+    background: #34c4e8;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Smoothly expand underline */
+}
+
+/* Contact Us button */
+.navbar .btn-contact {
+    background-color: #34c4e8;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px; /* Fully rounded */
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .btn-contact:hover {
+    background-color: #2d9eb8;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Stats Section */
+#about .col-lg-4 {
+    margin-bottom: 20px;
+}
+
+#about h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Thicker for big numbers */
+    font-size: 2.5rem;
+}
+
+#about h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
 }
