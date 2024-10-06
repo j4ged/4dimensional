@@ -151,7 +151,7 @@ body {
     font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
-/* Updated Stats section with solid colors and semi-transparent white icons */
+/* Updated Stats section with solid colors and bold fonts */
 #about {
     background-color: #ffffff; /* Reset to white */
     padding: 60px 0;
@@ -170,10 +170,11 @@ body {
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
+/* Stat box adjustments for larger height and bold white text */
 .stat-box {
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 30px;
+    padding: 40px 30px; /* Increased padding for larger Y-axis size */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -193,6 +194,16 @@ body {
 
 .stat-box.green h3 {
     color: white; /* White text */
+    font-weight: bold; /* Bold font */
+    font-size: 2.5rem; /* Font size for header */
+    font-family: 'Outfit', sans-serif; /* Matching font */
+}
+
+.stat-box.green p {
+    color: white; /* White text */
+    font-weight: bold; /* Bold font */
+    font-size: 1.2rem;
+    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box.green i {
@@ -207,6 +218,16 @@ body {
 
 .stat-box.blue h3 {
     color: white; /* White text */
+    font-weight: bold; /* Bold font */
+    font-size: 2.5rem; /* Font size for header */
+    font-family: 'Outfit', sans-serif; /* Matching font */
+}
+
+.stat-box.blue p {
+    color: white; /* White text */
+    font-weight: bold; /* Bold font */
+    font-size: 1.2rem;
+    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box.blue i {
@@ -221,6 +242,16 @@ body {
 
 .stat-box.red h3 {
     color: white; /* White text */
+    font-weight: bold; /* Bold font */
+    font-size: 2.5rem; /* Font size for header */
+    font-family: 'Outfit', sans-serif; /* Matching font */
+}
+
+.stat-box.red p {
+    color: white; /* White text */
+    font-weight: bold; /* Bold font */
+    font-size: 1.2rem;
+    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box.red i {
@@ -234,11 +265,6 @@ body {
     right: -20px;
     font-size: 8rem;
     opacity: 0.5; /* Control the transparency */
-}
-
-/* Hover effect */
-.stat-box:hover {
-    transform: translateY(-10px);
 }
 
 /* Social Links Section */
