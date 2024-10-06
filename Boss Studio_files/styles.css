@@ -15,6 +15,19 @@ body {
     padding: 0; /* No additional padding */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
     backdrop-filter: blur(10px); /* Blur effect for the navbar */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center the content horizontally */
+}
+
+.navbar .navbar-nav {
+    display: flex; /* Flexbox for nav items */
+    justify-content: center; /* Center nav items */
+    width: 100%; /* Allow full width to center items */
+    margin: 0; /* Reset default margins */
+}
+
+.navbar .nav-item {
+    margin: 0 10px; /* Space between buttons */
 }
 
 .navbar-brand img {
