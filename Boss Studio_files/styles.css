@@ -7,15 +7,15 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.2); /* More transparent background */
+    background-color: rgba(128, 128, 128, 0.2); /* Lightened gray background */
 }
 
 .nav-link {
     color: white !important;
     font-weight: bold;
     padding: 15px 30px; /* Increased size for larger buttons */
-    background-color: rgba(0, 0, 0, 0.5); /* More transparent background */
-    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3); /* Much more transparent */
+    border-radius: 12px; /* More rounded corners */
     margin: 5px;
     font-size: 1.2rem; /* Larger font */
     transition: background-color 0.3s ease;
@@ -38,8 +38,8 @@ body {
     }
 }
 
-#pulsating-logo {
-    animation: pulsate 2s infinite; /* Pulsating effect for the logo */
+#pulsating-logo, #pulsating-central-logo {
+    animation: pulsate 2s infinite; /* Both logos now pulsate */
 }
 
 /* Team Section */
