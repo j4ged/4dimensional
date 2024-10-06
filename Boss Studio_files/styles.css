@@ -2,7 +2,10 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Outfit', sans-serif; /* Updated to Outfit font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Navbar */
@@ -137,7 +140,7 @@ body {
 
 /* Stats section */
 #about {
-    background-color: #f8f9fa;
+    background-color: #ffffff; /* Reset to white */
     padding: 60px 0;
 }
 
@@ -145,11 +148,31 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
+    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
 #about p {
     font-size: 1.2rem;
     color: #666;
+    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
+}
+
+/* Updated content for the about section */
+#about h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Outfit', sans-serif; /* Matching font */
+}
+
+#about p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box {
@@ -171,11 +194,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box p {
     font-size: 1.1rem;
     color: #666;
+    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box i {
@@ -214,6 +239,7 @@ body {
 .btn-primary, .btn-dark {
     font-size: 1.2rem;
     font-weight: bold;
+    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
 /* Badge */
@@ -227,6 +253,7 @@ footer {
     background-color: #f8f9fa;
     color: #333;
     padding: 20px 0;
+    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
 /* Responsive adjustments */
