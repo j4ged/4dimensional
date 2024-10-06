@@ -23,7 +23,7 @@ body {
     left: 0;
     right: 0;
     height: 1px; /* Thinner outline */
-    background-color: rgba(0, 0, 0, 0.7); /* Black outline with 70% transparency */
+    background-color: rgba(0, 0, 0, 0.25); /* Black outline with 70% transparency */
 }
 
 /* Regular shadow style */
