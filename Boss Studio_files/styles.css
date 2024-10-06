@@ -81,20 +81,23 @@ body {
 
 /* Contact Us Button */
 .btn-contact {
-    background-color: #f79532; /* Orange background color */
-    border-radius: 50px; /* Fully rounded corners */
-    padding: 10px 25px; /* Adjust padding for pill shape */
-    font-size: 1.2rem; /* Slightly larger font */
-    font-weight: bold; /* Bold text */
+    background-color: #34c4e8; /* Custom blue background */
     color: white; /* White text */
-    display: inline-flex; /* Inline flex for icon and text alignment */
-    align-items: center; /* Vertically center content */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 10px 25px; /* Adjust padding for the pill shape */
+    font-size: 1rem; /* Font size matching navbar */
+    font-weight: bold; /* Matching the navbar text thickness */
+    text-transform: uppercase; /* Ensure uppercase letters like in navbar */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
 .btn-contact:hover {
-    background-color: #e68a29; /* Darker shade on hover */
+    background-color: #2ea9cb; /* Slightly darker blue on hover */
+}
+
+/* Ensures the font used is the same as the navbar */
+.navbar-nav .nav-link, .btn-contact {
+    font-family: 'Poppins', sans-serif; /* Ensure the same font as navbar */
 }
 
 .btn-contact img {
