@@ -174,12 +174,16 @@ body {
 .stat-box {
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 40px 30px; /* Increased padding for larger Y-axis size */
+    padding: 30px; /* Adjusted padding */
     text-align: center;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    height: 180px; /* Control box height */
 }
 
 .stat-box:hover {
@@ -192,18 +196,18 @@ body {
     box-shadow: 0 10px 30px rgba(52, 232, 82, 0.7); /* Green glow shadow */
 }
 
-.stat-box.green h3 {
+.stat-box.green h3, .stat-box.green p {
     color: white; /* White text */
     font-weight: bold; /* Bold font */
-    font-size: 2.5rem; /* Font size for header */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
+.stat-box.green h3 {
+    font-size: 2.5rem; /* Font size for header */
+}
+
 .stat-box.green p {
-    color: white; /* White text */
-    font-weight: bold; /* Bold font */
     font-size: 1.2rem;
-    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box.green i {
@@ -216,18 +220,18 @@ body {
     box-shadow: 0 10px 30px rgba(52, 196, 232, 0.7); /* Blue glow shadow */
 }
 
-.stat-box.blue h3 {
+.stat-box.blue h3, .stat-box.blue p {
     color: white; /* White text */
     font-weight: bold; /* Bold font */
-    font-size: 2.5rem; /* Font size for header */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
+.stat-box.blue h3 {
+    font-size: 2.5rem; /* Font size for header */
+}
+
 .stat-box.blue p {
-    color: white; /* White text */
-    font-weight: bold; /* Bold font */
     font-size: 1.2rem;
-    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box.blue i {
@@ -240,18 +244,18 @@ body {
     box-shadow: 0 10px 30px rgba(255, 67, 74, 0.7); /* Red glow shadow */
 }
 
-.stat-box.red h3 {
+.stat-box.red h3, .stat-box.red p {
     color: white; /* White text */
     font-weight: bold; /* Bold font */
-    font-size: 2.5rem; /* Font size for header */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
+.stat-box.red h3 {
+    font-size: 2.5rem; /* Font size for header */
+}
+
 .stat-box.red p {
-    color: white; /* White text */
-    font-weight: bold; /* Bold font */
     font-size: 1.2rem;
-    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 .stat-box.red i {
