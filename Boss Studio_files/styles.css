@@ -1,92 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap"); /* Font import */
+
 /* General Styling */
 body {
-    background-color: #ffffff;
-    color: #333;
-    font-family: 'Poppins', sans-serif; /* Ensure Poppins is used */
+    font-family: 'Outfit', sans-serif; /* Updated font family */
+    min-height: 100vh;
+    background: #e8ecf1;
+    margin: 0; /* Reset default margins */
 }
 
 /* Navbar */
 .navbar {
     background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
-    height: 80px; /* Set navbar height to 80px */
-    padding: 0; /* Remove padding to make navbar smaller */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for navbar */
-    backdrop-filter: blur(10px); /* Slight blur effect */
+    height: 80px; /* Set navbar height */
+    padding: 0; /* No additional padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    backdrop-filter: blur(10px); /* Blur effect for the navbar */
 }
 
 .navbar-brand img {
-    height: 60px; /* Adjust logo height */
+    height: 60px; /* Logo height adjustment */
 }
 
 .nav-link {
     color: #6b6b6b !important; /* Updated link color */
-    font-weight: 600; /* Make font thicker */
-    padding: 10px 15px; /* Adjust padding for smaller height */
-    font-size: 1.1rem; /* Keep font size */
-    position: relative;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    font-weight: 600; /* Thicker font */
+    padding: 15px 20px; /* Increased button padding */
+    font-size: 1.1rem; /* Font size */
+    position: relative; /* For after pseudo-element */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 /* Hover effects */
 .nav-link:hover {
-    color: #2d2d2d; /* Hover color */
+    color: #2d2d2d; /* Darker color on hover */
 }
 
 .nav-link::after {
     content: '';
     display: block;
     width: 100%;
-    height: 2px; /* Thicker line on hover */
-    background: #34c4e8; /* Your blue color */
+    height: 2px; /* Thicker underline */
+    background: #34c4e8; /* Hover color */
     position: absolute;
     left: 0;
-    bottom: -5px; /* Adjust for placement */
+    bottom: -5px; /* Positioning the underline */
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .nav-link:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Show underline on hover */
 }
 
 /* Contact Us Button */
 .btn-contact {
-    background-color: #34c4e8; /* Your blue color */
-    color: white;
-    border-radius: 25px; /* Fully rounded corners */
-    padding: 10px 20px; /* Size of the button */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
-    transition: background-color 0.3s ease;
+    background-color: #34c4e8; /* Set to specified blue */
+    color: white; /* White text */
+    border-radius: 9999px; /* Fully rounded corners */
+    padding: 12px 24px; /* Adjust size of the button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the button */
+    transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
+/* Contact button hover effect */
 .btn-contact:hover {
     background-color: #2d2d2d; /* Darker shade on hover */
 }
 
-/* Pulsating logo animation */
-@keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-#pulsating-logo {
-    animation: pulsate 2s infinite; /* Only big logo pulsates */
-}
-
-/* Adjust padding for logos */
+/* Header and section styles */
 #home .container {
-    padding-top: 30px; /* Increased padding above the big logo */
+    padding-top: 40px; /* Increased padding above the big logo */
 }
 
 #home .container + section {
-    margin-top: 40px; /* Increased padding below the big logo */
+    margin-top: 40px; /* Increased margin below the big logo */
 }
 
 /* Stats section */
@@ -107,6 +94,6 @@ body {
 
 /* Footer */
 footer {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #f8f9fa; /* Footer background */
+    color: #333; /* Footer text color */
 }
