@@ -80,33 +80,6 @@ body {
     animation: pulsate 2s infinite; /* Big logo pulsating */
 }
 
-/* Contact Us Button */
-.btn-contact {
-    background-color: #34c4e8; /* Custom blue background */
-    color: white; /* White text */
-    border-radius: 50px; /* Fully rounded corners */
-    padding: 10px 25px; /* Adjust padding for the pill shape */
-    font-size: 1rem; /* Font size matching navbar */
-    font-weight: bold; /* Matching the navbar text thickness */
-    text-transform: uppercase; /* Ensure uppercase letters like in navbar */
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
-    font-family: 'Outfit', sans-serif; /* Ensure the same font as navbar */
-}
-
-.btn-contact:hover {
-    background-color: #2ea9cb; /* Slightly darker blue on hover */
-}
-
-.btn-contact img {
-    margin-right: 8px; /* Space between icon and text */
-}
-
-/* Adjust icon size inside the button */
-.btn-contact-icon {
-    width: 20px; /* Set the icon size */
-    height: auto; /* Maintain aspect ratio */
-}
-
 /* Padding adjustments for sections */
 #home, #about, #about-us, #team {
     padding-top: 50px; /* Increased padding */
