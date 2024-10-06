@@ -8,10 +8,10 @@ body {
     margin: 0; /* Reset default margins */
 }
 
-/* Navbar */
 .navbar {
     position: relative; /* Ensure positioning for the pseudo-element */
     z-index: 10; /* Keep the navbar above other elements */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
 }
 
 .navbar::after {
@@ -24,6 +24,12 @@ body {
     background-color: rgba(255, 255, 255, 0.5); /* White with half transparency */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: add shadow for effect */
 }
+
+/* Initial state for the box shadow */
+.navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Adjust shadow here */
+}
+
 /* Center the nav links */
 .navbar-collapse {
     justify-content: center; /* Center items horizontally */
