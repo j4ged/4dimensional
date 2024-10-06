@@ -10,15 +10,20 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
-    height: 80px; /* Set navbar height */
-    padding: 0; /* Remove padding */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Regular shadow */
-    backdrop-filter: blur(10px); /* Blur effect */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
+    position: relative; /* Ensure positioning for the pseudo-element */
+    z-index: 10; /* Keep the navbar above other elements */
 }
 
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust as needed for spacing */
+    left: 0;
+    right: 0;
+    height: 2px; /* Thickness of the outline */
+    background-color: rgba(255, 255, 255, 0.5); /* White with half transparency */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: add shadow for effect */
+}
 /* Center the nav links */
 .navbar-collapse {
     justify-content: center; /* Center items horizontally */
