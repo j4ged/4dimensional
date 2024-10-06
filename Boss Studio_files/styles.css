@@ -2,77 +2,91 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif; /* Updated to Flow Rounded */
+    font-family: 'Flow Rounded', sans-serif;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #ffffff; /* Fully white background */
-    padding: 10px 0; /* Adjusted Y-axis padding */
-    position: relative; /* Positioning for the outline */
-    z-index: 10; /* Ensure navbar is above other elements */
-    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
-    backdrop-filter: blur(10px); /* Added blur behind the navbar */
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+    transition: box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
-/* Add outline as a pseudo-element */
 .navbar::after {
     content: '';
     position: absolute;
-    bottom: 0; /* No gap between shadow and outline */
+    bottom: 0;
     left: 0;
     right: 0;
-    height: 1px; /* Thinner outline */
-    background-color: rgba(0, 0, 0, 0.25); /* Black outline with 70% transparency */
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-/* Regular shadow style */
 .navbar {
-    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15); /* Increase Y-axis size, larger blur, and more transparent color */
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
 }
 
-/* Adjust shadow when scrolled */
 .navbar.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0); /* Fade out shadow on scroll */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
 }
 
 /* Navbar Links */
 .navbar-nav {
+    display: flex;
     justify-content: center;
-    flex-grow: 1; /* Ensure the nav links take up available space */
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
 }
 
 .nav-link {
-    color: #6b6b6b; /* Default link color */
-    font-weight: bold; /* Thicker font */
-    padding: 12px 20px; /* Larger buttons */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-    font-family: 'Outfit', sans-serif; /* Updated to Outfit */
-    text-align: center; /* Ensure links are centered */
+    color: #6b6b6b;
+    font-weight: bold;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    position: relative;
 }
 
 /* Hover Effects */
 .nav-link:hover {
-    color: #2d2d2d; /* Darker color on hover */
+    color: #2d2d2d;
 }
 
-/* Underline effect on hover */
 .nav-link:hover::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px; /* Space between text and underline */
-    height: 2px; /* Thickness of the underline */
-    background-color: #34c4e8; /* Blue color for underline */
-    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for underline */
-    width: 100%; /* Full width underline */
+    bottom: -5px;
+    height: 2px;
+    background-color: #34c4e8;
+    transition: width 0.3s ease, left 0.3s ease;
+    width: 100%;
 }
 
 .navbar-collapse {
-    justify-content: center; /* Ensures centering of the navbar links */
+    justify-content: center;
 }
 
-/* Pulsating logo animation */
+/* Ensure the navbar brand (logo) doesn't interfere with centering */
+.navbar-brand {
+    margin-right: 0;
+}
+
+/* Add flex-grow to push the toggler to the right if needed */
+.navbar > .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Rest of the CSS remains the same */
 @keyframes pulsate {
     0% {
         transform: scale(1);
@@ -86,15 +100,13 @@ body {
 }
 
 #pulsating-logo {
-    animation: pulsate 2s infinite; /* Big logo pulsating */
+    animation: pulsate 2s infinite;
 }
 
-/* Padding adjustments for sections */
 #home, #about, #about-us, #team {
-    padding-top: 50px; /* Increased padding */
+    padding-top: 50px;
 }
 
-/* Stats section */
 #about .col-lg-4 {
     margin-bottom: 20px;
 }
@@ -104,13 +116,11 @@ body {
     font-weight: bold;
 }
 
-/* Badge */
 .badge.bg-danger {
     font-size: 0.75rem;
     margin-top: 5px;
 }
 
-/* Footer */
 footer {
     background-color: #f8f9fa;
     color: #333;
