@@ -1,82 +1,59 @@
-/* Navbar Styling */
+/* Navbar */
 .navbar {
-    background-color: #fff; /* White background */
-    padding: 0.5rem 0; /* Reduced padding for a smaller navbar */
-    border-bottom: 1px solid #eaeaea; /* Light bottom border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow effect at the bottom */
-}
-
-.navbar-brand img {
-    width: 90px; /* Slightly smaller logo size */
+    background-color: white; /* Matches the Big Games navbar */
+    padding: 10px 0; /* Thinner navbar height */
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Drop shadow under navbar */
 }
 
 .navbar-nav .nav-link {
-    color: #333; /* Dark text color */
-    font-weight: bold; /* Bold text */
-    padding: 8px 15px; /* Slightly reduced padding for links */
-    font-size: 1rem; /* Slightly smaller text size */
-    text-transform: uppercase; /* Uppercase text */
-    transition: all 0.3s ease; /* Smooth transition */
+    color: #333; /* Dark gray for text */
+    font-weight: 500;
+    font-size: 1rem; /* Adjust font size */
+    padding: 10px 15px; /* Make the spacing between buttons a bit smaller */
+    position: relative;
+    text-transform: uppercase; /* Make buttons uppercase like in the image */
+    transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #f7941d; /* Orange text on hover */
-    border-bottom: 2px solid #f7941d; /* Orange underline on hover */
+    color: #34c4e8; /* Change to requested hover color */
 }
 
-.navbar-toggler {
-    border-color: #f7941d; /* Orange border for the navbar toggler */
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    height: 4px; /* Thicker underline */
+    width: 0;
+    background-color: #34c4e8; /* Change color to your desired #34c4e8 */
+    transition: width 0.3s ease;
+    margin-top: 5px; /* Adds space between text and underline */
 }
 
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+.navbar-nav .active::after {
+    width: 100%; /* Full underline on the active page */
+}
+
+/* Contact Us button */
 .btn-orange {
-    background-color: #f7941d; /* Orange background for button */
-    color: white; /* White text */
-    font-weight: bold; /* Bold text */
-    border-radius: 50px; /* Rounded button */
-    padding: 10px 25px; /* Increased padding for a bigger button */
-    font-size: 1.1rem; /* Slightly larger font size */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #34c4e8; /* Adjust to your specified color */
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px; /* Rounded button like in the image */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-orange:hover {
-    background-color: #ff9c33; /* Slightly lighter orange on hover */
-    color: white; /* White text */
+    background-color: #2ab0ce; /* Slightly darker shade on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
 }
 
-/* General Styling (from existing content) */
+/* Add a little padding for the navbar drop shadow */
 body {
-    background-color: #ffffff;
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Pulsating logo animation */
-#pulsating-logo, #pulsating-central-logo {
-    animation: pulsate 2s infinite;
-}
-
-@keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-#about .col-lg-4 {
-    margin-bottom: 20px;
-}
-
-#about .btn {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-footer {
-    background-color: #f8f9fa;
-    color: #333;
+    margin-top: 80px; /* This ensures space between the navbar shadow and content */
 }
