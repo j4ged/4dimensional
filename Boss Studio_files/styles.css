@@ -13,7 +13,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
     height: 80px; /* Set navbar height */
     padding: 0; /* Remove padding */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Initial shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Increased opacity for regular shadow */
     backdrop-filter: blur(10px); /* Blur effect */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
@@ -63,16 +63,15 @@ body {
     color: white; /* Button text color */
     border-radius: 30px; /* Rounded corners */
     padding: 12px 20px; /* Button padding */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increased button shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Increased button shadow opacity */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 /* Contact button hover effect */
 .btn-contact:hover {
     background-color: #2d2d2d; /* Darker shade on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Shadow on hover with increased opacity */
 }
-
 
 /* Header and section styles */
 #home .container {
