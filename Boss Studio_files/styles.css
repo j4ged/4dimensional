@@ -28,7 +28,7 @@ body {
 
 /* Regular shadow style */
 .navbar {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increase Y-axis size, larger blur, and more transparent color */
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15); /* Increase Y-axis size, larger blur, and more transparent color */
 }
 
 /* Adjust shadow when scrolled */
