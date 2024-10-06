@@ -5,10 +5,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Navbar */
+/* Updated Navbar */
 .navbar {
-    background-color: rgba(192, 192, 192, 0.1); /* Even lighter gray background */
-    padding: 10px 0; /* Thinner Y-axis */
+    background-color: rgba(192, 192, 192, 0.1); /* Lighter gray background */
+    padding: 10px 0;
 }
 
 .nav-link {
@@ -16,7 +16,7 @@ body {
     font-weight: bold;
     padding: 10px 20px; /* Larger buttons */
     background-color: rgba(0, 0, 0, 0.2); /* Slightly less transparent */
-    border-radius: 4px; /* Less rounded corners */
+    border-radius: 4px;
     margin: 5px;
     font-size: 1.3rem; /* Larger font */
     transition: background-color 0.3s ease;
@@ -40,7 +40,7 @@ body {
 }
 
 #pulsating-logo, #pulsating-central-logo {
-    animation: pulsate 2s infinite; /* Both logos now pulsate */
+    animation: pulsate 2s infinite;
 }
 
 /* Stats section */
