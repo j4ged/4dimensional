@@ -1,97 +1,98 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap"); /* Font import */
-
 /* General Styling */
 body {
-    font-family: 'Outfit', sans-serif; /* Updated font family */
-    min-height: 100vh;
-    background: #e8ecf1;
-    margin: 0; /* Reset default margins */
+    background-color: #ffffff;
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
 }
 
+/* Navbar */
 .navbar {
-    position: relative; /* Ensure positioning for the pseudo-element */
-    z-index: 10; /* Keep the navbar above other elements */
+    background-color: rgba(192, 192, 192, 0.5); /* Lighter gray background with transparency */
+    padding: 10px 0; /* Adjusted Y-axis padding */
+    position: relative; /* Positioning for the outline */
+    z-index: 10; /* Ensure navbar is above other elements */
     transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
 }
 
+/* Add outline as a pseudo-element */
 .navbar::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Adjust as needed for spacing */
+    bottom: 0; /* No gap between shadow and outline */
     left: 0;
     right: 0;
     height: 2px; /* Thickness of the outline */
-    background-color: rgba(255, 255, 255, 0.5); /* White with half transparency */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: add shadow for effect */
+    background-color: rgba(0, 0, 0, 0.5); /* Black outline with half transparency */
 }
 
-/* Initial state for the box shadow */
+/* Regular shadow style */
+.navbar {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Initial shadow */
+}
+
+/* Adjust shadow when scrolled */
 .navbar.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Adjust shadow here */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0); /* Fade out shadow on scroll */
 }
 
-/* Center the nav links */
-.navbar-collapse {
-    justify-content: center; /* Center items horizontally */
-}
-
-/* Adjust nav link styles */
+/* Navbar Links */
 .nav-link {
-    color: #6b6b6b !important; /* Text color */
-    font-weight: 600; /* Font weight */
-    padding: 12px 25px; /* Increased button padding for size */
-    font-size: 1.2rem; /* Increased font size */
-    transition: color 0.3s ease; /* Smooth transition */
-    position: relative; /* For hover underline */
+    color: #6b6b6b; /* Default link color */
+    font-weight: bold; /* Thicker font */
+    padding: 12px 20px; /* Larger buttons */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    position: relative; /* For the hover effect */
 }
 
-/* Hover effects */
+/* Hover Effects */
 .nav-link:hover {
-    color: #34c4e8; /* Blue hover color */
+    color: #2d2d2d; /* Darker color on hover */
 }
 
-.nav-link::after {
+/* Underline effect on hover */
+.nav-link:hover::after {
     content: '';
-    display: block;
-    width: 100%; /* Full width underline */
-    height: 2px; /* Thickness of the underline */
-    background: #34c4e8; /* Hover underline color */
     position: absolute;
     left: 0;
-    bottom: -5px; /* Positioning */
-    transform: scaleX(0); /* Start hidden */
-    transition: transform 0.3s ease; /* Smooth transition */
+    bottom: -5px; /* Space between text and underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #34c4e8; /* Blue color for underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for underline */
+    width: 100%; /* Full width underline */
 }
 
-.nav-link:hover::after {
-    transform: scaleX(1); /* Show underline on hover */
+/* Pulsating logo animation */
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#pulsating-logo {
+    animation: pulsate 2s infinite; /* Big logo pulsating */
 }
 
 /* Contact Us Button */
-.btn-contact {
-    background-color: #34c4e8; /* Contact button color */
-    color: white; /* Button text color */
-    border-radius: 30px; /* Rounded corners */
-    padding: 12px 20px; /* Button padding */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Button shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+.contact-button {
+    background-color: #34c4e8; /* Custom blue */
+    border-radius: 30px; /* Fully rounded corners */
+    padding: 10px 20px; /* Adjust padding for button */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
 }
 
-/* Contact button hover effect */
-.btn-contact:hover {
-    background-color: #2d2d2d; /* Darker shade on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+.contact-button:hover {
+    background-color: rgba(52, 196, 232, 0.8); /* Slightly darker on hover */
 }
 
-
-
-/* Header and section styles */
-#home .container {
-    padding-top: 40px; /* Increased padding above the big logo */
-}
-
-#home .container + section {
-    margin-top: 40px; /* Increased margin below the big logo */
+/* Padding adjustments for sections */
+#home, #about, #about-us, #team {
+    padding-top: 50px; /* Increased padding */
 }
 
 /* Stats section */
@@ -112,6 +113,6 @@ body {
 
 /* Footer */
 footer {
-    background-color: #f8f9fa; /* Footer background */
-    color: #333; /* Footer text color */
+    background-color: #f8f9fa;
+    color: #333;
 }
