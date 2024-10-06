@@ -11,23 +11,22 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light p-2 sticky-top"> <!-- Thinned navbar (p-2) -->
+    <nav class="navbar navbar-expand-lg navbar-light p-2 sticky-top">
         <div class="container-fluid">
-            <a href="#home" class="navbar-brand">
-                <img src="./Boss Studio_files/logo.png" alt="4 Dimensional Inc." id="pulsating-logo">
+            <a href="#home">
+                <img src="./Boss Studio_files/logo.png" alt="4 Dimensional Inc." width="80" id="corner-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#games">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#devlog">Devlog</a></li>
+                    <li class="nav-item"><a class="nav-link contact-us-btn" href="#contact">Contact Us</a></li>
                 </ul>
-                <a href="#contact" class="btn contact-button">Contact Us</a> <!-- Updated button -->
             </div>
         </div>
     </nav>
@@ -35,7 +34,7 @@
     <main>
         <section id="home">
             <div class="container text-center">
-                <img src="Boss Studio_files/logo.png" alt="4 Dimensional Inc." id="pulsating-central-logo" class="img-fluid">
+                <img src="Boss Studio_files/logo.png" alt="4 Dimensional Inc." width="300" id="pulsating-central-logo" class="img-fluid">
             </div>
         </section>
 
@@ -64,17 +63,17 @@
             </div>
 
             <!-- Social Links Section -->
-            <div class="container mt-4 social-links">
+            <div class="container mt-4">
                 <div class="row justify-content-center">
                     <div class="col-lg-4 text-center">
                         <a href="https://discord.gg/your-link" class="btn btn-primary p-3 d-block">
-                            <img src="Boss Studio_files/discord.png" alt="Discord" class="me-2"> 80K+ Members
+                            <img src="Boss Studio_files/discord.png" alt="Discord" width="30" class="me-2"> 80K+ Members
                         </a>
                         <span class="badge bg-danger mt-1">Accumulative (Multiple)</span>
                     </div>
                     <div class="col-lg-4 text-center">
                         <a href="https://www.roblox.com/groups/your-group-id" class="btn btn-dark p-3 d-block">
-                            <img src="Boss Studio_files/roblox.png" alt="Roblox Group" class="me-2"> 90K+ Group Members
+                            <img src="Boss Studio_files/roblox.png" alt="Roblox Group" width="30" class="me-2"> 90K+ Group Members
                         </a>
                         <span class="badge bg-danger mt-1">Accumulative (Multiple)</span>
                     </div>
@@ -82,10 +81,12 @@
             </div>
         </section>
 
-        <section id="games">
-            <div class="container text-center mt-5">
-                <h1 class="fw-bold">Our Games</h1>
-                <img src="Boss Studio_files/swordmaster_simulator.png" alt="Swordmaster Simulator" class="img-fluid" style="max-width: 500px;"> <!-- Limit the size of the game image -->
+        <section id="about-us">
+            <div class="container text-center">
+                <h1 class="fw-bold">About Us</h1>
+                <p class="lead mb-4">Founded in 2020, 4 Dimensional Inc. is one of the largest indie development teams on the Roblox platform.</p>
+                <p><em>“We strive to push the boundaries of our platform by providing incredible experiences and being at the frontier of creative gameplay.”</em></p>
+                <p>- Jason (Founder - CEO)</p>
             </div>
         </section>
 
@@ -105,13 +106,6 @@
                         <p>Co-Founder - COO</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="devlog">
-            <div class="container text-center mt-5">
-                <h1 class="fw-bold">Devlog</h1>
-                <p>Check out our latest updates and game development progress here.</p>
             </div>
         </section>
     </main>
