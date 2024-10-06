@@ -1,59 +1,50 @@
 /* Navbar */
 .navbar {
-    background-color: white; /* Matches the Big Games navbar */
-    padding: 10px 0; /* Thinner navbar height */
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Drop shadow under navbar */
+    background-color: white; 
+    padding: 0; /* Remove padding to shrink Y-axis size */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased drop shadow size */
+    height: 70px; /* Set a specific height for the navbar */
 }
 
 .navbar-nav .nav-link {
-    color: #333; /* Dark gray for text */
+    color: #333; 
     font-weight: 500;
-    font-size: 1rem; /* Adjust font size */
-    padding: 10px 15px; /* Make the spacing between buttons a bit smaller */
-    position: relative;
-    text-transform: uppercase; /* Make buttons uppercase like in the image */
-    transition: color 0.3s ease;
+    font-size: 1rem; 
+    padding: 10px 15px; /* Smaller padding to reduce navbar height */
+    position: relative; /* To apply custom underline */
 }
 
-.navbar-nav .nav-link:hover {
-    color: #34c4e8; /* Change to requested hover color */
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+    color: #34c4e8; /* Change text color to blue on hover and active */
 }
 
-.navbar-nav .nav-link::after {
+.navbar-nav .nav-link.active::after, .navbar-nav .nav-link:hover::after {
     content: '';
-    display: block;
-    height: 4px; /* Thicker underline */
-    width: 0;
-    background-color: #34c4e8; /* Change color to your desired #34c4e8 */
-    transition: width 0.3s ease;
-    margin-top: 5px; /* Adds space between text and underline */
-}
-
-.navbar-nav .nav-link:hover::after {
-    width: 100%; /* Full underline on hover */
-}
-
-.navbar-nav .active::after {
-    width: 100%; /* Full underline on the active page */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px; /* Thicker underline */
+    background-color: #34c4e8; /* Blue underline */
 }
 
 /* Contact Us button */
-.btn-orange {
-    background-color: #34c4e8; /* Adjust to your specified color */
+.navbar .btn {
+    background-color: #34c4e8; /* Blue background */
     color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 30px; /* Rounded button like in the image */
+    border: 1px solid #34c4e8;
+    padding: 8px 16px; /* Slightly larger button */
+    border-radius: 30px;
     font-size: 1rem;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
 }
 
-.btn-orange:hover {
-    background-color: #2ab0ce; /* Slightly darker shade on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
+.navbar .btn:hover {
+    background-color: #2bb2d4; /* Darker blue on hover */
+    border-color: #2bb2d4;
 }
 
-/* Add a little padding for the navbar drop shadow */
-body {
-    margin-top: 80px; /* This ensures space between the navbar shadow and content */
+/* Adjust drop shadow for navbar */
+.navbar {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More prominent drop shadow */
 }
