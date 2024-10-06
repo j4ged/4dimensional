@@ -80,15 +80,31 @@ body {
 }
 
 /* Contact Us Button */
-.contact-button {
-    background-color: #34c4e8; /* Custom blue */
-    border-radius: 30px; /* Fully rounded corners */
-    padding: 10px 20px; /* Adjust padding for button */
-    transition: background-color 0.3s ease; /* Smooth transition for background */
+.btn-contact {
+    background-color: #f79532; /* Orange background color */
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 10px 25px; /* Adjust padding for pill shape */
+    font-size: 1.2rem; /* Slightly larger font */
+    font-weight: bold; /* Bold text */
+    color: white; /* White text */
+    display: inline-flex; /* Inline flex for icon and text alignment */
+    align-items: center; /* Vertically center content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
-.contact-button:hover {
-    background-color: rgba(52, 196, 232, 0.8); /* Slightly darker on hover */
+.btn-contact:hover {
+    background-color: #e68a29; /* Darker shade on hover */
+}
+
+.btn-contact img {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Adjust icon size inside the button */
+.btn-contact-icon {
+    width: 20px; /* Set the icon size */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Padding adjustments for sections */
