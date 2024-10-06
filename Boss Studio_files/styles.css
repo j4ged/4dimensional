@@ -2,21 +2,26 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Poppins', sans-serif; /* Changed to Poppins */
+    font-family: 'Poppins', sans-serif; /* Ensure Poppins is used */
 }
 
 /* Navbar */
 .navbar {
     background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
-    padding: 3px 0; /* Reduce Y-axis padding to make navbar thinner */
+    height: 50px; /* Set a specific height for the navbar */
+    padding: 0; /* Remove padding to make navbar smaller */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for navbar */
     backdrop-filter: blur(10px); /* Slight blur effect */
+}
+
+.navbar-brand img {
+    height: 60px; /* Adjust logo height */
 }
 
 .nav-link {
     color: #6b6b6b !important; /* Updated link color */
     font-weight: 600; /* Make font thicker */
-    padding: 8px 15px; /* Adjust padding for smaller height */
+    padding: 10px 15px; /* Adjust padding for smaller height */
     font-size: 1.1rem; /* Keep font size */
     position: relative;
     transition: color 0.3s ease, background-color 0.3s ease;
@@ -48,7 +53,7 @@ body {
 .btn-contact {
     background-color: #34c4e8; /* Your blue color */
     color: white;
-    border-radius: 50px; /* Fully rounded corners */
+    border-radius: 25px; /* Fully rounded corners */
     padding: 10px 20px; /* Size of the button */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
     transition: background-color 0.3s ease;
@@ -96,5 +101,3 @@ footer {
     background-color: #f8f9fa;
     color: #333;
 }
-
-/* Additional styling can go here */
