@@ -213,6 +213,14 @@ body {
     }
 }
 
+/* Small text styling for stats */
+.small-text {
+    font-size: 0.9rem;
+    color: #ffffff; /* Adjust text color to be readable */
+    margin-top: 5px;
+    font-weight: lighter; /* Subtle, non-intrusive styling */
+}
+
 /* Green Stat Box */
 .stat-box.green {
     background-color: #34e852; /* Solid Green */
