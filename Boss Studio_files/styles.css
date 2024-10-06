@@ -7,11 +7,12 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(192, 192, 192, 0.5); /* Lighter gray background with transparency */
+    background-color: #ffffff; /* Fully white background */
     padding: 10px 0; /* Adjusted Y-axis padding */
     position: relative; /* Positioning for the outline */
     z-index: 10; /* Ensure navbar is above other elements */
     transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    backdrop-filter: blur(10px); /* Added blur behind the navbar */
 }
 
 /* Add outline as a pseudo-element */
@@ -21,8 +22,8 @@ body {
     bottom: 0; /* No gap between shadow and outline */
     left: 0;
     right: 0;
-    height: 2px; /* Thickness of the outline */
-    background-color: rgba(0, 0, 0, 0.5); /* Black outline with half transparency */
+    height: 1px; /* Thinner outline */
+    background-color: rgba(0, 0, 0, 0.7); /* Black outline with 70% transparency */
 }
 
 /* Regular shadow style */
