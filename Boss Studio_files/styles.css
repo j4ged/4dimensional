@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif; /* Updated to Flow Rounded */
+    font-family: 'Outfit', sans-serif; /* Changed to Outfit */
 }
 
 /* Navbar */
@@ -36,6 +36,11 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0); /* Fade out shadow on scroll */
 }
 
+/* Move navbar buttons slightly to the left */
+.navbar-nav {
+    margin-left: -20px; /* Slight left shift */
+}
+
 /* Navbar Links */
 .nav-link {
     color: #6b6b6b; /* Default link color */
@@ -43,7 +48,7 @@ body {
     padding: 12px 20px; /* Larger buttons */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     position: relative; /* For the hover effect */
-    font-family: 'Outfit', sans-serif; /* Updated to Outfit */
+    font-family: 'Flow Rounded', sans-serif; /* Changed to Flow Rounded */
 }
 
 /* Hover Effects */
@@ -77,7 +82,12 @@ body {
 }
 
 #pulsating-logo {
-    animation: pulsate 2s infinite; /* Big logo pulsating */
+    animation: pulsate 2s infinite; /* Logo pulsating */
+}
+
+/* Ensure the same font is used in multiple places */
+.navbar-nav .nav-link {
+    font-family: 'Flow Rounded', sans-serif; /* Ensure the same font as navbar */
 }
 
 /* Padding adjustments for sections */
