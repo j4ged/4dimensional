@@ -13,7 +13,7 @@ body {
     padding: 5px 0; /* Thinner Y-axis */
     position: relative;
     z-index: 1000; /* Ensure it stays on top when scrolling */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Bigger drop shadow */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10); /* Slightly more transparent drop shadow */
     backdrop-filter: blur(3px); /* Subtle blur effect */
     height: 65px; /* Manually setting height to control navbar size */
 }
@@ -55,12 +55,12 @@ body {
 
 /* Contact Us Button */
 .navbar .btn-contact-us {
-    background-color: #34c4e8;
+    background-color: #34c4e8; /* Same blue as hover line */
     color: white;
     font-weight: 600;
     padding: 8px 20px;
-    border-radius: 30px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Drop shadow */
+    border-radius: 50px; /* More rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly more transparent shadow for Contact Us button */
     transition: background-color 0.3s ease;
 }
 
@@ -71,7 +71,11 @@ body {
 /* Pulsating Logo */
 #pulsating-logo {
     animation: pulsate 2s infinite;
-    width: 80px; /* Larger logo */
+    width: 50px; /* Smaller corner logo size */
+}
+
+#pulsating-central-logo {
+    width: 80px; /* Retains the larger size for the central logo */
 }
 
 @keyframes pulsate {
@@ -88,7 +92,7 @@ body {
 
 /* Drop Shadow for Navbar */
 .navbar {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* More transparent shadow */
 }
 
 /* Adjusting Section Below Navbar */
