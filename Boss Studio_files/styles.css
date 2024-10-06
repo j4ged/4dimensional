@@ -7,22 +7,22 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent black */
+    background-color: rgba(0, 0, 0, 0.2); /* More transparent background */
 }
 
 .nav-link {
     color: white !important;
     font-weight: bold;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    padding: 15px 30px; /* Increased size for larger buttons */
+    background-color: rgba(0, 0, 0, 0.5); /* More transparent background */
     border-radius: 8px;
     margin: 5px;
-    font-size: 1.1rem; /* Thicker font size */
+    font-size: 1.2rem; /* Larger font */
     transition: background-color 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker on hover */
 }
 
 /* Pulsating logo animation */
@@ -38,7 +38,7 @@ body {
     }
 }
 
-#home img {
+#pulsating-logo {
     animation: pulsate 2s infinite; /* Pulsating effect for the logo */
 }
 
