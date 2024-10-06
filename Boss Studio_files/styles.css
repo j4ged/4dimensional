@@ -7,22 +7,22 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(128, 128, 128, 0.2); /* Lightened gray background */
+    background-color: rgba(192, 192, 192, 0.2); /* Even lighter gray background */
 }
 
 .nav-link {
     color: white !important;
     font-weight: bold;
-    padding: 15px 30px; /* Increased size for larger buttons */
-    background-color: rgba(0, 0, 0, 0.3); /* Much more transparent */
-    border-radius: 12px; /* More rounded corners */
+    padding: 12px 25px; /* Slightly smaller padding */
+    background-color: rgba(0, 0, 0, 0.1); /* Less transparent background */
+    border-radius: 4px; /* Less rounded corners */
     margin: 5px;
     font-size: 1.2rem; /* Larger font */
     transition: background-color 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker on hover */
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly darker on hover */
 }
 
 /* Pulsating logo animation */
