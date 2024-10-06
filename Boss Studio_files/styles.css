@@ -10,55 +10,57 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
     height: 80px; /* Set navbar height */
-    padding: 0; /* No additional padding */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
-    backdrop-filter: blur(10px); /* Blur effect for the navbar */
-    display: flex; /* Flexbox for alignment */
-    justify-content: center; /* Center the content horizontally */
+    padding: 0; /* Remove padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.navbar .navbar-brand img {
+    height: 60px; /* Logo height */
+    margin-right: 20px; /* Space between logo and nav */
 }
 
 .navbar .navbar-nav {
     display: flex; /* Flexbox for nav items */
     justify-content: center; /* Center nav items */
-    width: 100%; /* Allow full width to center items */
+    flex-grow: 1; /* Allow items to grow */
     margin: 0; /* Reset default margins */
 }
 
 .navbar .nav-item {
-    margin: 0 10px; /* Space between buttons */
-}
-
-.navbar-brand img {
-    height: 60px; /* Logo height adjustment */
+    margin: 0 15px; /* Space between buttons */
 }
 
 .nav-link {
-    color: #6b6b6b !important; /* Updated link color */
-    font-weight: 600; /* Thicker font */
-    padding: 15px 20px; /* Increased button padding */
-    font-size: 1.1rem; /* Font size */
-    position: relative; /* For after pseudo-element */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: #6b6b6b !important; /* Text color */
+    font-weight: 600; /* Font weight */
+    padding: 10px 15px; /* Button padding */
+    font-size: 1rem; /* Font size */
+    transition: color 0.3s ease; /* Smooth transition */
+    position: relative; /* For hover underline */
 }
 
 /* Hover effects */
 .nav-link:hover {
-    color: #2d2d2d; /* Darker color on hover */
+    color: #34c4e8; /* Blue hover color */
 }
 
 .nav-link::after {
     content: '';
     display: block;
-    width: 100%;
-    height: 2px; /* Thicker underline */
-    background: #34c4e8; /* Hover color */
+    width: 100%; /* Full width underline */
+    height: 2px; /* Thickness of the underline */
+    background: #34c4e8; /* Hover underline color */
     position: absolute;
     left: 0;
-    bottom: -5px; /* Positioning the underline */
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    bottom: -5px; /* Positioning */
+    transform: scaleX(0); /* Start hidden */
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
 .nav-link:hover::after {
@@ -67,12 +69,12 @@ body {
 
 /* Contact Us Button */
 .btn-contact {
-    background-color: #34c4e8; /* Set to specified blue */
-    color: white; /* White text */
-    border-radius: 9999px; /* Fully rounded corners */
-    padding: 12px 24px; /* Adjust size of the button */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the button */
-    transition: background-color 0.3s ease; /* Smooth background transition */
+    background-color: #34c4e8; /* Contact button color */
+    color: white; /* Button text color */
+    border-radius: 30px; /* Rounded corners */
+    padding: 12px 20px; /* Button padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 /* Contact button hover effect */
