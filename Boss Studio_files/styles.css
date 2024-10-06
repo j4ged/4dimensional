@@ -2,62 +2,133 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Outfit', sans-serif; /* Primary font */
+    font-family: 'Flow Rounded', sans-serif; /* Updated to Flow Rounded */
 }
-
-/* Ensure font is loaded properly */
-@import url('https://fonts.googleapis.com/css2?family=Flow+Rounded&family=Outfit:wght@400;600&display=swap');
 
 /* Navbar */
 .navbar {
-    background-color: #ffffff;
-    padding: 10px 0;
-    position: relative;
-    z-index: 10;
-    transition: box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
+    background-color: #ffffff; /* Fully white background */
+    padding: 10px 0; /* Adjusted Y-axis padding */
+    position: relative; /* Positioning for the outline */
+    z-index: 10; /* Ensure navbar is above other elements */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    backdrop-filter: blur(10px); /* Added blur behind the navbar */
 }
 
-/* Navbar Buttons Adjusted */
-.navbar-nav {
-    margin-left: -20px; /* Adjusting left movement */
-    font-family: 'Flow Rounded', sans-serif; /* Ensure the right font */
-    letter-spacing: normal; /* Fix any spacing issues */
+/* Add outline as a pseudo-element */
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* No gap between shadow and outline */
+    left: 0;
+    right: 0;
+    height: 1px; /* Thinner outline */
+    background-color: rgba(0, 0, 0, 0.25); /* Black outline with 70% transparency */
+}
+
+/* Regular shadow style */
+.navbar {
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15); /* Increase Y-axis size, larger blur, and more transparent color */
+}
+
+/* Adjust shadow when scrolled */
+.navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0); /* Fade out shadow on scroll */
 }
 
 /* Navbar Links */
 .nav-link {
-    color: #6b6b6b;
-    font-weight: bold;
-    padding: 12px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: relative;
-    font-family: 'Flow Rounded', sans-serif; /* Correct font */
-    letter-spacing: normal; /* Ensure normal spacing */
+    color: #6b6b6b; /* Default link color */
+    font-weight: bold; /* Thicker font */
+    padding: 12px 20px; /* Larger buttons */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    position: relative; /* For the hover effect */
+    font-family: 'Outfit', sans-serif; /* Updated to Outfit */
 }
 
 /* Hover Effects */
 .nav-link:hover {
-    color: #2d2d2d;
+    color: #2d2d2d; /* Darker color on hover */
 }
 
+/* Underline effect on hover */
 .nav-link:hover::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
-    height: 2px;
-    background-color: #34c4e8;
-    transition: width 0.3s ease, left 0.3s ease;
-    width: 100%;
+    bottom: -5px; /* Space between text and underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #34c4e8; /* Blue color for underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for underline */
+    width: 100%; /* Full width underline */
 }
 
-/* General body font */
-body, footer {
-    font-family: 'Outfit', sans-serif; /* General font for body and footer */
+/* Pulsating logo animation */
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
-/* Adjust footer font */
+#pulsating-logo {
+    animation: pulsate 2s infinite; /* Big logo pulsating */
+}
+
+/* Contact Us Button */
+.btn-contact {
+    background-color: #34c4e8; /* Custom blue background */
+    color: white; /* White text */
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 10px 25px; /* Adjust padding for the pill shape */
+    font-size: 1rem; /* Font size matching navbar */
+    font-weight: bold; /* Matching the navbar text thickness */
+    text-transform: uppercase; /* Ensure uppercase letters like in navbar */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    font-family: 'Outfit', sans-serif; /* Ensure the same font as navbar */
+}
+
+.btn-contact:hover {
+    background-color: #2ea9cb; /* Slightly darker blue on hover */
+}
+
+.btn-contact img {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Adjust icon size inside the button */
+.btn-contact-icon {
+    width: 20px; /* Set the icon size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Padding adjustments for sections */
+#home, #about, #about-us, #team {
+    padding-top: 50px; /* Increased padding */
+}
+
+/* Stats section */
+#about .col-lg-4 {
+    margin-bottom: 20px;
+}
+
+#about .btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Badge */
+.badge.bg-danger {
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+/* Footer */
 footer {
     background-color: #f8f9fa;
     color: #333;
