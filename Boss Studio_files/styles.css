@@ -13,24 +13,23 @@ body {
     background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
     height: 80px; /* Set navbar height */
     padding: 0; /* Remove padding */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Reduced opacity for regular shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Regular shadow */
     backdrop-filter: blur(10px); /* Blur effect */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    transition: box-shadow 0.3s ease; /* Transition for shadow */
 }
 
-.navbar.scrolled {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0); /* Remove shadow completely when scrolled */
+/* Center the nav links */
+.navbar-collapse {
+    justify-content: center; /* Center items horizontally */
 }
 
 /* Adjust nav link styles */
 .nav-link {
     color: #6b6b6b !important; /* Text color */
     font-weight: 600; /* Font weight */
-    padding: 10px 15px; /* Button padding */
-    font-size: 1rem; /* Font size */
+    padding: 12px 25px; /* Increased button padding for size */
+    font-size: 1.2rem; /* Increased font size */
     transition: color 0.3s ease; /* Smooth transition */
     position: relative; /* For hover underline */
 }
@@ -63,15 +62,16 @@ body {
     color: white; /* Button text color */
     border-radius: 30px; /* Rounded corners */
     padding: 12px 20px; /* Button padding */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Reduced button shadow opacity */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Button shadow */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 /* Contact button hover effect */
 .btn-contact:hover {
     background-color: #2d2d2d; /* Darker shade on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Shadow on hover with reduced opacity */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Shadow on hover */
 }
+
 
 
 /* Header and section styles */
