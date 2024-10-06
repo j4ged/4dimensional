@@ -18,8 +18,10 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Fades out shadow as you scroll */
 }
 
+/* Corner Logo */
 .navbar-brand img {
-    height: 60px; /* Smaller corner logo */
+    height: 60px;
+    width: auto; /* Prevents stretching on the X-axis */
 }
 
 /* Centered nav-links */
@@ -71,6 +73,7 @@ body {
 
 #pulsating-logo {
     height: 60px; /* Smaller logo in corner */
+    width: auto; /* Prevents stretching */
 }
 
 /* Contact Us Button */
