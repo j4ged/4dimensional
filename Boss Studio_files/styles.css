@@ -193,11 +193,12 @@ body {
 /* Floating animation for icons */
 .stat-box i {
     position: absolute;
-    bottom: -20px;
-    right: -20px;
+    bottom: 10px; /* Moved icon to appear below text */
+    right: 10px;
     font-size: 8rem;
     opacity: 0.5;
     animation: floatIcon 4s infinite ease-in-out; /* Floating effect for icons */
+    z-index: -1; /* Ensure icon is behind the text */
 }
 
 /* Floating animation for icons */
@@ -215,7 +216,7 @@ body {
 
 /* Small text styling for stats */
 .small-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Slightly smaller */
     color: #ffffff; /* Adjust text color to be readable */
     margin-top: 5px;
     font-weight: lighter; /* Subtle, non-intrusive styling */
@@ -227,8 +228,8 @@ body {
     box-shadow: 0 10px 30px rgba(52, 232, 82, 0.7); /* Green glow shadow */
 }
 
-.stat-box.green h3, .stat-box.green p {
-    color: white; /* White text */
+.stat-box.green h3, .stat-box.green p, .stat-box.green .small-text {
+    color: white; /* Ensure all text is white */
     font-weight: bold; /* Bold font */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
@@ -238,7 +239,7 @@ body {
 }
 
 .stat-box.green p {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Slightly larger for the main text */
 }
 
 .stat-box.green i {
@@ -251,8 +252,8 @@ body {
     box-shadow: 0 10px 30px rgba(52, 196, 232, 0.7); /* Blue glow shadow */
 }
 
-.stat-box.blue h3, .stat-box.blue p {
-    color: white; /* White text */
+.stat-box.blue h3, .stat-box.blue p, .stat-box.blue .small-text {
+    color: white; /* Ensure all text is white */
     font-weight: bold; /* Bold font */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
@@ -262,7 +263,7 @@ body {
 }
 
 .stat-box.blue p {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Slightly larger for the main text */
 }
 
 .stat-box.blue i {
@@ -275,8 +276,8 @@ body {
     box-shadow: 0 10px 30px rgba(255, 67, 74, 0.7); /* Red glow shadow */
 }
 
-.stat-box.red h3, .stat-box.red p {
-    color: white; /* White text */
+.stat-box.red h3, .stat-box.red p, .stat-box.red .small-text {
+    color: white; /* Ensure all text is white */
     font-weight: bold; /* Bold font */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
@@ -286,7 +287,7 @@ body {
 }
 
 .stat-box.red p {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Slightly larger for the main text */
 }
 
 .stat-box.red i {
