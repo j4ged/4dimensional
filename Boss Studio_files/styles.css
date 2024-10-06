@@ -13,7 +13,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
     height: 80px; /* Set navbar height */
     padding: 0; /* Remove padding */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Increased shadow size */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Initial shadow */
     backdrop-filter: blur(10px); /* Blur effect */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
@@ -21,15 +21,8 @@ body {
     transition: box-shadow 0.3s ease; /* Transition for shadow */
 }
 
-.navbar:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Shadow on hover */
-}
-
-.navbar .navbar-nav {
-    display: flex; /* Flexbox for nav items */
-    justify-content: center; /* Center nav items */
-    flex-grow: 1; /* Allow items to grow */
-    margin: 0; /* Reset default margins */
+.navbar.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow when scrolled */
 }
 
 /* Adjust nav link styles */
@@ -70,7 +63,7 @@ body {
     color: white; /* Button text color */
     border-radius: 30px; /* Rounded corners */
     padding: 12px 20px; /* Button padding */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increased button shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increased button shadow */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
