@@ -1,32 +1,58 @@
-/* General Styling */
+/* Navbar Styling */
+.navbar {
+    background-color: #fff; /* White background */
+    padding: 1rem 0; /* Padding around the navbar */
+    border-bottom: 1px solid #eaeaea; /* Light bottom border */
+}
+
+.navbar-brand img {
+    width: 100px; /* Logo size */
+}
+
+.navbar-nav .nav-link {
+    color: #333; /* Dark text color */
+    font-weight: bold; /* Bold text */
+    padding: 10px 20px; /* Padding for links */
+    font-size: 1.1rem; /* Slightly larger text size */
+    text-transform: uppercase; /* Uppercase text */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f7941d; /* Orange text on hover */
+    border-bottom: 2px solid #f7941d; /* Orange underline on hover */
+}
+
+.navbar-toggler {
+    border-color: #f7941d; /* Orange border for the navbar toggler */
+}
+
+.btn-orange {
+    background-color: #f7941d; /* Orange background for button */
+    color: white; /* White text */
+    font-weight: bold; /* Bold text */
+    border-radius: 50px; /* Rounded button */
+    padding: 8px 20px; /* Padding inside the button */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-orange:hover {
+    background-color: #ff9c33; /* Slightly lighter orange on hover */
+    color: white; /* White text */
+}
+
+/* General Styling (from existing content) */
 body {
     background-color: #ffffff;
     color: #333;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Updated Navbar */
-.navbar {
-    background-color: rgba(192, 192, 192, 0.1); /* Lighter gray background */
-    padding: 10px 0;
-}
-
-.nav-link {
-    color: white !important;
-    font-weight: bold;
-    padding: 10px 20px; /* Larger buttons */
-    background-color: rgba(0, 0, 0, 0.2); /* Slightly less transparent */
-    border-radius: 4px;
-    margin: 5px;
-    font-size: 1.3rem; /* Larger font */
-    transition: background-color 0.3s ease;
-}
-
-.nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker on hover */
-}
-
 /* Pulsating logo animation */
+#pulsating-logo, #pulsating-central-logo {
+    animation: pulsate 2s infinite;
+}
+
 @keyframes pulsate {
     0% {
         transform: scale(1);
@@ -39,11 +65,6 @@ body {
     }
 }
 
-#pulsating-logo, #pulsating-central-logo {
-    animation: pulsate 2s infinite;
-}
-
-/* Stats section */
 #about .col-lg-4 {
     margin-bottom: 20px;
 }
@@ -53,13 +74,6 @@ body {
     font-weight: bold;
 }
 
-/* Badge */
-.badge.bg-danger {
-    font-size: 0.75rem;
-    margin-top: 5px;
-}
-
-/* Footer */
 footer {
     background-color: #f8f9fa;
     color: #333;
