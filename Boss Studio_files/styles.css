@@ -3,9 +3,6 @@ body {
     background-color: #ffffff;
     color: #333;
     font-family: 'Flow Rounded', sans-serif; /* Updated to Flow Rounded */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 /* Navbar */
@@ -16,9 +13,6 @@ body {
     z-index: 10; /* Ensure navbar is above other elements */
     transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
     backdrop-filter: blur(10px); /* Added blur behind the navbar */
-    display: flex;
-    justify-content: center; /* Centering the navbar as a whole */
-    align-items: center; /* Vertical alignment */
 }
 
 /* Add outline as a pseudo-element */
@@ -93,49 +87,31 @@ body {
 
 #pulsating-logo {
     animation: pulsate 2s infinite; /* Big logo pulsating */
-    display: block;
-    margin: 0 auto; /* Ensure the logo is centered */
 }
 
 /* Padding adjustments for sections */
 #home, #about, #about-us, #team {
     padding-top: 50px; /* Increased padding */
-    text-align: center; /* Center the text inside sections */
 }
 
-/* Center align the main logo in home section */
-#home .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Make the container fill the entire viewport height */
-}
-
-/* Center buttons in Stats section */
+/* Stats section */
 #about .col-lg-4 {
     margin-bottom: 20px;
-    display: flex;
-    justify-content: center; /* Center the stats buttons */
-    align-items: center;
 }
 
 #about .btn {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0 auto; /* Ensure button is centered */
 }
 
 /* Badge */
 .badge.bg-danger {
     font-size: 0.75rem;
     margin-top: 5px;
-    text-align: center;
 }
 
 /* Footer */
 footer {
     background-color: #f8f9fa;
     color: #333;
-    text-align: center;
-    padding: 15px 0;
 }
