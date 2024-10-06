@@ -69,6 +69,8 @@ body {
 
 #pulsating-central-logo {
     animation: pulsate 2s infinite; /* Central logo pulsates */
+    max-width: 500px; /* Limit width for Our Games image */
+    height: auto;
 }
 
 #pulsating-logo {
@@ -105,4 +107,23 @@ section#games {
 /* Bigger shadow for navbar */
 .navbar {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Larger drop shadow */
+}
+
+/* Social Links Section */
+.social-links .btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.social-links img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.badge.bg-danger {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    background-color: red;
 }
