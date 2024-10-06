@@ -3,6 +3,9 @@ body {
     background-color: #ffffff;
     color: #333;
     font-family: 'Flow Rounded', sans-serif; /* Updated to Flow Rounded */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Navbar */
@@ -13,6 +16,9 @@ body {
     z-index: 10; /* Ensure navbar is above other elements */
     transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
     backdrop-filter: blur(10px); /* Added blur behind the navbar */
+    display: flex;
+    justify-content: center; /* Centering the navbar as a whole */
+    align-items: center; /* Vertical alignment */
 }
 
 /* Add outline as a pseudo-element */
@@ -37,13 +43,18 @@ body {
 }
 
 /* Navbar Links */
+.navbar-nav {
+    justify-content: center;
+    flex-grow: 1; /* Ensure the nav links take up available space */
+}
+
 .nav-link {
     color: #6b6b6b; /* Default link color */
     font-weight: bold; /* Thicker font */
     padding: 12px 20px; /* Larger buttons */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-    position: relative; /* For the hover effect */
     font-family: 'Outfit', sans-serif; /* Updated to Outfit */
+    text-align: center; /* Ensure links are centered */
 }
 
 /* Hover Effects */
@@ -63,6 +74,10 @@ body {
     width: 100%; /* Full width underline */
 }
 
+.navbar-collapse {
+    justify-content: center; /* Ensures centering of the navbar links */
+}
+
 /* Pulsating logo animation */
 @keyframes pulsate {
     0% {
@@ -78,58 +93,49 @@ body {
 
 #pulsating-logo {
     animation: pulsate 2s infinite; /* Big logo pulsating */
-}
-
-/* Contact Us Button */
-.btn-contact {
-    background-color: #34c4e8; /* Custom blue background */
-    color: white; /* White text */
-    border-radius: 50px; /* Fully rounded corners */
-    padding: 10px 25px; /* Adjust padding for the pill shape */
-    font-size: 1rem; /* Font size matching navbar */
-    font-weight: bold; /* Matching the navbar text thickness */
-    text-transform: uppercase; /* Ensure uppercase letters like in navbar */
-    transition: background-color 0.3s ease; /* Smooth transition for hover */
-    font-family: 'Outfit', sans-serif; /* Ensure the same font as navbar */
-}
-
-.btn-contact:hover {
-    background-color: #2ea9cb; /* Slightly darker blue on hover */
-}
-
-.btn-contact img {
-    margin-right: 8px; /* Space between icon and text */
-}
-
-/* Adjust icon size inside the button */
-.btn-contact-icon {
-    width: 20px; /* Set the icon size */
-    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Ensure the logo is centered */
 }
 
 /* Padding adjustments for sections */
 #home, #about, #about-us, #team {
     padding-top: 50px; /* Increased padding */
+    text-align: center; /* Center the text inside sections */
 }
 
-/* Stats section */
+/* Center align the main logo in home section */
+#home .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the container fill the entire viewport height */
+}
+
+/* Center buttons in Stats section */
 #about .col-lg-4 {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Center the stats buttons */
+    align-items: center;
 }
 
 #about .btn {
     font-size: 1.2rem;
     font-weight: bold;
+    margin: 0 auto; /* Ensure button is centered */
 }
 
 /* Badge */
 .badge.bg-danger {
     font-size: 0.75rem;
     margin-top: 5px;
+    text-align: center;
 }
 
 /* Footer */
 footer {
     background-color: #f8f9fa;
     color: #333;
+    text-align: center;
+    padding: 15px 0;
 }
