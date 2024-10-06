@@ -33,11 +33,31 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
 }
 
+/* Navbar container */
+.navbar > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.navbar-brand {
+    flex-shrink: 0;
+    margin-right: 0;
+}
+
+/* Navigation container */
+.navbar-collapse {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
 /* Navbar Links */
 .navbar-nav {
     display: flex;
     justify-content: center;
-    width: 100%;
+    margin: 0 auto;
 }
 
 .nav-item {
@@ -71,22 +91,24 @@ body {
     width: 100%;
 }
 
-.navbar-collapse {
-    justify-content: center;
+/* Ensure the navbar-toggler (for mobile) doesn't interfere */
+.navbar-toggler {
+    flex-shrink: 0;
 }
 
-/* Ensure the navbar brand (logo) doesn't interfere with centering */
-.navbar-brand {
-    margin-right: 0;
+/* Media query for smaller screens */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        justify-content: flex-start;
+    }
+    
+    .navbar-nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
 
-/* Add flex-grow to push the toggler to the right if needed */
-.navbar > .container {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Rest of the CSS remains the same */
+/* Pulsating logo animation */
 @keyframes pulsate {
     0% {
         transform: scale(1);
@@ -103,10 +125,12 @@ body {
     animation: pulsate 2s infinite;
 }
 
+/* Padding adjustments for sections */
 #home, #about, #about-us, #team {
     padding-top: 50px;
 }
 
+/* Stats section */
 #about .col-lg-4 {
     margin-bottom: 20px;
 }
@@ -116,11 +140,13 @@ body {
     font-weight: bold;
 }
 
+/* Badge */
 .badge.bg-danger {
     font-size: 0.75rem;
     margin-top: 5px;
 }
 
+/* Footer */
 footer {
     background-color: #f8f9fa;
     color: #333;
