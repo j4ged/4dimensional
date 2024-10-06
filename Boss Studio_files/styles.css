@@ -151,30 +151,11 @@ body {
     font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
-/* Updated Stats section with solid colors and bold fonts */
-#about {
-    background-color: #ffffff; /* Reset to white */
-    padding: 60px 0;
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    font-family: 'Outfit', sans-serif; /* Matching font */
-}
-
-#about p {
-    font-size: 1.2rem;
-    color: #666;
-    font-family: 'Outfit', sans-serif; /* Matching font */
-}
-
 /* Stat box adjustments for larger height and bold white text */
 .stat-box {
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 30px; /* Adjusted padding */
+    padding: 30px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -183,7 +164,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centers content vertically */
-    height: 180px; /* Control box height */
+    align-items: center; /* Centers horizontally */
+    height: 220px; /* Control box height */
 }
 
 .stat-box:hover {
