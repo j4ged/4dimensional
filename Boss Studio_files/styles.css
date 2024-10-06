@@ -2,105 +2,74 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
-    backdrop-filter: blur(10px); /* Blur effect */
-    padding: 10px 0; /* Thin Y-axis */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Bigger shadow */
-    transition: box-shadow 0.5s ease, background-color 0.5s ease; /* Fade shadow */
-}
-
-.navbar.scrolled {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Lighter shadow when scrolled */
+    background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    padding: 10px 0; /* Thinner Y-axis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+    backdrop-filter: blur(10px); /* Slight blur effect */
+    transition: box-shadow 0.4s ease;
 }
 
 /* Navbar Links */
 .nav-link {
     color: #6b6b6b !important;
-    font-weight: 600;
-    padding: 10px 15px;
-    margin: 0 5px;
-    font-size: 1.2rem; /* Slightly larger font */
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    font-weight: 600; /* Make font thicker */
+    padding: 10px 20px; /* Larger buttons */
+    font-size: 1.1rem; /* Increase font size */
     position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #2d2d2d !important;
+    color: #2d2d2d !important; /* Darker on hover */
 }
 
-.nav-link:before {
+/* Navbar underline hover effect */
+.nav-link::after {
     content: '';
     position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -5px;
-    left: 50%;
-    background-color: #34c4e8;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover:before {
-    width: 100%;
     left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px; /* Thicker underline */
+    background-color: #34c4e8; /* Same blue as buttons */
+    transition: width 0.3s ease;
 }
 
-/* Contact Us Button */
-.contact-us-btn {
-    color: white !important;
-    background-color: #34c4e8; /* Correct Blue */
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 50px; /* Fully rounded corners */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
-}
-
-.contact-us-btn:hover {
-    background-color: #2d2d2d; /* Hover color */
-    transform: scale(1.05); /* Slight grow on hover */
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* Pulsating logo animation */
-@keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 #pulsating-logo, #pulsating-central-logo {
     animation: pulsate 2s infinite;
 }
 
-#corner-logo {
-    width: 80px;
-    height: auto;
-    animation: none; /* Disable pulsating for corner logo */
+/* Contact Us button styling */
+.btn-contact {
+    background-color: #34c4e8;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 10px 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Main Section Styling */
-main {
-    padding: 40px 0;
+.btn-contact:hover {
+    background-color: #29a9c4; /* Slightly darker blue on hover */
 }
 
-#home img {
-    margin-top: 20px;
+/* Box shadow for navbar and scroll behavior */
+.navbar-scroll {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Bigger shadow */
 }
 
-#about {
-    padding-top: 60px; /* Increase padding under logo */
-}
-
+/* Stats section */
 #about .col-lg-4 {
     margin-bottom: 20px;
 }
@@ -110,6 +79,7 @@ main {
     font-weight: bold;
 }
 
+/* Badge */
 .badge.bg-danger {
     font-size: 0.75rem;
     margin-top: 5px;
@@ -121,8 +91,11 @@ footer {
     color: #333;
 }
 
-/* Adjust logo margins */
-#pulsating-central-logo {
-    margin-top: 30px;
-    margin-bottom: 30px; /* Adjust padding between logo and "Our Games" */
+/* Additional scroll shadow for navbar */
+body.scrolled .navbar {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.4s ease;
 }
+
+/* Add this at the top to import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
