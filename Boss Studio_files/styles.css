@@ -151,7 +151,13 @@ body {
     font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
-/* Stat box adjustments for larger height and bold white text */
+#about p {
+    font-size: 1.2rem;
+    color: #666;
+    font-family: 'Outfit', sans-serif; /* Matching font */
+}
+
+/* Stat box adjustments for glowing shadow and floating icons */
 .stat-box {
     background-color: #ffffff;
     border-radius: 20px;
@@ -159,17 +165,52 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centers content vertically */
     align-items: center; /* Centers horizontally */
     height: 220px; /* Control box height */
+    animation: glow 3s infinite ease-in-out; /* Glow effect */
 }
 
 .stat-box:hover {
     transform: translateY(-10px);
+}
+
+/* Animation for drop shadow glow */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Floating animation for icons */
+.stat-box i {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 8rem;
+    opacity: 0.5;
+    animation: floatIcon 4s infinite ease-in-out; /* Floating effect for icons */
+}
+
+/* Floating animation for icons */
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Floating up */
+    }
+    100% {
+        transform: translateY(0); /* Floating back down */
+    }
 }
 
 /* Green Stat Box */
@@ -242,15 +283,6 @@ body {
 
 .stat-box.red i {
     color: rgba(255, 255, 255, 0.5); /* Semi-transparent white icon */
-}
-
-/* Icon positioning */
-.stat-box i {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    font-size: 8rem;
-    opacity: 0.5; /* Control the transparency */
 }
 
 /* Social Links Section */
