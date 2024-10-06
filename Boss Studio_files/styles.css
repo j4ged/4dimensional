@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+    font-family: 'Flow Rounded', sans-serif; /* Updated to Flow Rounded */
 }
 
 /* Navbar */
@@ -43,6 +43,7 @@ body {
     padding: 12px 20px; /* Larger buttons */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
     position: relative; /* For the hover effect */
+    font-family: 'Outfit', sans-serif; /* Updated to Outfit */
 }
 
 /* Hover Effects */
@@ -89,15 +90,11 @@ body {
     font-weight: bold; /* Matching the navbar text thickness */
     text-transform: uppercase; /* Ensure uppercase letters like in navbar */
     transition: background-color 0.3s ease; /* Smooth transition for hover */
+    font-family: 'Outfit', sans-serif; /* Ensure the same font as navbar */
 }
 
 .btn-contact:hover {
     background-color: #2ea9cb; /* Slightly darker blue on hover */
-}
-
-/* Ensures the font used is the same as the navbar */
-.navbar-nav .nav-link, .btn-contact {
-    font-family: 'Poppins', sans-serif; /* Ensure the same font as navbar */
 }
 
 .btn-contact img {
