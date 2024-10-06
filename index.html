@@ -1,502 +1,159 @@
-<!DOCTYPE html>
-<!-- saved from url=(0033)https://www.4dimensionalinc.org/#team -->
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>4 Dimensional Inc.</title>
-    <link href="./Boss Studio_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Boss Studio_files/styles.css">
-    <link rel="stylesheet" href="./Boss Studio_files/bootstrap-icons.css">
-    <link rel="stylesheet" href="./Boss Studio_files/animate.min.css">
-    <script src="./Boss Studio_files/jquery.min.js.download"></script>
-    <link rel="shortcut icon" href="./Boss Studio_files/logo.png" type="image/x-icon">
-    <link rel="preload" as="image" href="./Boss Studio_files/ezgif.com-gif-maker.gif">
-    
-    <!-- Smooth Scrolling CSS -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-</head>
+/* modern-styles.css */
 
-<body>
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark p-3 sticky-top">
-            <div class="container-fluid">
-                <a href="#home"><img src="./Boss Studio_files/logo.png" alt="4 Dimensional Inc." width="100"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse text-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active fs-4 m-3" aria-current="page" href="#home">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-4 m-3" href="#about">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-4 m-3" href="#games">GAMES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-4 m-3" href="#team">TEAM</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+/* Base Styles */
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
-        <main>
-            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-                <section id="home">
-                    <div class="container-fluid text-center">
-                        <img src="./Boss Studio_files/ezgif.com-gif-maker.gif" alt="logo" class="img-fluid">
-                    </div>
-                </section>
+/* Navigation Bar */
+.navbar {
+    background-color: #ffffff !important;
+    transition: background-color 0.3s ease;
+}
 
-                <section id="about">
-                    <div class="container mt-4">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-12 mb-3">
-                                <div class="red text-center p-5 rounded-4">
-                                    <script src="./Boss Studio_files/countup.js.download"></script>
-                                    <h2>$12 Million+</h2>
-                                    <h5 class="fw-bold">Company Evaluation</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 mb-3">
-                                <div class="orange text-center p-5 rounded-4">
-                                    <h2>2.7 Billion+</h2>
-                                    <h5 class="fw-bold">Game Visits</h5>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 mb-3">
-                                <div class="blue text-center p-5 rounded-4">
-                                    <h2>11 Million+</h2>
-                                    <h5 class="fw-bold">Community Members</h5>
-                                </div>
-                            </div>
-                        </div>
+.navbar .nav-link {
+    color: #333333 !important;
+    transition: color 0.3s ease;
+}
 
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-3 col-md-6" style="position: relative;">
-                                    <a href="https://twitter.com/4DInc" target="_blank" class="btn btn-primary twitter rounded-4 fs-6 mb-2 fw-bold p-4 me-2 mb-3 fix">
-                                        <img src="./Boss Studio_files/twitter.png" width="30px" class="me-2">700k+
-                                        Followers</a>
+.navbar .nav-link:hover {
+    color: #007bff !important;
+}
 
-                                    <span class="ps-absolute badge bg-danger ms-5" style="position: absolute; bottom: 0; right: 0;">
-                                        Accumulative (Multiple)
-                                    </span>
-                                </div>
-                                <div class="col-lg-3 col-md-6">
-                                    <a href="https://www.youtube.com/channel/UC4DInc" target="_blank" class="btn btn-danger youtube rounded-4 fs-6 mb-2 fw-bold p-4 me-2 mb-3 fix">
-                                        <img src="./Boss Studio_files/youtube.png" width="30px" class="me-2">1.5M+
-                                        Subscribers</a>
-                                </div>
-                                <div class="col-lg-3 col-md-6" style="position: relative;">
-                                    <a href="https://discord.gg/4DInc" target="_blank" class="btn btn-dark discord rounded-4 fs-6 mb-2 fw-bold p-4 me-2 mb-3 fix">
-                                        <img src="./Boss Studio_files/discord.png" width="30px" class="me-2">1.5M+
-                                        Members</a>
-                                    <span class="ps-absolute badge bg-danger ms-5" style="position: absolute; bottom: 0; right: 0;">
-                                        Accumulative (Multiple)
-                                    </span>
-                                </div>
-                                <div class="col-lg-3 col-md-6" style="position: relative;">
-                                    <a href="https://www.roblox.com/groups/13494271" target="_blank" class="btn btn-dark roblox rounded-4 fs-6 mb-2 fw-bold p-4 mb-3 fix">
-                                        <img src="./Boss Studio_files/roblox.png" width="30px" class="me-2">
-                                        8M+ Members
-                                    </a>
-                                    <span class="ps-absolute badge bg-danger ms-5" style="position: absolute; bottom: 0; right: 0;">
-                                        Accumulative (Multiple)
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+.navbar .navbar-toggler {
+    border-color: #333333;
+}
 
-                        <div class="text-center mt-3 mb-2 d-sm-none d-md-block"></div>
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' 
+    xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%2833,51,51,1%29)' 
+    stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 
+    23h22'/></svg%3E");
+}
 
-                        <div class="row mt-5">
-                            <div class="col mb-3 text-center">
-                                <h1 class="fw-bold">About Us</h1>
-                                <p class="lead mb-4 mt-3">Founded in 2020, 4 Dimensional Inc. is one of the <b>largest</b>
-                                    indie
-                                    development
-                                    teams on the ROBLOX platform.</p>
-                                <p><span class="fst-italic">“We strive to push the <b>boundaries</b> of our platform, by
-                                        providing
-                                        incredible
-                                        <b>experiences</b> and being on the frontier of <b>creative gameplay</b>.”
-                                    </span>
-                                </p>
+/* Card Styles */
+.card {
+    border: none;
+}
 
-                                <p class="mb-4">-Jason Michel
-                                    (CEO)</p>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                    </div>
-                </section>
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-                <!-- Removed "As seen on" Section -->
+.card-subtitle {
+    font-size: 1rem;
+    color: #666666;
+}
 
-                <section id="games">
-                    <div class="container mt-4">
-                        <div class="divider"></div>
-                        <div class="row mt-3">
-                            <div class="col">
-                                <div class="text-center">
-                                    <h1 class="fw-bold">Our Games</h1>
-                                    <p class="mt-3">Games actively worked on by the 4 Dimensional Inc. team.</p>
-                                </div>
-                                <div class="container-fluid">
-                                    <div class="row gap-4 justify-content-center">
-                                        <div class="col-md-3 shadow" style="margin-top: 30px;">
-                                            <div class="row bg-dark rounded-3">
-                                                <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                    Anime Fighters</h4>
-                                                <div class="col-md-5 m-0 p-0">
-                                                    <img src="./Boss Studio_files/upd_64_afs.png" class="w-100 m-0 p-0 rounded-bottom">
-                                                </div>
-                                                <div class="col-md-7 m-0 p-0">
-                                                    <div class="mt-3 ms-3">
-                                                        <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 1.2
-                                                            Billion+ Visits</p>
-                                                        <p class="mb-1 small"><i class="bi bi-hand-thumbs-up me-1"></i>
-                                                            2.4 Million Members</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 92%</p>
-                                                        <p class="mb-1 small"><i class="bi bi-controller me-1"></i>
-                                                            Action PvE</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+.card-text i {
+    color: #007bff;
+}
 
-                                        <div class="col-md-3 shadow">
-                                            <div class="row">
-                                                <small class="bg-success-bright text-dark rounded-top px-3 py-1 w-50 m-0 text-center" style="margin-left: 150px!important;"><strong>#7 On
-                                                        Roblox</strong></small>
-                                                <div class="bg-dark rounded-3 m-0 p-0">
-                                                    <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                        Anime Last Stand</h4>
-                                                    <div class="row m-0 p-0">
-                                                        <div class="col-md-5 m-0 p-0">
-                                                            <img src="./Boss Studio_files/icon_1.png" class="w-100 m-0 p-0 rounded-bottom">
-                                                        </div>
-                                                        <div class="col-md-7 m-0 p-0">
-                                                            <div class="mt-3 ms-3">
-                                                                <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 440
-                                                                    Million+ Visits</p>
-                                                                <p class="mb-1 small"><i class="bi bi-person me-1"></i>
-                                                                    2 Million Members</p>
-                                                                <p class="mb-1 small"><i class="bi bi-person me-1"></i>
-                                                                    92%</p>
-                                                                <p class="mb-1 small"><i class="bi bi-controller me-1"></i> Tower Defense
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+/* Badges */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.5em 0.75em;
+}
 
-                                        <div class="col-md-3 shadow" style="margin-top: 30px;">
-                                            <div class="row bg-dark rounded-3">
-                                                <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                    AOPG</h4>
-                                                <div class="col-md-5 m-0 p-0">
-                                                    <img src="./Boss Studio_files/Van_Augur.webp" class="w-100 m-0 p-0 rounded-bottom">
-                                                </div>
-                                                <div class="col-md-7 m-0 p-0">
-                                                    <div class="mt-3 ms-3">
-                                                        <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 320
-                                                            Million+ Visits</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 2.1
-                                                            Million Members</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 91%</p>
-                                                        <p class="mb-1 small"><i class="bi bi-controller me-1"></i>
-                                                            Adventure RPG</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
 
-                                    <div class="row gap-4 justify-content-center mt-4">
-                                        <div class="col-md-3 shadow">
-                                            <div class="row">
-                                                <small class="bg-success-bright text-dark rounded-top px-3 py-1 w-50 m-0 text-center" style="margin-left: 150px!important;"><strong>#20 On
-                                                        Roblox</strong></small>
-                                                <div class="bg-dark rounded-3 m-0 p-0">
-                                                    <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                        One Fruit</h4>
-                                                    <div class="row m-0 p-0">
-                                                        <div class="col-md-5 m-0 p-0">
-                                                            <img src="./Boss Studio_files/IMG_2333.png" class="w-100 m-0 p-0 rounded-bottom">
-                                                        </div>
-                                                        <div class="col-md-7 m-0 p-0">
-                                                            <div class="mt-3 ms-3">
-                                                                <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 185
-                                                                    Million+ Visits</p>
-                                                                <p class="mb-1 small"><i class="bi bi-person me-1"></i>
-                                                                    1.3 Million Members</p>
-                                                                <p class="mb-1 small"><i class="bi bi-person me-1"></i>
-                                                                    95%</p>
-                                                                <p class="mb-1 small"><i class="bi bi-controller me-1"></i> Adventure RPG
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+.btn-primary:hover {
+    background-color: #0056b3;
+}
 
-                                        <div class="col-md-3 shadow" style="margin-top: 30px;">
-                                            <div class="row bg-dark rounded-3">
-                                                <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                    Heroes World</h4>
-                                                <div class="col-md-5 m-0 p-0">
-                                                    <img src="./Boss Studio_files/MHATHEGfX.png" class="w-100 m-0 p-0 rounded-bottom">
-                                                </div>
-                                                <div class="col-md-7 m-0 p-0">
-                                                    <div class="mt-3 ms-3">
-                                                        <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 215
-                                                            Million+ Visits</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 2.1
-                                                            Million Members</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 95%</p>
-                                                        <p class="mb-1 small"><i class="bi bi-controller me-1"></i>
-                                                            Adventure RPG</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    transition: background-color 0.3s ease;
+}
 
-                                        <div class="col-md-3 shadow" style="margin-top: 30px;">
-                                            <div class="row bg-dark rounded-3">
-                                                <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                    DragonBlox Ultimate</h4>
-                                                <div class="col-md-5 m-0 p-0">
-                                                    <img src="./Boss Studio_files/250.png" class="w-100 m-0 p-0 rounded-bottom">
-                                                </div>
-                                                <div class="col-md-7 m-0 p-0">
-                                                    <div class="mt-3 ms-3">
-                                                        <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 235
-                                                            Million+ Visits</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 250K
-                                                            Members</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 91%</p>
-                                                        <p class="mb-1 small"><i class="bi bi-controller me-1"></i>
-                                                            Adventure RPG</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
 
-                                    <div class="row gap-4 justify-content-center">
-                                        <div class="col-md-3 shadow" style="margin-top: 30px;">
-                                            <div class="row bg-dark rounded-3">
-                                                <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                    Anime Ball</h4>
-                                                <div class="col-md-5 m-0 p-0">
-                                                    <img src="./Boss Studio_files/ShankIconNew.png" class="w-100 m-0 p-0 rounded-bottom">
-                                                </div>
-                                                <div class="col-md-7 m-0 p-0">
-                                                    <div class="mt-3 ms-3">
-                                                        <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 95 Million+
-                                                            Visits</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 700K
-                                                            Members</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 92%</p>
-                                                        <p class="mb-1 small"><i class="bi bi-controller me-1"></i>
-                                                            Action PvP</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+.btn-dark {
+    background-color: #343a40;
+    border: none;
+    transition: background-color 0.3s ease;
+}
 
-                                        <div class="col-md-3 shadow" style="margin-top: 30px;">
-                                            <div class="row bg-dark rounded-3">
-                                                <h4 class="bg-secondary-dark rounded-top px-3 py-2 w-100 m-0 fw-bold">
-                                                    Fruit Seas</h4>
-                                                <div class="col-md-5 m-0 p-0">
-                                                    <img src="./Boss Studio_files/leoparddnooo.png" class="w-100 m-0 p-0 rounded-bottom">
-                                                </div>
-                                                <div class="col-md-7 m-0 p-0">
-                                                    <div class="mt-3 ms-3">
-                                                        <p class="mb-1 small"><i class="bi bi-eye me-1"></i> 47 Million+
-                                                            Visits</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 200K
-                                                            Members</p>
-                                                        <p class="mb-1 small"><i class="bi bi-person me-1"></i> 91%</p>
-                                                        <p class="mb-1 small"><i class="bi bi-controller me-1"></i>
-                                                            Adventure RPG</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-2"></div>
-                    </div></section>
-                    <section>
-                        <div class="container">
-                            <div class="row text-center">
-                                <div class="divider"></div>
-                                <h1 class="fw-bold" style="margin-bottom: -100px!important;">Our Giving
-                                    Pledge</h1>
-                                <div class="col-md-6 mt-5">
-                                    <div class="col-md-12">
-                                        <img src="./Boss Studio_files/Scholarship_Logo_Boss_Studio (1) (1).png" alt="Scholarship" class="img-fluid rounded-4 mb-3" style="width: 300px; height: 300px; object-fit: cover;">
-                                    </div>
-                                    <h5 class="fst-italic text-center" style="margin-top: 18px!important;">We've
-                                        empowered 40+ students
-                                        through
-                                        educational
-                                        scholarships through our game earnings</h5>
-                                    <p class="lead"><i>$65,000+</i></p>
-                                </div>
-                                <div class="col-md-6 mt-5">
-                                    <img src="./Boss Studio_files/rb (1).png" alt="Rosabands" class="img-fluid rounded-circle mb-3 mt-5" style="width: 250px; height: 250px; object-fit: cover;margin-top: 45px!important;">
-                                    <div class="m-3"></div>
-                                    <h5 class="fst-italic text-center" style="margin-top: 21px;">Rosabands. Our most recent
-                                        clothing campaign. We cover all costs and donate 100% of the
-                                        profits in all clothing ventures.</h5>
-                                    <p class="lead"><i>100% of Profits</i></p>
-                                    <div class="mb-5"></div>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-                        </div>
-                    </section>
-                    <section id="team" class="">
-                        <div class="container text-center">
-                            <div class="row justify-content-center">
-                                <div>
-                                    <h1 class="fw-bold mb-4">Our Team</h1>
-                                    <img src="./Boss Studio_files/jason_michel.png" alt="Jason Michel" width="300px" class="rounded-circle">
-                                    <h3 class="fw-bold mt-3">CEO</h3>
-                                        <h5 class="mb-5">Jason Michel</h5>
-                                </div>
-                                <div class="divider"></div>
-                                <h3 class="fw-bold mb-5">Executive Team</h3>
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-2 col-md-12">
-                                        <img src="./Boss Studio_files/david_tuaev.png" width="200px" height="200px" class="rounded-circle">
-                                        <h5 class="fw-bold mt-3">COO</h5>
-                                        <h5 class="mb-5">David Tuaev</h5>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </main>
+.btn-dark:hover {
+    background-color: #1d2124;
+}
 
-            <div class="container">
-                <div class="row p-3">
-                    <div class="col bg-dark p-5 rounded-4">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h4 class="text-secondary">Get the latest updates and more.</h4>
-                                <h2 class="fw-bold mb-4">Join our community today!</h2>
-                                <a href="https://twitter.com/4DInc" target="_blank" class="btn btn-primary twitter rounded-4 fs-5 mb-2 fw-bold ps-4 pe-4 pt-3 pb-3 me-2">
-                                    <img src="./Boss Studio_files/twitter.png" width="30px"></a>
-                                <a href="https://www.youtube.com/channel/UC4DInc" target="_blank" class="btn btn-danger youtube rounded-4 fs-5 mb-2 fw-bold ps-4 pe-4 pt-3 pb-3 me-2">
-                                    <img src="./Boss Studio_files/youtube.png" width="30px"></a>
-                                <a href="https://discord.gg/4DInc" target="_blank" class="btn btn-dark discord rounded-4 fs-5 mb-2 fw-bold ps-4 pe-4 pt-3 pb-3 me-2">
-                                    <img src="./Boss Studio_files/discord.png" width="30px"></a>
-                                <a href="https://www.roblox.com/groups/13494271" target="_blank" class="btn btn-dark roblox rounded-4 fs-5 mb-2 fw-bold ps-4 pe-4 pt-3 pb-3 me-2">
-                                    <img src="./Boss Studio_files/roblox.png" width="30px"></a>
-                            </div>
-                            <div class="col-md-2 d-none d-sm-block text-end ms-5">
-                                <img src="./Boss Studio_files/logo.png" class="img-fluid ms-5">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="divider"></div>
-            </div>
-            <footer class="text-center fw-bold">
-                <span> © 2020 4 Dimensional Inc. - All Rights Reserved</span>
-            </footer>
+/* Footer */
+footer {
+    background-color: #ffffff;
+    color: #333333;
+    border-top: 1px solid #eaeaea;
+}
 
-            <div class="container">
-                <div class="divider"></div>
-            </div>
+/* Giving Pledge Section */
+section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
 
+section h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
-            <script src="./Boss Studio_files/bootstrap.bundle.min.js.download" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-            <script>
-                $(document).ready(function () {
-                    var options = {
-                        useEasing: true,
-                        useGrouping: true,
-                        separator: ',',
-                        decimal: '.',
-                        prefix: '$ ',
-                        suffix: 'Million+'
-                    };
-                    $('.profit').each(function () {
-                        var num = $(this).attr('numx'); //end count
-                        var nuen = $(this).text();
-                        if (nuen === "") {
-                            nuen = 0;
-                        }
-                        var counts = new CountUp(this, nuen, num, 0, 1, options);
-                        counts.start();
-                    });
-                });
-            </script>
-            <script>
-                $(document).ready(function () {
-                    var options = {
-                        useEasing: true,
-                        useGrouping: true,
-                        separator: ',',
-                        decimal: '.',
-                        prefix: '',
-                        suffix: 'Billion+'
-                    };
-                    $('.sessions').each(function () {
-                        var num = $(this).attr('numx'); //end count
-                        var nuen = $(this).text();
-                        if (nuen === "") {
-                            nuen = 0;
-                        }
-                        var counts = new CountUp(this, nuen, num, 0, 1, options);
-                        counts.start();
-                    });
-                });
-            </script>
-            <script>
-                $(document).ready(function () {
-                    var options = {
-                        useEasing: true,
-                        useGrouping: true,
-                        separator: ',',
-                        decimal: '.',
-                        prefix: '',
-                        suffix: 'Million+'
-                    };
-                    $('.users').each(function () {
-                        var num = $(this).attr('numx'); //end count
-                        var nuen = $(this).text();
-                        if (nuen === "") {
-                            nuen = 0;
-                        }
-                        var counts = new CountUp(this, nuen, num, 0, 1, options);
-                        counts.start();
-                    });
-                });
-            </script>
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-            <script async="" id="netlify-rum-container" src="./Boss Studio_files/rum" data-netlify-rum-site-id="0dcb0b0c-24bd-4f60-ae95-490cb3546d1b" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiMGRjYjBiMGMtMjRiZC00ZjYwLWFlOTUtNDkwY2IzNTQ2ZDFiIiwiYWNjb3VudF9pZCI6IjYzMDk1MzQwYjczNmNkMDA2NTUwOWMwNiIsImRlcGxveV9pZCI6IjY2ZmVjZTNlYjA2MzE0MDAwOGRmYjA3MSIsImlzc3VlciI6Im5mc2VydmVyIn0.NcXdyOEf9RE9vuVWN-i47YV_t0pAkC_KfMH-x5ZXsd0"></script>
+/* Custom Badges Positioning */
+.position-absolute {
+    position: absolute;
+}
 
-    </div></body></html>
+.top-0 {
+    top: 0;
+}
+
+.start-50 {
+    left: 50%;
+}
+
+.translate-middle {
+    transform: translate(-50%, -50%);
+}
+
+/* Additional Styling */
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow-sm:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.rounded-4 {
+    border-radius: 0.5rem !important;
+}
+
+/* Smooth Scrolling already handled in HTML <style> */
+
+/* Override Bootstrap's card background */
+.card.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.card.bg-white {
+    background-color: #ffffff !important;
+}
