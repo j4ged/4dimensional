@@ -2,74 +2,79 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Existing font for other content */
 }
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent */
-    backdrop-filter: blur(10px); /* Add blur effect */
-    padding: 10px 0; /* Reduced height */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Larger shadow */
+    background-color: rgba(192, 192, 192, 0.1); /* Light transparent gray background */
+    padding: 10px 0; /* Slightly thinner */
+    position: relative;
+    z-index: 1000; /* Ensure it stays on top when scrolling */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Increased drop shadow */
+    backdrop-filter: blur(10px); /* Blur effect */
 }
 
-.navbar .nav-link {
-    color: #34c4e8 !important; /* Same color as Big Games */
+.nav-link {
+    color: #6b6b6b !important; /* Normal color */
+    font-family: 'Poppins', sans-serif; /* Updated font */
     font-weight: bold;
-    font-size: 1.1rem; /* Adjusted font size */
-    transition: all 0.3s ease;
-    padding: 10px 15px;
-    text-transform: uppercase;
+    padding: 10px 20px; /* Larger buttons */
+    background-color: transparent; /* Transparent buttons */
+    margin: 5px;
+    font-size: 1.3rem;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-width 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-    color: #ffffff !important;
-    border-bottom: 3px solid #34c4e8; /* Thicker hover underline */
+.nav-link:hover {
+    color: #2d2d2d !important; /* Darker color on hover */
 }
 
-.navbar .active {
-    border-bottom: 3px solid #34c4e8; /* Thicker active underline */
-}
-
-.navbar .contact-button {
-    font-size: 1.1rem;
-    font-weight: bold;
+/* Smooth underline effect */
+.nav-link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
     background-color: #34c4e8;
-    border: none;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0.6); /* Thinner underline initially */
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1); /* Smooth transition to full width */
+    height: 4px; /* Make the underline thicker */
+}
+
+/* Contact Us button */
+.navbar .btn-contact {
+    background-color: #34c4e8;
+    color: white;
+    font-weight: bold;
     padding: 10px 20px;
-    border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow */
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Contact button shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar .contact-button:hover {
-    background-color: #28a8d6; /* Slightly darker on hover */
+.navbar .btn-contact:hover {
+    background-color: #2d2d2d;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
 }
 
-/* Pulsating logo animation */
-@keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+#pulsating-logo, #pulsating-central-logo {
+    animation: pulsate 2s infinite; /* Keep pulsating effect */
 }
 
-#pulsating-logo {
-    animation: pulsate 2s infinite;
+/* Drop shadow for the whole navbar */
+.navbar {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Bigger shadow for entire navbar */
 }
 
-#pulsating-central-logo {
-    animation: pulsate 2s infinite;
-}
-
-/* Footer */
-footer {
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 20px 0;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Footer shadow */
-}
+/* Font Import for Poppins (same as Big Games) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
