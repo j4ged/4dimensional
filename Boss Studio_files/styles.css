@@ -1,144 +1,4 @@
-/* General Styling */
-body {
-    background-color: #ffffff;
-    color: #333;
-    font-family: 'Outfit', sans-serif; /* Updated to Outfit font */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Navbar */
-.navbar {
-    background-color: #ffffff;
-    padding: 10px 0;
-    position: relative;
-    z-index: 10;
-    transition: box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.navbar::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.25);
-}
-
-.navbar {
-    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
-}
-
-.navbar.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
-}
-
-/* Navbar container */
-.navbar > .container-fluid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-/* Logo styles */
-.navbar-brand {
-    flex-shrink: 0;
-    margin-right: 0;
-    z-index: 2;
-}
-
-/* Navigation container */
-.navbar-collapse {
-    position: absolute;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-}
-
-/* Navbar Links */
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-}
-
-.nav-link {
-    color: #6b6b6b;
-    font-weight: bold;
-    padding: 12px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: 'Outfit', sans-serif;
-    text-align: center;
-    position: relative;
-}
-
-/* Hover Effects */
-.nav-link:hover {
-    color: #2d2d2d;
-}
-
-.nav-link:hover::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    height: 2px;
-    background-color: #34c4e8;
-    transition: width 0.3s ease, left 0.3s ease;
-    width: 100%;
-}
-
-/* Ensure the navbar-toggler (for mobile) doesn't interfere */
-.navbar-toggler {
-    flex-shrink: 0;
-    z-index: 2;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: static;
-        justify-content: flex-start;
-    }
-    
-    .navbar-nav {
-        width: 100%;
-        justify-content: flex-start;
-    }
-}
-
-/* Pulsating logo animation */
-@keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-#pulsating-logo {
-    animation: pulsate 2s infinite;
-}
-
-/* Padding adjustments for sections */
-#home, #about, #about-us, #team {
-    padding-top: 50px;
-}
-
-/* Stats section */
+/* Updated Stats section with solid colors and semi-transparent white icons */
 #about {
     background-color: #ffffff; /* Reset to white */
     padding: 60px 0;
@@ -148,29 +8,11 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
-}
-
-#about p {
-    font-size: 1.2rem;
-    color: #666;
-    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
-}
-
-/* Updated content for the about section */
-#about h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 #about p {
     font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 30px;
     color: #666;
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
@@ -190,49 +32,60 @@ body {
     transform: translateY(-10px);
 }
 
-.stat-box h3 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-family: 'Outfit', sans-serif; /* Matching font */
+/* Green Stat Box */
+.stat-box.green {
+    background-color: #34e852; /* Solid Green */
+    box-shadow: 0 10px 30px rgba(52, 232, 82, 0.7); /* Green glow shadow */
 }
 
-.stat-box p {
-    font-size: 1.1rem;
-    color: #666;
-    font-family: 'Outfit', sans-serif; /* Matching font */
+.stat-box.green h3 {
+    color: white; /* White text */
 }
 
+.stat-box.green i {
+    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white icon */
+}
+
+/* Blue Stat Box */
+.stat-box.blue {
+    background-color: #34c4e8; /* Solid Blue */
+    box-shadow: 0 10px 30px rgba(52, 196, 232, 0.7); /* Blue glow shadow */
+}
+
+.stat-box.blue h3 {
+    color: white; /* White text */
+}
+
+.stat-box.blue i {
+    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white icon */
+}
+
+/* Red Stat Box */
+.stat-box.red {
+    background-color: #ff434a; /* Solid Red */
+    box-shadow: 0 10px 30px rgba(255, 67, 74, 0.7); /* Red glow shadow */
+}
+
+.stat-box.red h3 {
+    color: white; /* White text */
+}
+
+.stat-box.red i {
+    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white icon */
+}
+
+/* Icon positioning */
 .stat-box i {
     position: absolute;
     bottom: -20px;
     right: -20px;
     font-size: 8rem;
-    opacity: 0.1;
+    opacity: 0.5; /* Control the transparency */
 }
 
-.stat-box.green {
-    background-color: #e8f5e9;
-}
-
-.stat-box.green h3 {
-    color: #4caf50;
-}
-
-.stat-box.blue {
-    background-color: #e3f2fd;
-}
-
-.stat-box.blue h3 {
-    color: #2196f3;
-}
-
-.stat-box.red {
-    background-color: #ffebee;
-}
-
-.stat-box.red h3 {
-    color: #f44336;
+/* Hover effect */
+.stat-box:hover {
+    transform: translateY(-10px);
 }
 
 /* Social Links Section */
@@ -240,33 +93,4 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     font-family: 'Outfit', sans-serif; /* Ensure font consistency */
-}
-
-/* Badge */
-.badge.bg-danger {
-    font-size: 0.75rem;
-    margin-top: 5px;
-}
-
-/* Footer */
-footer {
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 20px 0;
-    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .stat-box {
-        margin-bottom: 30px;
-    }
-    
-    #about h2 {
-        font-size: 2rem;
-    }
-    
-    .stat-box h3 {
-        font-size: 2rem;
-    }
 }
