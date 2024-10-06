@@ -25,7 +25,8 @@ body {
 .navbar .nav-link {
     margin: 0 15px; /* Adjust margin for spacing */
     padding: 12px 20px; /* Increased padding for larger buttons */
-    font-size: 1.1rem; /* Slightly larger font */
+    font-size: 1.2rem; /* Slightly larger font */
+    font-weight: 700; /* Thicker font weight */
 }
 
 /* Contact Us Button */
@@ -51,11 +52,10 @@ body {
     display: block;
     width: 100%;
     height: 2px; /* Thinner outline */
-    background-color: rgba(0, 0, 0, 0.7); /* Black outline with transparency */
+    background-color: rgba(0, 0, 0, 0.2); /* Black outline with transparency */
     position: absolute;
     bottom: 0; /* Aligns to the bottom of the navbar */
     left: 0;
-    transition: opacity 0.3s ease; /* Smooth transition for fading */
 }
 
 /* Adjusting shadow and outline on scroll */
