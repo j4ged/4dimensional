@@ -1,183 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Dimensional Inc.</title>
 
-:root {
-    color-scheme: light;
-}
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="path_to_your_css_folder/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-body {
-    background-color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-}
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-.nav-link {
-    font-weight: 600 !important;
-    color: #333 !important;
-}
+    <!-- Fallback styles -->
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .navbar {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
 
-.loader {
-    height: 100vh;
-    background-color: #ffffff;
-}
+    <nav class="navbar navbar-expand-lg navbar-light p-3 sticky-top">
+        <div class="container-fluid">
+            <a href="#home"><img src="path_to_your_images_folder/logo.png" alt="4 Dimensional Inc." width="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#games">GAMES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-.top-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+    <main>
+        <section id="home">
+            <div class="container text-center">
+                <img src="path_to_your_images_folder/ezgif.com-gif-maker.gif" alt="logo">
+            </div>
+        </section>
 
-.vertical-center {
-    min-height: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
+        <section id="about">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4 bg-light rounded-3">
+                            <h2>$12 Million+</h2>
+                            <h5 class="fw-bold">Company Evaluation</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4 bg-light rounded-3">
+                            <h2>2.7 Billion+</h2>
+                            <h5 class="fw-bold">Game Visits</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4 bg-light rounded-3">
+                            <h2>11 Million+</h2>
+                            <h5 class="fw-bold">Community Members</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-.overflow-hidden {
-    overflow: hidden;
-}
+        <!-- More sections... -->
+    </main>
 
-.navbar {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
-}
+    <footer class="text-center p-3">
+        <p>© 2020 4 Dimensional Inc. - All Rights Reserved</p>
+    </footer>
 
-#home {
-    background-color: #ffffff;
-}
-
-#about {
-    margin-top: -8vh;
-}
-
-.red, .blue, .orange {
-    border: 1px solid #ddd;
-    background-color: #ffffff;
-    color: #333;
-}
-
-.divider {
-    border: 1px solid #e0e0e0;
-    margin-top: 2vh !important;
-    margin-bottom: 2vh !important;
-}
-
-b {
-    font-weight: 600;
-}
-
-.bg-dark {
-    background-color: #f8f9fa !important;
-    border: 1px solid #e0e0e0;
-}
-
-.fix {
-    height: 75px !important;
-    width: 100% !important;
-    text-align: center;
-}
-
-.discord {
-    background-color: #5865F2 !important;
-}
-
-.twitter {
-    background-color: #1DA1F2 !important;
-}
-
-.youtube {
-    background-color: #FF0000 !important;
-}
-
-.roblox {
-    background-color: #333 !important;
-}
-
-.holder {
-    position: relative;
-}
-
-.image {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #000000;
-}
-
-.holder:hover .overlay {
-    opacity: 1;
-}
-
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.same-size {
-    width: 550px;
-    height: 250px;
-}
-
-@media (max-width: 768px) {
-    .same-size {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.bg-secondary-dark {
-    background-color: #f8f9fa !important;
-}
-
-.bg-success-bright {
-    background-color: #77fbca !important;
-}
-
-/* Button Styles with Hover Glow Effect */
-.btn {
-    border-radius: 50px;
-    transition: box-shadow 0.3s ease-in-out;
-    box-shadow: none;
-    color: white;
-    padding: 10px 20px;
-    font-weight: 600;
-}
-
-.btn:hover {
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.75);
-}
-
-.twitter:hover {
-    box-shadow: 0 0 15px rgba(29, 161, 242, 0.75);
-}
-
-.youtube:hover {
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.75);
-}
-
-.discord:hover {
-    box-shadow: 0 0 15px rgba(88, 101, 242, 0.75);
-}
-
-.roblox:hover {
-    box-shadow: 0 0 15px rgba(51, 51, 51, 0.75);
-}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
