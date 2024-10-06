@@ -1,159 +1,162 @@
-/* modern-styles.css */
 
-/* Base Styles */
-body {
-    background-color: #ffffff;
-    color: #333333;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4D Inc. | Innovative Metaverse Games</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #001f3f;
+        }
 
-/* Navigation Bar */
-.navbar {
-    background-color: #ffffff !important;
-    transition: background-color 0.3s ease;
-}
+        header {
+            background-color: #001f3f;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
 
-.navbar .nav-link {
-    color: #333333 !important;
-    transition: color 0.3s ease;
-}
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #001f3f;
+            padding: 10px;
+        }
 
-.navbar .nav-link:hover {
-    color: #007bff !important;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
 
-.navbar .navbar-toggler {
-    border-color: #333333;
-}
+        nav a:hover {
+            color: #1E90FF;
+        }
 
-.navbar .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' 
-    xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%2833,51,51,1%29)' 
-    stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 
-    23h22'/></svg%3E");
-}
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
 
-/* Card Styles */
-.card {
-    border: none;
-}
+        .hero h1 {
+            color: #001f3f;
+            font-size: 48px;
+        }
 
-.card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+        .hero p {
+            font-size: 18px;
+            color: #333;
+        }
 
-.card-subtitle {
-    font-size: 1rem;
-    color: #666666;
-}
+        .button-glow {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #1E90FF;
+            border-radius: 50px;
+            box-shadow: 0 0 10px #1E90FF, 0 0 40px #1E90FF, 0 0 80px #1E90FF;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+        }
 
-.card-text i {
-    color: #007bff;
-}
+        .button-glow:hover {
+            background-color: #0099cc;
+            box-shadow: 0 0 20px #0099cc, 0 0 60px #0099cc, 0 0 120px #0099cc;
+        }
 
-/* Badges */
-.badge {
-    font-size: 0.75rem;
-    padding: 0.5em 0.75em;
-}
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
 
-/* Buttons */
-.btn-primary {
-    background-color: #007bff;
-    border: none;
-    transition: background-color 0.3s ease;
-}
+        .content h2 {
+            color: #001f3f;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-}
+        .content p {
+            font-size: 18px;
+            color: #333;
+        }
 
-.btn-danger {
-    background-color: #dc3545;
-    border: none;
-    transition: background-color 0.3s ease;
-}
+        /* Footer */
+        footer {
+            background-color: #001f3f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-.btn-danger:hover {
-    background-color: #a71d2a;
-}
+        .social-buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
 
-.btn-dark {
-    background-color: #343a40;
-    border: none;
-    transition: background-color 0.3s ease;
-}
+        .social-buttons a:hover {
+            background-color: #1E90FF;
+        }
 
-.btn-dark:hover {
-    background-color: #1d2124;
-}
+        .social-buttons a i {
+            font-size: 24px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-/* Footer */
-footer {
-    background-color: #ffffff;
-    color: #333333;
-    border-top: 1px solid #eaeaea;
-}
+    <!-- Header Section -->
+    <header>
+        <h1>4D Inc.</h1>
+        <p>Innovative Metaverse Experiences</p>
+    </header>
 
-/* Giving Pledge Section */
-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-section h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to the Future of Gaming</h1>
+        <p>At 4D Inc., we're redefining metaverse experiences with innovation and creativity.</p>
+        <a href="#contact" class="button-glow">Join Us Today!</a>
+    </div>
 
-/* Responsive Images */
-img {
-    max-width: 100%;
-    height: auto;
-}
+    <!-- Content Section -->
+    <div class="content" id="services">
+        <h2>Our Services</h2>
+        <p>We specialize in metaverse game development, immersive experiences, and groundbreaking virtual environments.</p>
+    </div>
 
-/* Custom Badges Positioning */
-.position-absolute {
-    position: absolute;
-}
+    <!-- Footer Section -->
+    <footer>
+        <p>Join our community today!</p>
+        <div class="social-buttons">
+            <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 4D Inc. | All rights reserved.</p>
+    </footer>
 
-.top-0 {
-    top: 0;
-}
-
-.start-50 {
-    left: 50%;
-}
-
-.translate-middle {
-    transform: translate(-50%, -50%);
-}
-
-/* Additional Styling */
-.shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-
-.shadow-sm:hover {
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15) !important;
-}
-
-.rounded-circle {
-    border-radius: 50% !important;
-}
-
-.rounded-4 {
-    border-radius: 0.5rem !important;
-}
-
-/* Smooth Scrolling already handled in HTML <style> */
-
-/* Override Bootstrap's card background */
-.card.bg-light {
-    background-color: #f8f9fa !important;
-}
-
-.card.bg-white {
-    background-color: #ffffff !important;
-}
+</body>
+</html>
