@@ -1,19 +1,20 @@
 /* Navbar Styling */
 .navbar {
     background-color: #fff; /* White background */
-    padding: 1rem 0; /* Padding around the navbar */
+    padding: 0.5rem 0; /* Reduced padding for a smaller navbar */
     border-bottom: 1px solid #eaeaea; /* Light bottom border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow effect at the bottom */
 }
 
 .navbar-brand img {
-    width: 100px; /* Logo size */
+    width: 90px; /* Slightly smaller logo size */
 }
 
 .navbar-nav .nav-link {
     color: #333; /* Dark text color */
     font-weight: bold; /* Bold text */
-    padding: 10px 20px; /* Padding for links */
-    font-size: 1.1rem; /* Slightly larger text size */
+    padding: 8px 15px; /* Slightly reduced padding for links */
+    font-size: 1rem; /* Slightly smaller text size */
     text-transform: uppercase; /* Uppercase text */
     transition: all 0.3s ease; /* Smooth transition */
 }
@@ -32,7 +33,8 @@
     color: white; /* White text */
     font-weight: bold; /* Bold text */
     border-radius: 50px; /* Rounded button */
-    padding: 8px 20px; /* Padding inside the button */
+    padding: 10px 25px; /* Increased padding for a bigger button */
+    font-size: 1.1rem; /* Slightly larger font size */
     transition: background-color 0.3s ease; /* Smooth transition */
 }
 
