@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -83,7 +83,7 @@ body {
     font-weight: bold;
     padding: 12px 20px;
     transition: color 0.3s ease;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Outfit', sans-serif;
     text-align: center;
     position: relative;
 }
@@ -142,13 +142,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 #about p {
     font-size: 1.2rem;
     color: #6b6b6b;
-    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 /* Stat box adjustments */
@@ -182,7 +182,7 @@ body {
 .stat-box.red .small-text {
     color: #ffffff !important;
     font-weight: bold;
-    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
     position: relative;
     z-index: 2;
     margin: 5px 0;
@@ -243,7 +243,7 @@ body {
 .btn-primary, .btn-dark {
     font-size: 1.2rem;
     font-weight: bold;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Outfit', sans-serif;
     transition: all 0.3s ease;
     width: 100%;
     padding: 15px 0;
@@ -290,7 +290,7 @@ footer {
     background-color: #f8f9fa;
     color: #333;
     padding: 20px 0;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 /* Responsive adjustments */
@@ -336,7 +336,7 @@ footer {
 #about-us h1, #team h1 {
     color: #333;
     margin-bottom: 30px;
-    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
 }
@@ -344,14 +344,14 @@ footer {
 #about-us p, #team p {
     color: #6b6b6b;
     font-size: 1.2rem;
-    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 #about-us em {
     font-style: italic;
     font-weight: 500;
     color: #333;
-    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .rounded-circle {
@@ -362,5 +362,5 @@ footer {
 #team h3 {
     margin-top: 20px;
     color: #333;
-    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
 }
