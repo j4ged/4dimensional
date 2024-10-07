@@ -1,5 +1,3 @@
-/* Existing CSS (unaltered) */
-
 /* General Styling */
 body {
     background-color: #ffffff;
@@ -456,6 +454,25 @@ footer {
     border-radius: 20px;
     font-size: 0.9rem;
     margin-top: 5px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    position: absolute;
+    left: 0;
+}
+
+.carousel-control-next {
+    position: absolute;
+    right: 0;
 }
 
 .carousel-container::before,
