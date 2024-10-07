@@ -175,38 +175,50 @@
 
     <!-- Carousel Functionality -->
     <script>
-      let currentIndex = 0;
-const carousel = document.querySelector('.carousel');
-const items = document.querySelectorAll('.carousel-item');
-const totalItems = items.length;
+      document.addEventListener('DOMContentLoaded', function() {
+    let currentIndex = 0;
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
 
-function updateCarousel() {
-    const itemWidth = carousel.offsetWidth / totalItems;
-    carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-}
+    function updateCarousel() {
+        const itemWidth = carousel.offsetWidth / totalItems;
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        console.log('Updated carousel position:', currentIndex * itemWidth);
+    }
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalItems;
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+    }
+
+    // Update carousel on window resize
+    window.addEventListener('resize', updateCarousel);
+
+    // Initialize carousel
     updateCarousel();
-}
 
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-    updateCarousel();
-}
+    // Add event listeners to the buttons
+    document.querySelector('.carousel-control-prev').addEventListener('click', prevSlide);
+    document.querySelector('.carousel-control-next').addEventListener('click', nextSlide);
 
-// Update carousel on window resize
-window.addEventListener('resize', updateCarousel);
+    // Log dimensions for debugging
+    function logDimensions() {
+        console.log('Carousel container:', document.querySelector('.carousel-container').offsetWidth, 'x', document.querySelector('.carousel-container').offsetHeight);
+        console.log('Carousel:', carousel.offsetWidth, 'x', carousel.offsetHeight);
+        items.forEach((item, index) => {
+            console.log(`Item ${index}:`, item.offsetWidth, 'x', item.offsetHeight);
+        });
+    }
 
-// Initialize carousel
-updateCarousel();
-
-// Add event listeners to the buttons
-document.querySelector('.carousel-control-prev').addEventListener('click', prevSlide);
-document.querySelector('.carousel-control-next').addEventListener('click', nextSlide);
-
-// Optional: Auto-slide every 5 seconds
-setInterval(nextSlide, 5000);
+    logDimensions();
+    window.addEventListener('resize', logDimensions);
+});
     </script>
 </body>
 </html>
