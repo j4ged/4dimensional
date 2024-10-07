@@ -168,16 +168,44 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers horizontally */
-    height: 220px; /* Control box height */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Default shadow */
-    animation: glow 3s infinite ease-in-out; /* Glow effect */
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    transition: all 0.3s ease;
 }
 
 .stat-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 50px rgba(255, 255, 255, 0.7); /* Enhanced glow effect on hover */
+}
+
+/* Green Stat Box */
+.stat-box.green {
+    background-color: #34e852; /* Solid Green */
+    box-shadow: 0 0 20px 0 rgba(52, 232, 82, 0.5);
+}
+
+.stat-box.green:hover {
+    box-shadow: 0 0 30px 0 rgba(52, 232, 82, 0.7);
+}
+
+/* Blue Stat Box */
+.stat-box.blue {
+    background-color: #34c4e8; /* Solid Blue */
+    box-shadow: 0 0 20px 0 rgba(52, 196, 232, 0.5);
+}
+
+.stat-box.blue:hover {
+    box-shadow: 0 0 30px 0 rgba(52, 196, 232, 0.7);
+}
+
+/* Red Stat Box */
+.stat-box.red {
+    background-color: #ff434a; /* Solid Red */
+    box-shadow: 0 0 20px 0 rgba(255, 67, 74, 0.5);
+}
+
+.stat-box.red:hover {
+    box-shadow: 0 0 30px 0 rgba(255, 67, 74, 0.7);
 }
 
 /* Animation for drop shadow glow */
