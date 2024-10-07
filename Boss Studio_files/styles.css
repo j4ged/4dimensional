@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Outfit', sans-serif; /* Updated to Outfit font */
+    font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -49,6 +49,11 @@ body {
     flex-shrink: 0;
     margin-right: 0;
     z-index: 2;
+}
+
+/* Remove pulsating animation from the navbar logo */
+#pulsating-logo {
+    animation: none;
 }
 
 /* Navigation container */
@@ -116,10 +121,6 @@ body {
     }
 }
 
-#pulsating-logo {
-    animation: pulsate 2s infinite;
-}
-
 /* Padding adjustments for sections */
 #home, #about, #about-us, #team {
     padding-top: 50px;
@@ -127,7 +128,7 @@ body {
 
 /* Stats section */
 #about {
-    background-color: #ffffff; /* Reset to white */
+    background-color: #ffffff;
     padding: 60px 0;
 }
 
@@ -135,13 +136,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
+    font-family: 'Flow Rounded', sans-serif;
 }
 
 #about p {
     font-size: 1.2rem;
-    color: #6b6b6b; /* Same color as navbar links */
-    font-family: 'Outfit', sans-serif; /* Matching font */
+    color: #6b6b6b;
+    font-family: 'Flow Rounded', sans-serif;
 }
 
 /* Stat box adjustments */
@@ -175,7 +176,7 @@ body {
 .stat-box.red .small-text {
     color: #ffffff !important;
     font-weight: bold;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Flow Rounded', sans-serif;
     position: relative;
     z-index: 2;
     margin: 5px 0;
@@ -225,6 +226,7 @@ body {
     background-color: #ff434a;
     box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25);
 }
+
 @keyframes floatIcon {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -241,22 +243,27 @@ body {
     padding: 15px 0;
     margin-bottom: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary {
-    background-color: #5865F2; /* Discord color */
+    background-color: #5865F2;
     border-color: #5865F2;
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
 }
 
 .btn-dark {
-    background-color: #000000; /* Roblox color (black) */
+    background-color: #000000;
     border-color: #000000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:hover, .btn-dark:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Increase glow on hover */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Ensure the icons in the buttons are aligned */
@@ -269,7 +276,7 @@ body {
 .badge.bg-danger {
     font-size: 0.75rem;
     margin-top: 5px;
-    font-weight: normal; /* Adjust badge font weight if needed */
+    font-weight: normal;
 }
 
 /* Footer */
@@ -307,7 +314,7 @@ footer {
     }
 }
 
-/* Additional styles from the original CSS */
+/* Additional styles */
 #pulsating-central-logo {
     animation: pulsate 2s infinite;
 }
@@ -323,11 +330,22 @@ footer {
 #about-us h1, #team h1 {
     color: #333;
     margin-bottom: 30px;
+    font-family: 'Flow Rounded', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 #about-us p, #team p {
     color: #6b6b6b;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-family: 'Flow Rounded', sans-serif;
+}
+
+#about-us em {
+    font-style: italic;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Flow Rounded', sans-serif;
 }
 
 .rounded-circle {
@@ -338,8 +356,5 @@ footer {
 #team h3 {
     margin-top: 20px;
     color: #333;
-}
-
-#team p {
-    color: #6b6b6b;
+    font-family: 'Flow Rounded', sans-serif;
 }
