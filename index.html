@@ -87,14 +87,14 @@
             </div>
         </section>
 
-   <section id="projects">
+  <section id="projects">
     <div class="container mt-4">
         <h2 class="text-center mb-2">Our Games</h2>
         <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
 
         <div class="carousel-container">
             <div class="carousel">
-                <div class="carousel-item" style="background-color: #ffcccc;">
+                <div class="carousel-item">
                     <img src="Boss Studio_files/anshul.png" alt="Swordmaster Simulator" class="img-fluid">
                     <div class="stats">
                         <h3>Swordmaster Simulator</h3>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-color: #ccffcc;">
+                <div class="carousel-item">
                     <img src="Boss Studio_files/anshul.png" alt="Click Simulator" class="img-fluid">
                     <div class="stats">
                         <h3>Click Simulator</h3>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-color: #ccccff;">
+                <div class="carousel-item">
                     <img src="Boss Studio_files/anshul.png" alt="Punching Simulator" class="img-fluid">
                     <div class="stats">
                         <h3>Punching Simulator</h3>
@@ -185,64 +185,35 @@
       let currentIndex = 0;
 const carousel = document.querySelector('.carousel');
 const items = document.querySelectorAll('.carousel-item');
-
-console.log('Carousel element:', carousel);
-console.log('Carousel items:', items);
+const totalItems = items.length;
 
 function updateCarousel() {
-    const itemWidth = carousel.offsetWidth / 3; // Assuming 3 items visible at once
-    console.log('Item width:', itemWidth);
+    const itemWidth = carousel.offsetWidth / totalItems;
     carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    console.log('Current transform:', carousel.style.transform);
 }
 
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % items.length;
-    console.log('Next slide. Current index:', currentIndex);
+    currentIndex = (currentIndex + 1) % totalItems;
     updateCarousel();
 }
 
 function prevSlide() {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    console.log('Previous slide. Current index:', currentIndex);
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
     updateCarousel();
 }
-
-function logCarouselDimensions() {
-    const container = document.querySelector('.carousel-container');
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
-    
-    console.log('Container dimensions:', container.offsetWidth, 'x', container.offsetHeight);
-    console.log('Carousel dimensions:', carousel.offsetWidth, 'x', carousel.offsetHeight);
-    items.forEach((item, index) => {
-        console.log(`Item ${index} dimensions:`, item.offsetWidth, 'x', item.offsetHeight);
-    });
-}
-
-// Call this function after the carousel is initialized and on window resize
 
 // Update carousel on window resize
-window.addEventListener('resize', () => {
-    console.log('Window resized');
-    updateCarousel();
-});
+window.addEventListener('resize', updateCarousel);
 
 // Initialize carousel
-console.log('Initializing carousel');
 updateCarousel();
-
-logCarouselDimensions();
-window.addEventListener('resize', logCarouselDimensions);
-
-// Optional: Auto-slide every 5 seconds
-setInterval(nextSlide, 5000);
-
-console.log('Carousel script loaded');
 
 // Add event listeners to the buttons
 document.querySelector('.carousel-control-prev').addEventListener('click', prevSlide);
 document.querySelector('.carousel-control-next').addEventListener('click', nextSlide);
+
+// Optional: Auto-slide every 5 seconds
+setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
