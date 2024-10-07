@@ -434,9 +434,12 @@ footer {
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     margin-bottom: 30px;
-    max-width: 400px;
+    max-width: 600px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-box .title-bar {
@@ -463,44 +466,64 @@ footer {
     content: '\F6B2';
     font-family: 'Bootstrap-icons';
     position: absolute;
-    right: -5px;
-    top: -10px;
-    font-size: 2rem;
-    opacity: 0.3;
-    transform: rotate(15deg);
-    z-index: 1;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    opacity: 0.7;
+    animation: floatIcon 4s infinite ease-in-out;
+}
+
+.project-box .content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.project-box .image-container {
+    flex: 0 0 40%;
+    padding-right: 15px;
 }
 
 .project-box img {
     border-radius: 8px;
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
 }
 
-.project-box ul {
-    font-size: 0.9rem;
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 0;
+.project-box .stats {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.project-box ul li {
-    margin-bottom: 6px;
+.project-box .stats p {
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
-.project-box ul li i {
-    margin-right: 6px;
+.project-box .stats strong {
+    font-size: 1.1rem;
     color: #34e852;
 }
 
 @media (max-width: 768px) {
-    .project-box .title-bar h3 {
-        font-size: 1.1rem;
+    .project-box {
+        height: auto;
     }
-    
-    .project-box ul {
-        font-size: 0.8rem;
+
+    .project-box .content {
+        flex-direction: column;
+    }
+
+    .project-box .image-container,
+    .project-box .stats {
+        flex: 1 1 auto;
+    }
+
+    .project-box .image-container {
+        padding-right: 0;
+        padding-bottom: 15px;
     }
 }
 /* Responsive adjustments */
