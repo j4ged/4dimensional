@@ -1,3 +1,6 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Flow+Rounded:wght@400;500;600&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
 /* General Styling */
 body {
     background-color: #ffffff;
@@ -16,6 +19,7 @@ body {
     z-index: 10;
     transition: box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
 }
 
 .navbar::after {
@@ -26,10 +30,6 @@ body {
     right: 0;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.25);
-}
-
-.navbar {
-    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
 }
 
 .navbar.scrolled {
@@ -110,15 +110,9 @@ body {
 
 /* Pulsating logo animation */
 @keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Padding adjustments for sections */
@@ -136,13 +130,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Outfit', sans-serif;
 }
 
 #about p {
     font-size: 1.2rem;
     color: #6b6b6b;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Outfit', sans-serif;
 }
 
 /* Stat box adjustments */
@@ -164,19 +158,10 @@ body {
 
 .stat-box h3, 
 .stat-box p, 
-.stat-box .small-text,
-.stat-box.green h3, 
-.stat-box.green p, 
-.stat-box.green .small-text,
-.stat-box.blue h3, 
-.stat-box.blue p, 
-.stat-box.blue .small-text,
-.stat-box.red h3, 
-.stat-box.red p, 
-.stat-box.red .small-text {
+.stat-box .small-text {
     color: #ffffff !important;
     font-weight: bold;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Outfit', sans-serif;
     position: relative;
     z-index: 2;
     margin: 5px 0;
@@ -330,7 +315,7 @@ footer {
 #about-us h1, #team h1 {
     color: #333;
     margin-bottom: 30px;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Outfit', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
 }
@@ -338,14 +323,14 @@ footer {
 #about-us p, #team p {
     color: #6b6b6b;
     font-size: 1.2rem;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Outfit', sans-serif;
 }
 
 #about-us em {
     font-style: italic;
     font-weight: 500;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Outfit', sans-serif;
 }
 
 .rounded-circle {
@@ -356,5 +341,5 @@ footer {
 #team h3 {
     margin-top: 20px;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Outfit', sans-serif;
 }
