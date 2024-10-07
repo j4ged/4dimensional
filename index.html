@@ -210,7 +210,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateCarousel() {
         const itemWidth = items[0].offsetWidth;
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        const carouselWidth = carousel.offsetWidth;
+        const maxTranslate = -(items.length - Math.floor(carouselWidth / itemWidth)) * itemWidth;
+        let translate = -currentIndex * itemWidth;
+        translate = Math.max(maxTranslate, Math.min(0, translate));
+        carousel.style.transform = `translateX(${translate}px)`;
     }
 
     prevButton.addEventListener('click', () => {
