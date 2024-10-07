@@ -87,7 +87,7 @@
             </div>
         </section>
 
-      <section id="projects">
+   <section id="projects">
     <div class="container mt-4">
         <h2 class="text-center mb-2">Our Games</h2>
         <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
@@ -131,7 +131,7 @@
         </div>
     </div>
 </section>
-
+        
         <section id="about-us">
             <div class="container text-center">
                 <h1 class="fw-bold">About Us</h1>
@@ -208,6 +208,20 @@ function prevSlide() {
     updateCarousel();
 }
 
+function logCarouselDimensions() {
+    const container = document.querySelector('.carousel-container');
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    
+    console.log('Container dimensions:', container.offsetWidth, 'x', container.offsetHeight);
+    console.log('Carousel dimensions:', carousel.offsetWidth, 'x', carousel.offsetHeight);
+    items.forEach((item, index) => {
+        console.log(`Item ${index} dimensions:`, item.offsetWidth, 'x', item.offsetHeight);
+    });
+}
+
+// Call this function after the carousel is initialized and on window resize
+
 // Update carousel on window resize
 window.addEventListener('resize', () => {
     console.log('Window resized');
@@ -217,6 +231,9 @@ window.addEventListener('resize', () => {
 // Initialize carousel
 console.log('Initializing carousel');
 updateCarousel();
+
+logCarouselDimensions();
+window.addEventListener('resize', logCarouselDimensions);
 
 // Optional: Auto-slide every 5 seconds
 setInterval(nextSlide, 5000);
