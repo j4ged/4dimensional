@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Outfit', sans-serif; /* Updated to Outfit font */
+    font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,6 +16,7 @@ body {
     z-index: 10;
     transition: box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
 }
 
 .navbar::after {
@@ -26,10 +27,6 @@ body {
     right: 0;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.25);
-}
-
-.navbar {
-    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
 }
 
 .navbar.scrolled {
@@ -72,7 +69,7 @@ body {
 }
 
 .nav-link {
-    color: #6b6b6b; /* Original color of the navbar links */
+    color: #6b6b6b;
     font-weight: bold;
     padding: 12px 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -103,30 +100,11 @@ body {
     z-index: 2;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: static;
-        justify-content: flex-start;
-    }
-    
-    .navbar-nav {
-        width: 100%;
-        justify-content: flex-start;
-    }
-}
-
 /* Pulsating logo animation */
 @keyframes pulsate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 #pulsating-logo {
@@ -140,7 +118,7 @@ body {
 
 /* Stats section */
 #about {
-    background-color: #ffffff; /* Reset to white */
+    background-color: #ffffff;
     padding: 60px 0;
 }
 
@@ -148,14 +126,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
+    font-family: 'Outfit', sans-serif;
 }
 
-/* Use the same color as the navbar for this specific paragraph */
 #about p {
     font-size: 1.2rem;
-    color: #6b6b6b; /* Same color as navbar links */
-    font-family: 'Outfit', sans-serif; /* Matching font */
+    color: #6b6b6b;
+    font-family: 'Outfit', sans-serif;
 }
 
 /* Stat box adjustments */
@@ -172,17 +149,28 @@ body {
     align-items: center;
     height: 220px;
     transition: all 0.3s ease;
+    opacity: 1;
 }
 
 .stat-box h3, 
 .stat-box p, 
-.stat-box .small-text {
-    color: #ffffff; /* Ensure ALL text is white */
+.stat-box .small-text,
+.stat-box.green h3, 
+.stat-box.green p, 
+.stat-box.green .small-text,
+.stat-box.blue h3, 
+.stat-box.blue p, 
+.stat-box.blue .small-text,
+.stat-box.red h3, 
+.stat-box.red p, 
+.stat-box.red .small-text {
+    color: #ffffff !important;
     font-weight: bold;
     font-family: 'Outfit', sans-serif;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     margin: 5px 0;
+    text-shadow: none;
 }
 
 .stat-box h3 {
@@ -216,7 +204,7 @@ body {
 }
 
 .stat-box.green:hover {
-    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25); /* Same as non-hover */
+    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25);
 }
 
 /* Blue Stat Box */
@@ -226,7 +214,7 @@ body {
 }
 
 .stat-box.blue:hover {
-    box-shadow: 0 0 50px 15px rgba(52, 196, 232, 0.25); /* Same as non-hover */
+    box-shadow: 0 0 50px 15px rgba(52, 196, 232, 0.25);
 }
 
 /* Red Stat Box */
@@ -236,7 +224,7 @@ body {
 }
 
 .stat-box.red:hover {
-    box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25); /* Same as non-hover */
+    box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25);
 }
 
 @keyframes floatIcon {
@@ -245,91 +233,17 @@ body {
     100% { transform: translateY(0); }
 }
 
-/* Small text styling for stats */
-.small-text {
-    font-size: 0.8rem; /* Slightly smaller */
-    color: #ffffff; /* Keep the small text white */
-    margin-top: 5px;
-    font-weight: lighter; /* Subtle, non-intrusive styling */
-}
-
-/* Green Stat Box */
-.stat-box.green {
-    background-color: #34e852; /* Solid Green */
-    box-shadow: 0 0 15px 0 rgba(52, 232, 82, 0.5);
-}
-
-.stat-box.green h3, .stat-box.green p, .stat-box.green .small-text {
-    color: white; /* Keep all text in the stat box white */
-    font-weight: bold; /* Bold font */
-    font-family: 'Outfit', sans-serif; /* Matching font */
-}
-
-.stat-box.green h3 {
-    font-size: 2.5rem; /* Font size for header */
-}
-
-.stat-box.green p {
-    font-size: 1.4rem; /* Slightly larger for the main text */
-}
-
-.stat-box.green i {
-    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white icon */
-}
-
-/* Blue Stat Box */
-.stat-box.blue {
-    background-color: #34c4e8; /* Solid Blue */
-    box-shadow: 0 0 15px 0 rgba(52, 196, 232, 0.5); /* Subtle blue glow */
-}
-
-.stat-box.blue h3, .stat-box.blue p, .stat-box.blue .small-text {
-    color: white; /* Keep all text in the stat box white */
-    font-weight: bold; /* Bold font */
-    font-family: 'Outfit', sans-serif; /* Matching font */
-}
-
-.stat-box.blue h3 {
-    font-size: 2.5rem; /* Font size for header */
-}
-
-.stat-box.blue p {
-    font-size: 1.4rem; /* Slightly larger for the main text */
-}
-
-.stat-box.blue i {
-    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white icon */
-}
-
-/* Red Stat Box */
-.stat-box.red {
-    background-color: #ff434a; /* Solid Red */
-    box-shadow: 0 0 15px 0 rgba(255, 67, 74, 0.5); /* Subtle red glow */
-}
-
-.stat-box.red h3, .stat-box.red p, .stat-box.red .small-text {
-    color: white; /* Keep all text in the stat box white */
-    font-weight: bold; /* Bold font */
-    font-family: 'Outfit', sans-serif; /* Matching font */
-}
-
-.stat-box.red h3 {
-    font-size: 2.5rem; /* Font size for header */
-}
-
-.stat-box.red p {
-    font-size: 1.4rem; /* Slightly larger for the main text */
-}
-
-.stat-box.red i {
-    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white icon */
-}
-
 /* Social Links Section */
 .btn-primary, .btn-dark {
     font-size: 1.2rem;
     font-weight: bold;
-    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
+    font-family: 'Outfit', sans-serif;
+    transition: none;
+}
+
+.btn-primary:hover, .btn-dark:hover {
+    background-color: inherit;
+    border-color: inherit;
 }
 
 /* Badge */
@@ -343,10 +257,22 @@ footer {
     background-color: #f8f9fa;
     color: #333;
     padding: 20px 0;
-    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
+    font-family: 'Outfit', sans-serif;
 }
 
 /* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: static;
+        justify-content: flex-start;
+    }
+    
+    .navbar-nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
 @media (max-width: 768px) {
     .stat-box {
         margin-bottom: 30px;
