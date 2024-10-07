@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', sans-serif; /* Updated to Outfit font */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,7 +16,6 @@ body {
     z-index: 10;
     transition: box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
 }
 
 .navbar::after {
@@ -27,6 +26,10 @@ body {
     right: 0;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+    box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
 }
 
 .navbar.scrolled {
@@ -102,9 +105,15 @@ body {
 
 /* Pulsating logo animation */
 @keyframes pulsate {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 #pulsating-logo {
@@ -118,7 +127,7 @@ body {
 
 /* Stats section */
 #about {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Reset to white */
     padding: 60px 0;
 }
 
@@ -126,13 +135,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
 #about p {
     font-size: 1.2rem;
-    color: #6b6b6b;
-    font-family: 'Outfit', sans-serif;
+    color: #6b6b6b; /* Same color as navbar links */
+    font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
 /* Stat box adjustments */
@@ -183,8 +192,9 @@ body {
 
 .stat-box .small-text {
     font-size: 0.8rem;
-    font-weight: 200;
+    font-weight: 200 !important;
     color: #ffffff !important;
+    opacity: 0.8;
 }
 
 .stat-box i {
@@ -204,17 +214,9 @@ body {
     box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25);
 }
 
-.stat-box.green:hover {
-    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25);
-}
-
 /* Blue Stat Box */
 .stat-box.blue {
     background-color: #34c4e8;
-    box-shadow: 0 0 50px 15px rgba(52, 196, 232, 0.25);
-}
-
-.stat-box.blue:hover {
     box-shadow: 0 0 50px 15px rgba(52, 196, 232, 0.25);
 }
 
@@ -223,11 +225,6 @@ body {
     background-color: #ff434a;
     box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25);
 }
-
-.stat-box.red:hover {
-    box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25);
-}
-
 @keyframes floatIcon {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -248,20 +245,21 @@ body {
 }
 
 .btn-primary {
-    background-color: #5865F2;
+    background-color: #5865F2; /* Discord color */
     border-color: #5865F2;
 }
 
 .btn-dark {
-    background-color: #000000;
+    background-color: #000000; /* Roblox color (black) */
     border-color: #000000;
 }
 
 .btn-primary:hover, .btn-dark:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Increase glow on hover */
 }
 
+/* Ensure the icons in the buttons are aligned */
 .btn-primary img, .btn-dark img {
     vertical-align: middle;
     margin-right: 10px;
@@ -271,7 +269,7 @@ body {
 .badge.bg-danger {
     font-size: 0.75rem;
     margin-top: 5px;
-    font-weight: normal;
+    font-weight: normal; /* Adjust badge font weight if needed */
 }
 
 /* Footer */
@@ -307,4 +305,41 @@ footer {
     .stat-box h3 {
         font-size: 2rem;
     }
+}
+
+/* Additional styles from the original CSS */
+#pulsating-central-logo {
+    animation: pulsate 2s infinite;
+}
+
+.light-gray-text {
+    color: #6b6b6b;
+}
+
+#about-us, #team {
+    padding: 60px 0;
+}
+
+#about-us h1, #team h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#about-us p, #team p {
+    color: #6b6b6b;
+    font-size: 1.1rem;
+}
+
+.rounded-circle {
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#team h3 {
+    margin-top: 20px;
+    color: #333;
+}
+
+#team p {
+    color: #6b6b6b;
 }
