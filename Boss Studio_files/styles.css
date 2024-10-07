@@ -345,39 +345,49 @@ footer {
     margin: 0 auto;
     overflow: hidden;
     padding: 20px 0;
-    border: 2px solid red;
-    min-height: 300px; /* Add a minimum height to the container */
 }
 
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
-    width: 300%; /* Adjust based on the number of items */
-    height: 100%; /* Ensure full height */
+    width: 300%; /* 100% for each item */
 }
 
 .carousel-item {
-    flex: 0 0 33.333%; /* Adjust based on how many items you want visible at once */
-    padding: 10px;
-    border: 2px solid blue;
+    flex: 0 0 33.333%; /* Each item takes up 1/3 of the carousel width */
+    padding: 0 15px;
     box-sizing: border-box;
-    min-height: 250px; /* Increase minimum height to ensure visibility */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .carousel-item img {
     width: 100%;
-    height: auto;
-    max-height: 200px; /* Limit image height */
-    border-radius: 10px;
+    height: 200px; /* Fixed height for consistency */
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .stats {
     text-align: center;
     margin-top: 10px;
+}
+
+.stats h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.badge {
+    font-size: 0.8rem;
+    padding: 0.25em 0.5em;
+    margin-right: 5px;
+}
+
+.year {
+    background-color: #FFA500;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
 .carousel-control {
@@ -401,10 +411,12 @@ footer {
     right: 10px;
 }
 
-
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .carousel-item {
-        flex: 0 0 33.333%;
+        flex: 0 0 100%; /* On mobile, show one item at a time */
+    }
+    .carousel {
+        width: 300%; /* Adjust for mobile */
     }
 }
 
