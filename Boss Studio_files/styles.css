@@ -138,7 +138,7 @@ body {
 /* Stat box adjustments */
 .stat-box {
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 15px; /* Reduced from 20px for slightly less corner rounding */
     padding: 30px;
     text-align: center;
     position: relative;
@@ -183,7 +183,8 @@ body {
 
 .stat-box .small-text {
     font-size: 0.8rem;
-    font-weight: normal;
+    font-weight: 300; /* Reduced from normal (400) for a slightly thinner appearance */
+    color: #ffffff !important; /* Ensure it stays white */
 }
 
 .stat-box i {
