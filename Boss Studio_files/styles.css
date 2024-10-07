@@ -72,7 +72,7 @@ body {
 }
 
 .nav-link {
-    color: #6b6b6b;
+    color: #6b6b6b; /* Original color of the navbar links */
     font-weight: bold;
     padding: 12px 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -151,9 +151,10 @@ body {
     font-family: 'Outfit', sans-serif; /* Ensure font consistency */
 }
 
+/* Use the same color as the navbar for this specific paragraph */
 #about p {
     font-size: 1.2rem;
-    color: #d3d3d3; /* Changed text color to light gray */
+    color: #6b6b6b; /* Same color as navbar links */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
@@ -219,7 +220,7 @@ body {
 /* Small text styling for stats */
 .small-text {
     font-size: 0.8rem; /* Slightly smaller */
-    color: #ffffff; /* Adjust text color to be readable */
+    color: #ffffff; /* Keep the small text white */
     margin-top: 5px;
     font-weight: lighter; /* Subtle, non-intrusive styling */
 }
@@ -231,7 +232,7 @@ body {
 }
 
 .stat-box.green h3, .stat-box.green p, .stat-box.green .small-text {
-    color: white; /* Ensure all text is white */
+    color: white; /* Keep all text in the stat box white */
     font-weight: bold; /* Bold font */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
@@ -255,7 +256,7 @@ body {
 }
 
 .stat-box.blue h3, .stat-box.blue p, .stat-box.blue .small-text {
-    color: white; /* Ensure all text is white */
+    color: white; /* Keep all text in the stat box white */
     font-weight: bold; /* Bold font */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
@@ -279,7 +280,7 @@ body {
 }
 
 .stat-box.red h3, .stat-box.red p, .stat-box.red .small-text {
-    color: white; /* Ensure all text is white */
+    color: white; /* Keep all text in the stat box white */
     font-weight: bold; /* Bold font */
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
