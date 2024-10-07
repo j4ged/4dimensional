@@ -420,7 +420,9 @@ footer {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    display: block; /* Add this to ensure it's displayed */
 }
+
 
 .carousel {
     display: flex;
