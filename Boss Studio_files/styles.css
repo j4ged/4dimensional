@@ -174,8 +174,9 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Remove hover transform effect */
 .stat-box:hover {
-    transform: translateY(-10px);
+    transform: none;
 }
 
 .stat-box h3, .stat-box p, .stat-box .small-text {
@@ -194,6 +195,13 @@ body {
     font-size: 1.4rem;
 }
 
+.small-text {
+    font-size: 0.8rem;
+    color: white; /* Ensure small text is also white */
+    margin-top: 5px;
+    font-weight: lighter;
+}
+
 .stat-box i {
     position: absolute;
     bottom: 10px;
@@ -208,31 +216,26 @@ body {
 /* Green Stat Box */
 .stat-box.green {
     background-color: #34e852;
-    box-shadow: 0 0 40px 10px rgba(52, 232, 82, 0.3);
-}
-
-.stat-box.green:hover {
-    box-shadow: 0 0 60px 15px rgba(52, 232, 82, 0.4);
+    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25); /* Softer and larger glow */
 }
 
 /* Blue Stat Box */
 .stat-box.blue {
     background-color: #34c4e8;
-    box-shadow: 0 0 40px 10px rgba(52, 196, 232, 0.3);
-}
-
-.stat-box.blue:hover {
-    box-shadow: 0 0 60px 15px rgba(52, 196, 232, 0.4);
+    box-shadow: 0 0 50px 15px rgba(52, 196, 232, 0.25); /* Softer and larger glow */
 }
 
 /* Red Stat Box */
 .stat-box.red {
     background-color: #ff434a;
-    box-shadow: 0 0 40px 10px rgba(255, 67, 74, 0.3);
+    box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25); /* Softer and larger glow */
 }
 
+/* Remove hover effects for all stat boxes */
+.stat-box.green:hover,
+.stat-box.blue:hover,
 .stat-box.red:hover {
-    box-shadow: 0 0 60px 15px rgba(255, 67, 74, 0.4);
+    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25); /* Same as non-hover state */
 }
 
 @keyframes floatIcon {
