@@ -345,25 +345,27 @@ footer {
     margin: 0 auto;
     overflow: hidden;
     padding: 20px 0;
-    border: 2px solid red; /* Debug border */
+    border: 2px solid red;
 }
 
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
+    width: 300%; /* Adjust based on the number of items */
 }
 
 .carousel-item {
-    flex: 0 0 100%;
+    flex: 0 0 33.333%; /* Adjust based on how many items you want visible at once */
     padding: 10px;
-    border: 2px solid blue; /* Debug border */
+    border: 2px solid blue;
     box-sizing: border-box;
+    min-height: 200px; /* Add a minimum height to ensure visibility */
 }
 
 .carousel-item img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
-    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
@@ -392,6 +394,7 @@ footer {
 .carousel-control-next {
     right: 10px;
 }
+
 
 @media (min-width: 768px) {
     .carousel-item {
