@@ -131,19 +131,19 @@ body {
 
 /* Padding adjustments for sections */
 #home, #about, #about-us, #team {
-    padding-top: 120px; /* Increased padding-top */
+    padding-top: 120px;
 }
 
 /* Home section */
 #home {
-    padding-top: 180px; /* Increased padding for pulsating logo */
-    padding-bottom: 60px;
+    padding-top: 180px;
+    padding-bottom: 40px;
 }
 
 /* Stats section */
 #about {
     background-color: #ffffff;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 #about h2 {
@@ -338,7 +338,7 @@ footer {
 }
 
 #about-us, #team {
-    padding: 40px 0; /* Decreased padding */
+    padding: 40px 0;
 }
 
 #about-us h1, #team h1 {
@@ -353,8 +353,8 @@ footer {
     color: #6b6b6b;
     font-size: 1.2rem;
     font-family: 'Outfit', sans-serif;
-    max-width: 800px; /* Added max-width for better readability */
-    margin: 0 auto; /* Center the paragraph */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .rounded-circle {
