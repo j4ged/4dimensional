@@ -158,7 +158,7 @@ body {
     font-family: 'Outfit', sans-serif; /* Matching font */
 }
 
-/* Stat box adjustments for glowing shadow and floating icons */
+/* Stat box adjustments */
 .stat-box {
     background-color: #ffffff;
     border-radius: 20px;
@@ -171,20 +171,18 @@ body {
     justify-content: center;
     align-items: center;
     height: 220px;
-    transition: all 0.3s ease;
+    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25); /* Default glow */
 }
 
-/* Remove hover transform effect */
-.stat-box:hover {
-    transform: none;
-}
-
-.stat-box h3, .stat-box p, .stat-box .small-text {
-    color: white;
+.stat-box h3, 
+.stat-box p, 
+.stat-box .small-text {
+    color: #ffffff; /* Ensure all text is white */
     font-weight: bold;
     font-family: 'Outfit', sans-serif;
     position: relative;
     z-index: 1;
+    margin: 5px 0; /* Add some vertical spacing between elements */
 }
 
 .stat-box h3 {
@@ -195,11 +193,9 @@ body {
     font-size: 1.4rem;
 }
 
-.small-text {
+.stat-box .small-text {
     font-size: 0.8rem;
-    color: white; /* Ensure small text is also white */
-    margin-top: 5px;
-    font-weight: lighter;
+    font-weight: normal; /* Make the small text less bold */
 }
 
 .stat-box i {
@@ -213,41 +209,50 @@ body {
     z-index: 0;
 }
 
-/* Green Stat Box */
+/* Specific colors for each stat box */
 .stat-box.green {
     background-color: #34e852;
-    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25); /* Softer and larger glow */
+    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25);
 }
 
-/* Blue Stat Box */
 .stat-box.blue {
     background-color: #34c4e8;
-    box-shadow: 0 0 50px 15px rgba(52, 196, 232, 0.25); /* Softer and larger glow */
+    box-shadow: 0 0 50px 15px rgba(52, 196, 232, 0.25);
 }
 
-/* Red Stat Box */
 .stat-box.red {
     background-color: #ff434a;
-    box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25); /* Softer and larger glow */
+    box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25);
 }
 
-/* Remove hover effects for all stat boxes */
+/* Remove all hover effects */
+.stat-box:hover,
 .stat-box.green:hover,
 .stat-box.blue:hover,
-.stat-box.red:hover {
-    box-shadow: 0 0 50px 15px rgba(52, 232, 82, 0.25); /* Same as non-hover state */
+.stat-box.red:hover,
+.btn-primary:hover,
+.btn-dark:hover {
+    transform: none;
+    box-shadow: inherit; /* This will keep the default box-shadow */
+}
+
+/* Button styles - remove hover effects */
+.btn-primary, .btn-dark {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    transition: none; /* Remove transition effects */
+}
+
+.btn-primary:hover, .btn-dark:hover {
+    background-color: inherit; /* Keep original background color on hover */
+    border-color: inherit; /* Keep original border color on hover */
 }
 
 @keyframes floatIcon {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
 /* Small text styling for stats */
