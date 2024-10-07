@@ -120,6 +120,34 @@
     </div>
 </section>
         
+        <!-- New Games Carousel Section -->
+        <section id="games">
+            <div class="container mt-4 text-center">
+                <h2 class="mb-3">Our Games</h2>
+                <p>Check out our ever expanding library of games here.</p>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <img src="path_to_anshul_image.png" alt="Game 1">
+                            <h3>Game 1</h3>
+                            <p class="release-year">2024</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="path_to_anshul_image.png" alt="Game 2">
+                            <h3>Game 2</h3>
+                            <p class="release-year">2023</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="path_to_anshul_image.png" alt="Game 3">
+                            <h3>Game 3</h3>
+                            <p class="release-year">2022</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="view-roblox-btn">View on Roblox</button>
+            </div>
+        </section>
+
         <section id="about-us">
             <div class="container text-center">
                 <h1 class="fw-bold">About Us</h1>
@@ -153,16 +181,34 @@
         <p>© 2020 4 Dimensional Inc. - All Rights Reserved</p>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Carousel Functionality -->
     <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 0) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+        const carousel = document.querySelector('.carousel');
+        let scrollInterval;
+        let currentIndex = 0;
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+
+        function startCarousel() {
+            scrollInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalItems;
+                const offset = currentIndex * -330; // Adjust based on item width + margin
+                carousel.style.transform = `translateX(${offset}px)`;
+            }, 3000); // Change slide every 3 seconds
+        }
+
+        function stopCarousel() {
+            clearInterval(scrollInterval);
+        }
+
+        // Start scrolling on load
+        startCarousel();
+
+        // Optional: Pause on hover (if desired)
+        document.querySelector('.carousel-container').addEventListener('mouseenter', stopCarousel);
+        document.querySelector('.carousel-container').addEventListener('mouseleave', startCarousel);
     </script>
 </body>
 </html>
