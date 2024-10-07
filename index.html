@@ -87,14 +87,14 @@
             </div>
         </section>
 
-       <section id="projects">
+      <section id="projects">
     <div class="container mt-4">
         <h2 class="text-center mb-2">Our Games</h2>
         <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
 
         <div class="carousel-container">
             <div class="carousel">
-                <div class="carousel-item">
+                <div class="carousel-item" style="background-color: #ffcccc;">
                     <img src="Boss Studio_files/anshul.png" alt="Swordmaster Simulator" class="img-fluid">
                     <div class="stats">
                         <h3>Swordmaster Simulator</h3>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item">
+                <div class="carousel-item" style="background-color: #ccffcc;">
                     <img src="Boss Studio_files/anshul.png" alt="Click Simulator" class="img-fluid">
                     <div class="stats">
                         <h3>Click Simulator</h3>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item">
+                <div class="carousel-item" style="background-color: #ccccff;">
                     <img src="Boss Studio_files/anshul.png" alt="Punching Simulator" class="img-fluid">
                     <div class="stats">
                         <h3>Punching Simulator</h3>
@@ -186,29 +186,42 @@
 const carousel = document.querySelector('.carousel');
 const items = document.querySelectorAll('.carousel-item');
 
+console.log('Carousel element:', carousel);
+console.log('Carousel items:', items);
+
 function updateCarousel() {
     const itemWidth = items[0].offsetWidth;
+    console.log('Item width:', itemWidth);
     carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    console.log('Current transform:', carousel.style.transform);
 }
 
 function nextSlide() {
     currentIndex = (currentIndex + 1) % items.length;
+    console.log('Next slide. Current index:', currentIndex);
     updateCarousel();
 }
 
 function prevSlide() {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
+    console.log('Previous slide. Current index:', currentIndex);
     updateCarousel();
 }
 
 // Update carousel on window resize
-window.addEventListener('resize', updateCarousel);
+window.addEventListener('resize', () => {
+    console.log('Window resized');
+    updateCarousel();
+});
 
 // Initialize carousel
+console.log('Initializing carousel');
 updateCarousel();
 
 // Optional: Auto-slide every 5 seconds
 setInterval(nextSlide, 5000);
+
+console.log('Carousel script loaded');
     </script>
 </body>
 </html>
