@@ -695,3 +695,35 @@ footer {
         width: calc(33.333% - 0.5rem);
     }
 }
+
+/* Debug styles */
+.debug-border {
+    border: 2px solid red !important;
+}
+
+/* Ensure carousel container is visible */
+.w-full.relative.flex.justify-center {
+    overflow: visible;
+}
+
+.overflow-x-hidden {
+    overflow: visible;
+    width: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+    }
+}
+
+/* Ensure carousel controls are visible */
+.carousel-control {
+    z-index: 10;
+}
