@@ -8,36 +8,24 @@ body {
     box-sizing: border-box;
 }
 
-/* ... (other styles remain unchanged) ... */
-
-#about h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+    transition: box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
-/* ... (other styles remain unchanged) ... */
-
-#about-us h1, #team h1 {
-    color: #333;
-    margin-bottom: 30px;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-#about-us p, #team p {
-    color: #6b6b6b;
-    font-size: 1.2rem;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
-}
-
-#about-us em {
-    font-style: italic;
-    font-weight: 500;
-    color: #333;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .navbar {
@@ -93,7 +81,7 @@ body {
     font-weight: bold;
     padding: 12px 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
     text-align: center;
     position: relative;
 }
@@ -148,13 +136,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
 }
 
 #about p {
     font-size: 1.2rem;
     color: #6b6b6b;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
 }
 
 /* Stat box adjustments */
@@ -188,7 +176,7 @@ body {
 .stat-box.red .small-text {
     color: #ffffff !important;
     font-weight: bold;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
     position: relative;
     z-index: 2;
     margin: 5px 0;
@@ -249,7 +237,7 @@ body {
 .btn-primary, .btn-dark {
     font-size: 1.2rem;
     font-weight: bold;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
     transition: all 0.3s ease;
     width: 100%;
     padding: 15px 0;
@@ -296,7 +284,7 @@ footer {
     background-color: #f8f9fa;
     color: #333;
     padding: 20px 0;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
 }
 
 /* Responsive adjustments */
@@ -342,7 +330,7 @@ footer {
 #about-us h1, #team h1 {
     color: #333;
     margin-bottom: 30px;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
     font-size: 2.5rem;
     font-weight: bold;
 }
@@ -350,14 +338,14 @@ footer {
 #about-us p, #team p {
     color: #6b6b6b;
     font-size: 1.2rem;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
 }
 
 #about-us em {
     font-style: italic;
     font-weight: 500;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
 }
 
 .rounded-circle {
@@ -368,5 +356,5 @@ footer {
 #team h3 {
     margin-top: 20px;
     color: #333;
-    font-family: 'Flow Rounded', sans-serif;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
 }
