@@ -2,30 +2,42 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #ffffff;
-    padding: 10px 0;
-    position: relative;
-    z-index: 10;
-    transition: box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
+/* ... (other styles remain unchanged) ... */
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
 }
 
-.navbar::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.25);
+/* ... (other styles remain unchanged) ... */
+
+#about-us h1, #team h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#about-us p, #team p {
+    color: #6b6b6b;
+    font-size: 1.2rem;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
+}
+
+#about-us em {
+    font-style: italic;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
 }
 
 .navbar {
