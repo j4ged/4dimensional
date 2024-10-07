@@ -47,24 +47,10 @@
             justify-content: center;
             align-items: center;
             font-size: 24px;
-            color: white;
             background-color: white;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
-            border: 2px solid white;
-        }
-
-        /* Placeholder colors inside the white frames */
-        .carousel-item.red {
-            background: linear-gradient(to bottom right, red, darkred);
-        }
-
-        .carousel-item.green {
-            background: linear-gradient(to bottom right, green, darkgreen);
-        }
-
-        .carousel-item.blue {
-            background: linear-gradient(to bottom right, blue, darkblue);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Larger black shadow */
+            border: none; /* Removed borders */
         }
 
         /* Arrow navigation styling */
@@ -74,8 +60,8 @@
             transform: translateY(-50%);
             background-color: #34c4e8;
             color: white;
-            border: 2px solid white; /* White stroke */
-            font-size: 2rem;
+            border: 3px solid white; /* Thicker white stroke */
+            font-size: 1.8rem; /* Slightly smaller arrow icons */
             padding: 10px;
             cursor: pointer;
             z-index: 10;
@@ -93,6 +79,23 @@
 
         .carousel-control:hover {
             background-color: #288fb6; /* Darker blue on hover */
+        }
+
+        /* View on Roblox button */
+        .roblox-btn {
+            background-color: #34c4e8;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px; /* Fully rounded corners */
+            text-align: center;
+            box-shadow: 0 0 15px rgba(52, 196, 232, 0.7); /* Blue glow */
+            transition: box-shadow 0.3s ease;
+        }
+
+        .roblox-btn:hover {
+            box-shadow: 0 0 25px rgba(52, 196, 232, 1); /* Larger blue glow on hover */
         }
     </style>
 </head>
@@ -167,20 +170,17 @@
                 <!-- Simplified Carousel with Placeholders -->
                 <div class="carousel-container">
                     <div class="carousel-wrapper">
-                        <!-- Placeholder items with colors -->
-                        <div class="carousel-item red">Red Placeholder</div>
-                        <div class="carousel-item green">Green Placeholder</div>
-                        <div class="carousel-item blue">Blue Placeholder</div>
+                        <!-- Placeholder items with solid white and shadows -->
+                        <div class="carousel-item">Placeholder 1</div>
+                        <div class="carousel-item">Placeholder 2</div>
+                        <div class="carousel-item">Placeholder 3</div>
                     </div>
                     <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
                 </div>
                 
                 <div class="d-flex justify-content-center mt-4 mb-3 py-2">
-                    <a class="btn btn-primary" href="#">
-                        <span class="me-2">View on Roblox</span>
-                        <i class="bi bi-box-arrow-up-right"></i>
-                    </a>
+                    <a class="btn roblox-btn" href="#">View on Roblox</a>
                 </div>
             </div>
         </section>
