@@ -35,11 +35,11 @@
         .carousel-wrapper {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: 300%; /* Allow space for 3 items */
         }
 
         .carousel-item {
-            flex: 0 0 33.33%; /* Each item takes up one-third of the carousel */
+            min-width: 300px; /* Set min width to 300px for each item */
+            margin: 0 10px; /* Space between items */
             text-align: center;
             height: 300px;
             display: flex;
@@ -232,8 +232,9 @@
             let currentIndex = 1; // Start with red in the center
 
             function updateCarousel() {
-                const translateX = -currentIndex * 100 / items.length; // Center current item
-                carousel.style.transform = `translateX(${translateX}%)`;
+                const itemWidth = items[0].offsetWidth + 20; // Include margin
+                const translateX = -(currentIndex - 1) * itemWidth;
+                carousel.style.transform = `translateX(${translateX}px)`;
             }
 
             function showNextItem() {
@@ -251,6 +252,9 @@
 
             // Initial update
             updateCarousel();
+
+            // Update on window resize
+            window.addEventListener('resize', updateCarousel);
         });
     </script>
 </body>
