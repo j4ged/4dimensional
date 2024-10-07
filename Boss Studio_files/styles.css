@@ -2,7 +2,7 @@
 body {
     background-color: #ffffff;
     color: #333;
-    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,10 +12,12 @@ body {
 .navbar {
     background-color: #ffffff;
     padding: 10px 0;
-    position: relative;
-    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     transition: box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
 }
 
 .navbar::after {
@@ -80,8 +82,8 @@ body {
     color: #6b6b6b;
     font-weight: bold;
     padding: 12px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
+    transition: color 0.3s ease;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     position: relative;
 }
@@ -91,14 +93,18 @@ body {
     color: #2d2d2d;
 }
 
-.nav-link:hover::after {
+.nav-link::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -5px;
     height: 2px;
     background-color: #34c4e8;
-    transition: width 0.3s ease, left 0.3s ease;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
     width: 100%;
 }
 
@@ -123,7 +129,7 @@ body {
 
 /* Padding adjustments for sections */
 #home, #about, #about-us, #team {
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 /* Stats section */
@@ -136,13 +142,13 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
+    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
 }
 
 #about p {
     font-size: 1.2rem;
     color: #6b6b6b;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
+    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
 }
 
 /* Stat box adjustments */
@@ -176,7 +182,7 @@ body {
 .stat-box.red .small-text {
     color: #ffffff !important;
     font-weight: bold;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
+    font-family: 'Flow Rounded', Georgia, 'Times New Roman', serif;
     position: relative;
     z-index: 2;
     margin: 5px 0;
@@ -227,134 +233,4 @@ body {
     box-shadow: 0 0 50px 15px rgba(255, 67, 74, 0.25);
 }
 
-@keyframes floatIcon {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* Social Links Section */
-.btn-primary, .btn-dark {
-    font-size: 1.2rem;
-    font-weight: bold;
-    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
-    transition: all 0.3s ease;
-    width: 100%;
-    padding: 15px 0;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-primary {
-    background-color: #5865F2;
-    border-color: #5865F2;
-    box-shadow: 0 0 15px rgba(88, 101, 242, 0.3);
-}
-
-.btn-dark {
-    background-color: #000000;
-    border-color: #000000;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-.btn-primary:hover, .btn-dark:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure the icons in the buttons are aligned */
-.btn-primary img, .btn-dark img {
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-/* Badge */
-.badge.bg-danger {
-    font-size: 0.75rem;
-    margin-top: 5px;
-    font-weight: normal;
-}
-
-/* Footer */
-footer {
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 20px 0;
-    font-family: 'Outfit', 'Arial', 'Helvetica', sans-serif;
-}
-
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: static;
-        justify-content: flex-start;
-    }
-    
-    .navbar-nav {
-        width: 100%;
-        justify-content: flex-start;
-    }
-}
-
-@media (max-width: 768px) {
-    .stat-box {
-        margin-bottom: 30px;
-    }
-    
-    #about h2 {
-        font-size: 2rem;
-    }
-    
-    .stat-box h3 {
-        font-size: 2rem;
-    }
-}
-
-/* Additional styles */
-#pulsating-central-logo {
-    animation: pulsate 2s infinite;
-}
-
-.light-gray-text {
-    color: #6b6b6b;
-}
-
-#about-us, #team {
-    padding: 60px 0;
-}
-
-#about-us h1, #team h1 {
-    color: #333;
-    margin-bottom: 30px;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-#about-us p, #team p {
-    color: #6b6b6b;
-    font-size: 1.2rem;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
-}
-
-#about-us em {
-    font-style: italic;
-    font-weight: 500;
-    color: #333;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
-}
-
-.rounded-circle {
-    border: 5px solid #ffffff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-#team h3 {
-    margin-top: 20px;
-    color: #333;
-    font-family: 'Flow Rounded', 'Georgia', 'Times New Roman', serif;
-}
+@key
