@@ -193,11 +193,9 @@ let currentIndex = 0;
 const totalItems = document.querySelectorAll('.carousel-item').length;
 
 function updateCarousel() {
-    const offset = currentIndex * -330;
+    const offset = currentIndex * -370; // Adjust the offset as needed for spacing
     carousel.style.transform = `translateX(${offset}px)`;
-    console.log(`Current index: ${currentIndex}, Offset: ${offset}`);
 }
-
 
 function nextSlide() {
     currentIndex = (currentIndex + 1) % totalItems;
