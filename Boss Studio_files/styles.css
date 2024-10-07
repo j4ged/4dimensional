@@ -421,7 +421,9 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    height: 300px; /* Add a height to ensure items are visible */
 }
+
 
 .carousel {
     display: flex;
