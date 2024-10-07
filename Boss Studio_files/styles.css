@@ -360,9 +360,14 @@ footer {
 }
 
 .carousel-item {
-    flex: 0 0 33.333%; /* This ensures all three items are visible */
-    padding: 0 15px;
+    flex: 0 0 33.333%;
+    padding: 15px;
     box-sizing: border-box;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-item img {
@@ -372,8 +377,6 @@ footer {
     max-height: 150px;
     object-fit: cover;
     border-radius: 10px;
-    margin: 0 auto;
-    display: block;
 }
 
 .stats {
@@ -407,15 +410,143 @@ footer {
     right: 10px;
 }
 
-@media (max-width: 768px) {
-    .carousel {
-        width: 300%;
-    }
-    .carousel-item {
-        flex: 0 0 33.333%;
+/* Additional styles for the carousel */
+.carousel-item {
+    transition: opacity 0.3s ease;
+}
+
+.carousel-item:not(.active) {
+    opacity: 0.5;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107;
+    color: #000;
+    font-size: 0.8rem;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+.year {
+    display: inline-block;
+    background-color: #FFA500;
+    color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+}
+
+/* Ensure images maintain aspect ratio */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Center content in carousel items */
+.carousel-item {
+    text-align: center;
+}
+
+/* Style for the "View on Roblox" button */
+.roundButtonClass {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.roundButtonClass:hover {
+    background-color: #2563EB;
+    transform: translateY(-2px);
+}
+
+/* Fade effect for carousel sides */
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve button and interactive element accessibility */
+button, 
+a[href],
+input[type='submit'],
+input[type='image'],
+label[for],
+select,
+.pointer {
+  cursor: pointer;
+}
+
+/* Improve form element styling */
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Improve accessibility for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Ensure consistency across browsers */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve responsiveness for very large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
     }
 }
 
+/* Improve print styles */
+@media print {
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    a, a:visited {
+        text-decoration: underline;
+    }
+    
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+}
+
+/* Existing utility classes and responsive design */
 .w-full {
     width: 100%;
 }
@@ -438,10 +569,6 @@ footer {
 
 .pt-[50px] {
     padding-top: 50px;
-}
-
-.leading-6 {
-    line-height: 1.5rem;
 }
 
 .pt-14 {
