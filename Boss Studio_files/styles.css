@@ -345,6 +345,7 @@ footer {
     margin: 0 auto;
     overflow: hidden;
     padding: 20px 0;
+    border: 2px solid red; /* Debug border */
 }
 
 .carousel {
@@ -354,7 +355,9 @@ footer {
 
 .carousel-item {
     flex: 0 0 100%;
-    padding: 0 10px;
+    padding: 10px;
+    border: 2px solid blue; /* Debug border */
+    box-sizing: border-box;
 }
 
 .carousel-item img {
@@ -367,19 +370,6 @@ footer {
 .stats {
     text-align: center;
     margin-top: 10px;
-}
-
-.stats h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.year {
-    background-color: #FFA500;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 20px;
-    font-size: 0.9rem;
 }
 
 .carousel-control {
