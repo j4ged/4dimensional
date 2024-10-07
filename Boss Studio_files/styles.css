@@ -357,12 +357,11 @@ footer {
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
-    width: 300%;
-    height: 100%;
+    width: 100%; /* Changed from 300% to 100% */
 }
 
 .carousel-item {
-    flex: 0 0 33.333%;
+    flex: 0 0 33.333%; /* This ensures all three items are visible */
     padding: 15px;
     box-sizing: border-box;
     min-height: 250px;
@@ -375,9 +374,9 @@ footer {
 
 .carousel-item img {
     width: 100%;
-    max-width: 300px;
+    max-width: 200px; /* Reduced from 300px to fit better */
     height: auto;
-    max-height: 200px;
+    max-height: 150px; /* Reduced from 200px to fit better */
     object-fit: cover;
     border-radius: 10px;
 }
@@ -428,11 +427,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 100%;
-    }
     .carousel {
-        width: 100%;
+        width: 300%; /* Show one item at a time on mobile */
+    }
+    .carousel-item {
+        flex: 0 0 33.333%;
     }
 }
 
