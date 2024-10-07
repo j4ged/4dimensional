@@ -47,11 +47,11 @@
        <section id="about">
     <div class="container mt-4">
         <h2 class="text-center mb-4">Our Numbers</h2>
-        <p class="text-center mb-5">The results of thinking in a fourth-dimension.</p>
+        <p class="text-center mb-5" style="color: #aaa;">The results of thinking in a fourth-dimension.</p> <!-- Changed text color to light gray -->
         <div class="row justify-content-center">
             <div class="col-lg-4 mb-4">
                 <div class="stat-box green">
-                    <h3>80 Million +</h3>
+                    <h3 class="count" data-target="80000000">0</h3> <!-- Number increase animation -->
                     <p>Unique Gameplay Sessions</p>
                     <p class="small-text">More than the population of France!</p>
                     <i class="bi bi-controller"></i>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="stat-box blue">
-                    <h3>110 Thousand +</h3>
+                    <h3 class="count" data-target="110000">0</h3> <!-- Number increase animation -->
                     <p>Hours of Playtime</p>
                     <p class="small-text">That's over 12 years!</p>
                     <i class="bi bi-clock"></i> <!-- Changed to clock icon -->
@@ -67,7 +67,7 @@
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="stat-box red">
-                    <h3>80 Thousand +</h3>
+                    <h3 class="count" data-target="80000">0</h3> <!-- Number increase animation -->
                     <p>Accumulated Community Members</p>
                     <p class="small-text">That's over 4 stadiums full!</p>
                     <i class="bi bi-people-fill"></i>
@@ -132,18 +132,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const counters = document.querySelectorAll('.count');
-            const speed = 1500; // Animation speed in ms (1.5 seconds)
+            const speed = 200; // Animation speed in ms (adjust as needed)
 
             counters.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.innerText;
 
-                    const increment = target / speed * 100; // Speed adjustment
+                    const increment = target / speed;
 
                     if (count < target) {
                         counter.innerText = Math.ceil(count + increment);
-                        setTimeout(updateCount, 30); // Faster increments
+                        setTimeout(updateCount, 30);
                     } else {
                         counter.innerText = target;
                     }
