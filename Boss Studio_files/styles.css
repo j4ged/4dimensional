@@ -329,66 +329,6 @@ body {
     margin-bottom: 10px;
 }
 
-.project-card {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 15px;
-    color: #333;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-}
-
-.image-container {
-    flex: 0 0 30%;
-    margin-right: 20px;
-}
-
-.image-container img {
-    border-radius: 8px;
-    width: 100%;
-    height: auto;
-}
-
-.stats {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.stats h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.stats p {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-.stats strong {
-    font-size: 1.1rem;
-    color: #34e852;
-}
-
-@media (max-width: 768px) {
-    .project-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .image-container {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-}
-
 /* Footer */
 footer {
     background-color: #f8f9fa;
@@ -400,94 +340,66 @@ footer {
 /* Carousel Section */
 .carousel-container {
     position: relative;
-    overflow: hidden;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    display: block;
-    min-height: 300px;
+    overflow: hidden;
+    padding: 20px 0;
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
+    transition: transform 0.5s ease;
 }
 
 .carousel-item {
-    min-width: 350px;
-    margin: 0 15px;
-    text-align: center;
-    transition: opacity 0.3s ease;
-    flex: 0 0 auto;
+    flex: 0 0 33.333%;
+    padding: 0 10px;
 }
 
 .carousel-item img {
     width: 100%;
     border-radius: 10px;
-    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
-.carousel-item h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 15px;
+.stats {
+    text-align: center;
+    margin-top: 10px;
 }
 
-.carousel-item .badge {
+.stats h3 {
     font-size: 1.2rem;
-    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
-.carousel-item .year {
-    font-size: 1rem;
-    padding: 5px 10px;
-    background-color: #ff7f50;
+.year {
+    background-color: #FFA500;
     color: white;
+    padding: 3px 8px;
     border-radius: 20px;
-    display: inline-block;
+    font-size: 0.9rem;
 }
 
-/* Carousel control buttons */
-.carousel-control-prev, .carousel-control-next {
-    background-color: rgba(0, 0, 0, 0.1);
-    border: none;
-    color: #333;
-    font-size: 2rem;
-    padding: 10px;
-    cursor: pointer;
+.carousel-control-prev,
+.carousel-control-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
 }
 
 .carousel-control-prev {
-    left: 0;
+    left: 10px;
 }
 
 .carousel-control-next {
-    right: 0;
-}
-
-/* Fade effect for carousel sides */
-.carousel-container::before,
-.carousel-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-    z-index: 2;
-}
-
-.carousel-container::before {
-    left: 0;
-    transform: rotate(180deg);
-}
-
-.carousel-container::after {
-    right: 0;
+    right: 10px;
 }
 
 /* View on Roblox button */
@@ -501,7 +413,6 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-    /* Center the button */
     display: inline-block;
     text-align: center;
     max-width: 300px;
@@ -515,7 +426,7 @@ footer {
 
 @media (max-width: 768px) {
     .carousel-item {
-        min-width: 250px;
+        flex: 0 0 100%;
     }
 }
 
@@ -687,7 +598,7 @@ footer {
 }
 
 .text-xl {
-    font-size: 1.25rem;
+    font-size: 1.25rem
 }
 
 .bg-pageOrange {
@@ -748,5 +659,141 @@ footer {
 
     .lg\:text-size26 {
         font-size: 1.625rem;
+    }
+}
+
+/* Additional styles for the carousel */
+.carousel-item {
+    transition: opacity 0.3s ease;
+}
+
+.carousel-item:not(.active) {
+    opacity: 0.5;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107;
+    color: #000;
+    font-size: 0.8rem;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+.year {
+    display: inline-block;
+    background-color: #FFA500;
+    color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+}
+
+/* Ensure images maintain aspect ratio */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Center content in carousel items */
+.carousel-item {
+    text-align: center;
+}
+
+/* Style for the "View on Roblox" button */
+.roundButtonClass {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.roundButtonClass:hover {
+    background-color: #2563EB;
+    transform: translateY(-2px);
+}
+
+/* Fade effect for carousel sides */
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve button and interactive element accessibility */
+button, 
+a[href],
+input[type='submit'],
+input[type='image'],
+label[for],
+select,
+.pointer {
+  cursor: pointer;
+}
+
+/* Improve form element styling */
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Improve accessibility for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Ensure consistency across browsers */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve responsiveness for very large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Improve print styles */
+@media print {
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    a, a:visited {
+        text-decoration: underline;
+    }
+    
+    .no-print,
+    .no-print * {
+        display: none !important;
     }
 }
