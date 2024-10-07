@@ -317,8 +317,6 @@ body {
     }
 }
 
-/* New/Modified CSS */
-
 /* Projects section */
 #projects {
     background-color: #ffffff;
@@ -399,4 +397,106 @@ footer {
     color: #333;
     padding: 20px 0;
     font-family: 'Outfit', sans-serif;
+}
+
+/* New Games Carousel Section */
+#games {
+    padding: 60px 0;
+}
+
+#games h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#games p {
+    font-size: 1.2rem;
+    color: #6b6b6b;
+    margin-bottom: 40px;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-item {
+    min-width: 300px;
+    margin: 0 15px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-item h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.release-year {
+    background-color: #ff7f50;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 2;
+}
+
+.carousel-container::before {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.carousel-container::after {
+    right: 0;
+}
+
+/* View on Roblox button */
+.view-roblox-btn {
+    background-color: #34c4e8;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.view-roblox-btn:hover {
+    background-color: #289bc1;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 250px;
+    }
 }
