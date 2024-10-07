@@ -183,30 +183,34 @@
 
     <!-- Carousel Functionality -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            updateCarousel(); // Initialize the carousel on page load
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.carousel');
+  const items = document.querySelectorAll('.carousel-item');
+  const prevButton = document.querySelector('.carousel-control.prev');
+  const nextButton = document.querySelector('.carousel-control.next');
+  let currentIndex = 0;
 
-        const carousel = document.querySelector('.carousel');
-        let currentIndex = 0;
-        const totalItems = document.querySelectorAll('.carousel-item').length;
+  function updateCarousel() {
+    const itemWidth = items[0].offsetWidth;
+    carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
 
-        function updateCarousel() {
-            const itemWidth = document.querySelector('.carousel-item').offsetWidth + 30; // Add margin
-            const offset = currentIndex * -itemWidth; // Calculate the correct offset
-            carousel.style.transform = `translateX(${offset}px)`;
-            console.log(`Current index: ${currentIndex}, Offset: ${offset}`); // For debugging
-        }
+  function showNextItem() {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+  }
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateCarousel();
-        }
+  function showPrevItem() {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel();
+  }
 
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-            updateCarousel();
-        }
+  nextButton.addEventListener('click', showNextItem);
+  prevButton.addEventListener('click', showPrevItem);
+
+  // Optional: Auto-slide every 5 seconds
+  setInterval(showNextItem, 5000);
+});
     </script>
 </body>
 </html>
