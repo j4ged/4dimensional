@@ -130,7 +130,7 @@ body {
 }
 
 /* Padding adjustments for sections */
-#home, #about, #about-us, #team {
+#home, #about, #about-us, #team, #projects {
     padding-top: 120px;
 }
 
@@ -293,39 +293,45 @@ body {
     font-weight: normal;
 }
 
+/* Projects section */
+#projects {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 40px;
+}
+
+#projects h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 20px;
+}
+
+#projects ul {
+    font-size: 1.2rem;
+    color: #6b6b6b;
+    font-family: 'Outfit', sans-serif;
+}
+
+#projects img {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
 /* Footer */
 footer {
     background-color: #f8f9fa;
     color: #333;
     padding: 20px 0;
     font-family: 'Outfit', sans-serif;
-}
-
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: static;
-        justify-content: flex-start;
-    }
-    
-    .navbar-nav {
-        width: 100%;
-        justify-content: flex-start;
-    }
-}
-
-@media (max-width: 768px) {
-    .stat-box {
-        margin-bottom: 30px;
-    }
-    
-    #about h2 {
-        font-size: 2rem;
-    }
-    
-    .stat-box h3 {
-        font-size: 2rem;
-    }
 }
 
 /* Additional styles */
@@ -361,4 +367,35 @@ footer {
     margin-top: 20px;
     color: #333;
     font-family: 'Outfit', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: static;
+        justify-content: flex-start;
+    }
+    
+    .navbar-nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .stat-box {
+        margin-bottom: 30px;
+    }
+    
+    #about h2, #projects h2 {
+        font-size: 2rem;
+    }
+    
+    .stat-box h3, #projects h3 {
+        font-size: 1.75rem;
+    }
+    
+    #projects ul {
+        font-size: 1.1rem;
+    }
 }
