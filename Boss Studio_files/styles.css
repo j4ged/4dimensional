@@ -357,11 +357,11 @@ footer {
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
-    width: 100%; /* Changed from 300% to 100% */
+    width: 300%; /* Show all three items */
 }
 
 .carousel-item {
-    flex: 0 0 33.333%; /* This ensures all three items are visible */
+    flex: 0 0 33.333%;
     padding: 15px;
     box-sizing: border-box;
     min-height: 250px;
@@ -374,9 +374,9 @@ footer {
 
 .carousel-item img {
     width: 100%;
-    max-width: 200px; /* Reduced from 300px to fit better */
+    max-width: 200px;
     height: auto;
-    max-height: 150px; /* Reduced from 200px to fit better */
+    max-height: 150px;
     object-fit: cover;
     border-radius: 10px;
 }
