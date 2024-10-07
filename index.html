@@ -30,16 +30,17 @@
             position: relative;
             width: 100%;
             overflow: hidden;
+            margin-bottom: 40px;
         }
 
         .carousel-wrapper {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bouncy easing */
         }
 
         .carousel-item {
-            min-width: 300px; /* Set min width to 300px for each item */
-            margin: 0 10px; /* Space between items */
+            min-width: 300px;
+            margin: 0 10px;
             text-align: center;
             height: 300px;
             display: flex;
@@ -47,19 +48,23 @@
             align-items: center;
             font-size: 24px;
             color: white;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+            border: 2px solid white;
         }
 
-        /* Placeholder colors */
+        /* Placeholder colors inside the white frames */
         .carousel-item.red {
-            background-color: red;
+            background: linear-gradient(to bottom right, red, darkred);
         }
 
         .carousel-item.green {
-            background-color: green;
+            background: linear-gradient(to bottom right, green, darkgreen);
         }
 
         .carousel-item.blue {
-            background-color: blue;
+            background: linear-gradient(to bottom right, blue, darkblue);
         }
 
         /* Arrow navigation styling */
@@ -67,13 +72,15 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: #34c4e8;
             color: white;
-            border: none;
+            border: 2px solid white; /* White stroke */
             font-size: 2rem;
             padding: 10px;
             cursor: pointer;
             z-index: 10;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for buttons */
         }
 
         .carousel-control.prev {
@@ -82,6 +89,10 @@
 
         .carousel-control.next {
             right: 10px;
+        }
+
+        .carousel-control:hover {
+            background-color: #288fb6; /* Darker blue on hover */
         }
     </style>
 </head>
@@ -230,7 +241,7 @@
             const prevButton = document.querySelector('.carousel-control.prev');
             const nextButton = document.querySelector('.carousel-control.next');
             let currentIndex = 1; // Ensure red is in the center
-            
+
             function updateCarousel() {
                 const itemWidth = items[0].offsetWidth + 20; // Include margin
                 const translateX = -(currentIndex - 1) * itemWidth; 
