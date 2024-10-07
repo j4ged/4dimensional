@@ -122,10 +122,10 @@
                 </div>
             </div>
             
-            <button class="carousel-control carousel-control-prev" onclick="prevSlide()">
+            <button class="carousel-control carousel-control-prev">
                 <i class="bi bi-chevron-left"></i>
             </button>
-            <button class="carousel-control carousel-control-next" onclick="nextSlide()">
+            <button class="carousel-control carousel-control-next">
                 <i class="bi bi-chevron-right"></i>
             </button>
         </div>
@@ -182,7 +182,7 @@
 
     <!-- Carousel Functionality -->
     <script>
-       let currentIndex = 0;
+      let currentIndex = 0;
 const carousel = document.querySelector('.carousel');
 const items = document.querySelectorAll('.carousel-item');
 
@@ -190,7 +190,7 @@ console.log('Carousel element:', carousel);
 console.log('Carousel items:', items);
 
 function updateCarousel() {
-    const itemWidth = items[0].offsetWidth;
+    const itemWidth = carousel.offsetWidth / 3; // Assuming 3 items visible at once
     console.log('Item width:', itemWidth);
     carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     console.log('Current transform:', carousel.style.transform);
@@ -222,6 +222,10 @@ updateCarousel();
 setInterval(nextSlide, 5000);
 
 console.log('Carousel script loaded');
+
+// Add event listeners to the buttons
+document.querySelector('.carousel-control-prev').addEventListener('click', prevSlide);
+document.querySelector('.carousel-control-next').addEventListener('click', nextSlide);
     </script>
 </body>
 </html>
