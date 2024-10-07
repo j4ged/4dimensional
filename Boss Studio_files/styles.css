@@ -342,571 +342,285 @@ footer {
     border: 2px solid red;
 }
 
-/* Carousel styles */
-.carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 20px 0;
-    min-height: 300px;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%; /* Changed from 300% to 100% */
-}
-
-.carousel-item {
-    flex: 0 0 33.333%;
-    padding: 15px;
-    box-sizing: border-box;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-item img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.stats {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.stats h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.carousel-control-prev {
-    left: 10px;
-}
-
-.carousel-control-next {
-    right: 10px;
-}
-
-/* Additional styles for the carousel */
-.carousel-item {
-    transition: opacity 0.3s ease;
-}
-
-.carousel-item:not(.active) {
-    opacity: 0.5;
-}
-
-.badge.bg-warning {
-    background-color: #ffc107;
-    color: #000;
-    font-size: 0.8rem;
-    padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    margin-right: 0.5rem;
-}
-
-.year {
-    display: inline-block;
-    background-color: #FFA500;
-    color: white;
-    padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    font-size: 0.8rem;
-}
-
-/* Ensure images maintain aspect ratio */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Center content in carousel items */
-.carousel-item {
-    text-align: center;
-}
-
-/* Style for the "View on Roblox" button */
-.roundButtonClass {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.roundButtonClass:hover {
-    background-color: #2563EB;
-    transform: translateY(-2px);
-}
-
-/* Fade effect for carousel sides */
-.carousel-container::before,
-.carousel-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.carousel-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-}
-
-.carousel-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-}
-
-/* Smooth scrolling for the whole page */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Improve button and interactive element accessibility */
-button, 
-a[href],
-input[type='submit'],
-input[type='image'],
-label[for],
-select,
-.pointer {
-  cursor: pointer;
-}
-
-/* Improve form element styling */
-input, textarea, select {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-
-/* Improve accessibility for screen readers */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Ensure consistency across browsers */
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Improve responsiveness for very large screens */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1320px;
-    }
-}
-
-/* Improve print styles */
-@media print {
-    body {
-        color: #000;
-        background: #fff;
-    }
-    
-    a, a:visited {
-        text-decoration: underline;
-    }
-    
-    .no-print,
-    .no-print * {
-        display: none !important;
-    }
-}
-
-/* Existing utility classes and responsive design */
+/* Carousel container and structure */
 .w-full {
-    width: 100%;
+  width: 100%;
 }
 
 .relative {
-    position: relative;
+  position: relative;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .pb-[175px] {
-    padding-bottom: 175px;
+  padding-bottom: 175px;
 }
 
 .pt-[50px] {
-    padding-top: 50px;
+  padding-top: 50px;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
 }
 
 .pt-14 {
-    padding-top: 3.5rem;
+  padding-top: 3.5rem;
 }
 
+/* Header styles */
 .title {
-    font-weight: bold;
+  font-weight: 800;
+  color: rgb(43 43 43/var(--tw-text-opacity));
 }
 
 .text-size34 {
-    font-size: 2.125rem;
+  font-size: 2.125rem;
 }
 
 .description {
-    color: #6B7280;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(126 126 126/var(--tw-text-opacity));
 }
 
 .mt-2 {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.overflow-x-hidden {
-    overflow-x: hidden;
-}
-
+/* Carousel navigation */
 .absolute {
-    position: absolute;
+  position: absolute;
 }
 
 .top-[50%] {
-    top: 50%;
+  top: 50%;
 }
 
 .left-[50%] {
-    left: 50%;
+  left: 50%;
 }
 
 .transform-gpu {
-    transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate3d(var(--tw-translate-x),var(--tw-translate-y),0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .translate-x-[-50%] {
-    --tw-translate-x: -50%;
+  --tw-translate-x: -50%;
 }
 
 .translate-y-[-50%] {
-    --tw-translate-y: -50%;
+  --tw-translate-y: -50%;
 }
 
 .z-[90] {
-    z-index: 90;
+  z-index: 90;
 }
 
 .w-screen {
-    width: 100vw;
+  width: 100vw;
 }
 
 .justify-around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .px-20 {
-    padding-left: 5rem;
-    padding-right: 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .cursor-pointer {
-    cursor: pointer;
-}
-
-.md\:flex {
-    @media (min-width: 768px) {
-        display: flex;
-    }
-}
-
-.md\:w-[calc(33%*9)] {
-    @media (min-width: 768px) {
-        width: calc(33% * 9);
-    }
-}
-
-.gap-2 {
-    gap: 0.5rem;
-}
-
-.snap-x {
-    scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
-.snap-mandatory {
-    --tw-scroll-snap-strictness: mandatory;
-}
-
-.p-5 {
-    padding: 1.25rem;
-}
-
-.h-full {
-    height: 100%;
-}
-
-.md\:w-1/3 {
-    @media (min-width: 768px) {
-        width: 33.333333%;
-    }
-}
-
-.rounded-3xl {
-    border-radius: 1.5rem;
-}
-
-.bg-white\/90 {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.aspect-video {
-    aspect-ratio: 16 / 9;
-}
-
-.mt-5 {
-    margin-top: 1.25rem;
-}
-
-.mb-1 {
-    margin-bottom: 0.25rem;
-}
-
-.text-pageBlack {
-    color: #000000;
-}
-
-.font-bold {
-    font-weight: 700;
-}
-
-.text-xl {
-    font-size: 1.25rem
-}
-
-.bg-pageOrange {
-    background-color: #FFA500;
-}
-
-.tracking-wider {
-    letter-spacing: 0.05em;
-}
-
-.text-white {
-    color: #FFFFFF;
-}
-
-.px-3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-}
-
-.py-1 {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-}
-
-.mt-2 {
-    margin-top: 0.5rem;
-}
-
-.roundButtonClass {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.bg-pageBlue {
-    background-color: #3B82F6;
-}
-
-.shadow-glowBlue {
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-}
-
-@media (min-width: 1024px) {
-    .lg\:text-size50 {
-        font-size: 3.125rem;
-    }
-
-    .lg\:text-size22 {
-        font-size: 1.375rem;
-    }
-
-    .lg\:mt-4 {
-        margin-top: 1rem;
-    }
-
-    .lg\:text-size26 {
-        font-size: 1.625rem;
-    }
-}
-
-/* Additional styles for the carousel */
-.carousel-item {
-    transition: opacity 0.3s ease;
-}
-
-.carousel-item:not(.active) {
-    opacity: 0.5;
-}
-
-.badge.bg-warning {
-    background-color: #ffc107;
-    color: #000;
-    font-size: 0.8rem;
-    padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    margin-right: 0.5rem;
-}
-
-.year {
-    display: inline-block;
-    background-color: #FFA500;
-    color: white;
-    padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    font-size: 0.8rem;
-}
-
-/* Ensure images maintain aspect ratio */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Center content in carousel items */
-.carousel-item {
-    text-align: center;
-}
-
-/* Style for the "View on Roblox" button */
-.roundButtonClass {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.roundButtonClass:hover {
-    background-color: #2563EB;
-    transform: translateY(-2px);
-}
-
-/* Fade effect for carousel sides */
-.carousel-container::before,
-.carousel-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.carousel-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-}
-
-.carousel-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-}
-
-/* Smooth scrolling for the whole page */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Improve button and interactive element accessibility */
-button, 
-a[href],
-input[type='submit'],
-input[type='image'],
-label[for],
-select,
-.pointer {
   cursor: pointer;
 }
 
-/* Improve form element styling */
-input, textarea, select {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+/* Carousel content */
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
-/* Improve accessibility for screen readers */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+.w-[calc(100%*9)] {
+  width: calc(100% * 9);
 }
 
-/* Ensure consistency across browsers */
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.gap-2 {
+  gap: 0.5rem;
 }
 
-/* Improve responsiveness for very large screens */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1320px;
-    }
+.snap-x {
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
 }
 
-/* Improve print styles */
-@media print {
-    body {
-        color: #000;
-        background: #fff;
-    }
-    
-    a, a:visited {
-        text-decoration: underline;
-    }
-    
-    .no-print,
-    .no-print * {
-        display: none !important;
-    }
+.snap-mandatory {
+  --tw-scroll-snap-strictness: mandatory;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+/* Game card styles */
+.h-full {
+  height: 100%;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.bg-white\/90 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.text-pageBlack {
+  --tw-text-opacity: 1;
+  color: rgb(43 43 43/var(--tw-text-opacity));
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.bg-pageOrange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 157 67/var(--tw-bg-opacity));
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* "View on Roblox" button styles */
+.roundButtonClass {
+  transform: translate3d(var(--tw-translate-x),var(--tw-translate-y),0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .2s;
+  display: flex;
+  height: 3.75rem;
+  width: 220px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.bg-pageBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 117 254/var(--tw-bg-opacity));
+}
+
+.shadow-glowBlue {
+  --tw-shadow: 0px 5px 10px rgba(54,70,76,.05),0px 0px 20px 4px rgba(67,117,254,.5);
+  --tw-shadow-colored: 0px 5px 10px var(--tw-shadow-color),0px 0px 20px 4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+  
+  .md\:w-[calc(33%*9)] {
+    width: calc(33% * 9);
+  }
+  
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-size50 {
+    font-size: 3.125rem;
+  }
+
+  .lg\:text-size22 {
+    font-size: 1.375rem;
+  }
+
+  .lg\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .lg\:text-size26 {
+    font-size: 1.625rem;
+  }
+}
+
+/* Swiper styles (if used) */
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
 }
