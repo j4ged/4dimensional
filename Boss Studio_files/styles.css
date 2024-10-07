@@ -353,7 +353,7 @@ footer {
 }
 
 .carousel-item {
-    flex: 0 0 33.333%;
+    flex: 0 0 100%;
     padding: 0 10px;
 }
 
@@ -382,16 +382,17 @@ footer {
     font-size: 0.9rem;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
     font-size: 2rem;
-    color: #333;
+    padding: 10px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .carousel-control-prev {
@@ -402,31 +403,9 @@ footer {
     right: 10px;
 }
 
-/* View on Roblox button */
-.view-roblox-btn {
-    background-color: #34c4e8;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    display: inline-block;
-    text-align: center;
-    max-width: 300px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.view-roblox-btn:hover {
-    background-color: #289bc1;
-}
-
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .carousel-item {
-        flex: 0 0 100%;
+        flex: 0 0 33.333%;
     }
 }
 
