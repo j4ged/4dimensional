@@ -43,14 +43,18 @@
             margin: 0 10px;
             text-align: center;
             height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
             background-color: white;
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Larger black shadow */
-            border: none; /* Removed borders */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Smaller and more transparent shadow */
+            border: none; /* No borders */
+            opacity: 0.5; /* Default opacity for unselected */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .carousel-item.active {
+            transform: scale(1.1); /* Slightly enlarge the active item */
+            opacity: 1; /* Fully opaque when active */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Larger shadow when active */
         }
 
         /* Arrow navigation styling */
@@ -60,8 +64,8 @@
             transform: translateY(-50%);
             background-color: #34c4e8;
             color: white;
-            border: 3px solid white; /* Thicker white stroke */
-            font-size: 1.8rem; /* Slightly smaller arrow icons */
+            border: 4px solid white; /* Thicker white stroke */
+            font-size: 1.5rem; /* Slightly smaller arrow icons */
             padding: 10px;
             cursor: pointer;
             z-index: 10;
@@ -171,9 +175,9 @@
                 <div class="carousel-container">
                     <div class="carousel-wrapper">
                         <!-- Placeholder items with solid white and shadows -->
-                        <div class="carousel-item">Placeholder 1</div>
-                        <div class="carousel-item">Placeholder 2</div>
-                        <div class="carousel-item">Placeholder 3</div>
+                        <div class="carousel-item"></div>
+                        <div class="carousel-item"></div>
+                        <div class="carousel-item"></div>
                     </div>
                     <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
                     <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
@@ -240,11 +244,20 @@
             const items = document.querySelectorAll('.carousel-item');
             const prevButton = document.querySelector('.carousel-control.prev');
             const nextButton = document.querySelector('.carousel-control.next');
-            let currentIndex = 1; // Ensure red is in the center
+            let currentIndex = 1; // Ensure first item is in the center
 
             function updateCarousel() {
+                items.forEach((item, index) => {
+                    item.classList.remove('active'); // Remove active class from all
+                    item.style.opacity = '0.5'; // Reduce opacity for all
+                    item.style.transform = 'scale(1)'; // Reset scale for all
+                });
+                items[currentIndex].classList.add('active'); // Add active class to center
+                items[currentIndex].style.opacity = '1'; // Make center item fully visible
+                items[currentIndex].style.transform = 'scale(1.1)'; // Slightly enlarge center item
+
                 const itemWidth = items[0].offsetWidth + 20; // Include margin
-                const translateX = -(currentIndex - 1) * itemWidth; 
+                const translateX = -(currentIndex - 1) * itemWidth;
                 carousel.style.transform = `translateX(${translateX}px)`;
             }
 
