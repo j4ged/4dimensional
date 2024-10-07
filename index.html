@@ -229,11 +229,11 @@
             const items = document.querySelectorAll('.carousel-item');
             const prevButton = document.querySelector('.carousel-control.prev');
             const nextButton = document.querySelector('.carousel-control.next');
-            let currentIndex = 1; // Start with red in the center
+            let currentIndex = 0; // Start with red in the center
 
             function updateCarousel() {
                 const itemWidth = items[0].offsetWidth + 20; // Include margin
-                const translateX = -(currentIndex - 1) * itemWidth;
+                const translateX = -currentIndex * itemWidth;
                 carousel.style.transform = `translateX(${translateX}px)`;
             }
 
