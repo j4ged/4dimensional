@@ -456,6 +456,7 @@ footer {
     margin-top: 5px;
 }
 
+/* Carousel control buttons */
 .carousel-control-prev, .carousel-control-next {
     background-color: rgba(0, 0, 0, 0.1);
     border: none;
@@ -475,6 +476,7 @@ footer {
     right: 0;
 }
 
+/* Fade effect for carousel sides */
 .carousel-container::before,
 .carousel-container::after {
     content: '';
@@ -506,6 +508,10 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    /* Center the button */
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 .view-roblox-btn:hover {
