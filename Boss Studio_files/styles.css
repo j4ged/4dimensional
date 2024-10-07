@@ -227,7 +227,7 @@ body {
 /* Green Stat Box */
 .stat-box.green {
     background-color: #34e852; /* Solid Green */
-    box-shadow: 0 10px 30px rgba(52, 232, 82, 0.7); /* Green glow shadow */
+    box-shadow: 0 0 15px 0 rgba(52, 232, 82, 0.5);
 }
 
 .stat-box.green h3, .stat-box.green p, .stat-box.green .small-text {
@@ -251,7 +251,7 @@ body {
 /* Blue Stat Box */
 .stat-box.blue {
     background-color: #34c4e8; /* Solid Blue */
-    box-shadow: 0 10px 30px rgba(52, 196, 232, 0.7); /* Blue glow shadow */
+    box-shadow: 0 0 15px 0 rgba(52, 196, 232, 0.5); /* Subtle blue glow */
 }
 
 .stat-box.blue h3, .stat-box.blue p, .stat-box.blue .small-text {
@@ -275,7 +275,7 @@ body {
 /* Red Stat Box */
 .stat-box.red {
     background-color: #ff434a; /* Solid Red */
-    box-shadow: 0 10px 30px rgba(255, 67, 74, 0.7); /* Red glow shadow */
+    box-shadow: 0 0 15px 0 rgba(255, 67, 74, 0.5); /* Subtle red glow */
 }
 
 .stat-box.red h3, .stat-box.red p, .stat-box.red .small-text {
