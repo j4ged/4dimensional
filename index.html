@@ -95,28 +95,43 @@
         <div class="carousel-container">
             <div class="carousel">
                 <div class="carousel-item">
-                    <img src="Boss Studio_files/anshul.png" alt="Swordmaster Simulator" class="img-fluid">
-                    <div class="stats">
-                        <h3>Swordmaster Simulator</h3>
-                        <span class="badge bg-warning">🔥</span>
-                        <span class="year">2024</span>
-                    </div>
+                   <div class="w-full relative flex justify-center pb-[175px] pt-[50px]">
+    <div class="w-full">
+        <div class="relative overflow-x-hidden">
+            <div class="absolute top-[50%] left-[50%] transform-gpu translate-x-[-50%] translate-y-[-50%] z-[90]">
+               <div class="w-screen justify-around px-20 hidden md:flex">
+    <div class="cursor-pointer">
+        <i class="bi bi-chevron-left" style="font-size: 2rem;"></i>
+    </div>
+    <div class="cursor-pointer">
+        <i class="bi bi-chevron-right" style="font-size: 2rem;"></i>
+    </div>
+</div>
+            </div>
+            <div class="overflow-x-hidden relative w-[calc(100%*9)] md:w-[calc(33%*9)] flex justify-center gap-2 snap-x snap-mandatory p-5">
+                <!-- Repeat this div for each game -->
+                <div style="transform:translateX(0%);box-shadow:0px 0px 35px -16px rgba(54, 70, 76, 1)" class="h-full w-full md:w-1/3 relative p-5 rounded-3xl bg-white/90">
+                    <a href="[game-link]">
+                        <div class="relative aspect-video overflow-hidden rounded-3xl">
+                            <img alt="[game-name]" loading="lazy" width="454" height="272.4" decoding="async" data-nimg="1" style="color:transparent;width:100%;height:auto" sizes="100vw" src="[game-image-url]"/>
+                        </div>
+                        <header class="flex flex-col items-center mt-5 mb-1">
+                            <h2 class="text-pageBlack font-bold text-xl lg:text-size26">[game-name]</h2>
+                            <p class="bg-pageOrange tracking-wider text-white font-bold px-3 py-1 rounded-full mt-2">[game-year]</p>
+                        </header>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <img src="Boss Studio_files/anshul.png" alt="Click Simulator" class="img-fluid">
-                    <div class="stats">
-                        <h3>Click Simulator</h3>
-                        <span class="badge bg-warning">🔥</span>
-                        <span class="year">2023</span>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="Boss Studio_files/anshul.png" alt="Punching Simulator" class="img-fluid">
-                    <div class="stats">
-                        <h3>Punching Simulator</h3>
-                        <span class="badge bg-warning">🔥</span>
-                        <span class="year">2023</span>
-                    </div>
+                <!-- Repeat for other games -->
+            </div>
+        </div>
+        <div class="flex justify-center mt-4 mb-3 py-2">
+            <a class="roundButtonClass flex flex-row-reverse bg-pageBlue shadow-glowBlue" href="[roblox-link]">
+                <img alt="icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/arrow.69d54574.svg"/>
+                <span class="">View on Roblox</span>
+            </a>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
             <button class="carousel-control carousel-control-prev">&lt;</button>
@@ -176,49 +191,26 @@
     <!-- Carousel Functionality -->
     <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.overflow-x-hidden.relative');
+    const items = carousel.querySelectorAll('.md\\:w-1\\/3');
+    const prevButton = document.querySelector('.bi-chevron-left').parentElement;
+    const nextButton = document.querySelector('.bi-chevron-right').parentElement;
     let currentIndex = 0;
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
 
     function updateCarousel() {
-        const containerWidth = document.querySelector('.carousel-container').offsetWidth;
-        const itemWidth = containerWidth / 3; // Show three items at once
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        console.log('Updated carousel position:', currentIndex * itemWidth);
+        const offset = -currentIndex * 100 / 3;
+        carousel.style.transform = `translateX(${offset}%)`;
     }
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalItems;
+    prevButton.addEventListener('click', () => {
+        currentIndex = Math.max(currentIndex - 1, 0);
         updateCarousel();
-    }
+    });
 
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    nextButton.addEventListener('click', () => {
+        currentIndex = Math.min(currentIndex + 1, items.length - 3);
         updateCarousel();
-    }
-
-    // Update carousel on window resize
-    window.addEventListener('resize', updateCarousel);
-
-    // Initialize carousel
-    updateCarousel();
-
-    // Add event listeners to the buttons
-    document.querySelector('.carousel-control-prev').addEventListener('click', prevSlide);
-    document.querySelector('.carousel-control-next').addEventListener('click', nextSlide);
-
-    // Log dimensions for debugging
-    function logDimensions() {
-        console.log('Carousel container:', document.querySelector('.carousel-container').offsetWidth, 'x', document.querySelector('.carousel-container').offsetHeight);
-        console.log('Carousel:', carousel.offsetWidth, 'x', carousel.offsetHeight);
-        items.forEach((item, index) => {
-            console.log(`Item ${index}:`, item.offsetWidth, 'x', item.offsetHeight);
-        });
-    }
-
-    logDimensions();
-    window.addEventListener('resize', logDimensions);
+    });
 });
     </script>
 </body>
