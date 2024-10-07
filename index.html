@@ -88,59 +88,47 @@
         </section>
 
        <section id="projects">
-    <div class="w-full relative flex justify-center pb-[175px] pt-[50px]">
-        <div class="w-full">
-            <header class="leading-6 relative pt-14">
-                <h2 class="title text-size34 lg:text-size50">Our Games</h2>
-                <p class="description lg:text-size22 mt-2 lg:mt-4">Check out our ever expanding library of games here.</p>
-            </header>
-            <div class="carousel-container">
-                <div class="absolute top-[50%] left-[50%] transform-gpu translate-x-[-50%] translate-y-[-50%] z-[90]">
-                    <div class="w-screen justify-around px-20 hidden md:flex">
-                        <div class="cursor-pointer carousel-control prev">
-                            <img alt="arrow_left" loading="lazy" width="80" height="80" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/imgSliderArrowLeft.b72fdc16.svg"/>
-                        </div>
-                        <div class="cursor-pointer carousel-control next">
-                            <img alt="arrow_right" loading="lazy" width="80" height="80" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/imgSliderArrowRight.e631e21d.svg"/>
-                        </div>
+    <div class="container mt-4">
+        <h2 class="text-center mb-2">Our Games</h2>
+        <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
+
+        <div class="carousel-container">
+            <button class="carousel-control-prev" onclick="prevSlide()">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="Boss Studio_files/anshul.png" alt="Swordmaster Simulator" class="img-fluid">
+                    <div class="stats">
+                        <h3>Swordmaster Simulator</h3>
+                        <span class="badge bg-warning">🔥</span>
+                        <span class="year">2024</span>
                     </div>
                 </div>
-                <div class="carousel">
-                    <div class="carousel-item">
-                        <a href="https://www.roblox.com/games/swordmaster-simulator">
-                            <div class="game-card">
-                                <img alt="Swordmaster Simulator" loading="lazy" width="1920" height="1080" decoding="async" data-nimg="1" style="color:transparent;width:100%;height:auto" src="Boss Studio_files/anshul.png"/>
-                                <h3>Swordmaster Simulator</h3>
-                                <span class="year-tag">2024</span>
-                            </div>
-                        </a>
+
+                <div class="carousel-item">
+                    <img src="Boss Studio_files/anshul.png" alt="Click Simulator" class="img-fluid">
+                    <div class="stats">
+                        <h3>Click Simulator</h3>
+                        <span class="badge bg-warning">🔥</span>
+                        <span class="year">2023</span>
                     </div>
-                    <div class="carousel-item">
-                        <a href="https://www.roblox.com/games/click-simulator">
-                            <div class="game-card">
-                                <img alt="Click Simulator" loading="lazy" width="1920" height="1080" decoding="async" data-nimg="1" style="color:transparent;width:100%;height:auto" src="Boss Studio_files/anshul.png"/>
-                                <h3>Click Simulator</h3>
-                                <span class="year-tag">2023</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="https://www.roblox.com/games/punching-simulator">
-                            <div class="game-card">
-                                <img alt="Punching Simulator" loading="lazy" width="1920" height="1080" decoding="async" data-nimg="1" style="color:transparent;width:100%;height:auto" src="Boss Studio_files/anshul.png"/>
-                                <h3>Punching Simulator</h3>
-                                <span class="year-tag">2023</span>
-                            </div>
-                        </a>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Boss Studio_files/anshul.png" alt="Punching Simulator" class="img-fluid">
+                    <div class="stats">
+                        <h3>Punching Simulator</h3>
+                        <span class="badge bg-warning">🔥</span>
+                        <span class="year">2023</span>
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center mt-4 mb-3 py-2">
-                <a class="roundButtonClass flex flex-row-reverse bg-pageBlue shadow-glowBlue" href="https://www.roblox.com/games">
-                    <img alt="icon" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" style="color:transparent" src="/_next/static/media/arrow.69d54574.svg"/>
-                    <span class="">View on Roblox</span>
-                </a>
-            </div>
+
+            <button class="carousel-control-next" onclick="nextSlide()">
+                <i class="bi bi-chevron-right"></i>
+            </button>
         </div>
     </div>
 </section>
@@ -195,34 +183,30 @@
 
     <!-- Carousel Functionality -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.querySelector('.carousel');
-  const items = document.querySelectorAll('.carousel-item');
-  const prevButton = document.querySelector('.carousel-control.prev');
-  const nextButton = document.querySelector('.carousel-control.next');
-  let currentIndex = 0;
+       let currentIndex = 0;
+const carousel = document.querySelector('.carousel');
+const items = document.querySelectorAll('.carousel-item');
 
-  function updateCarousel() {
+function updateCarousel() {
     const itemWidth = items[0].offsetWidth;
     carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-  }
+}
 
-  function showNextItem() {
+function nextSlide() {
     currentIndex = (currentIndex + 1) % items.length;
     updateCarousel();
-  }
+}
 
-  function showPrevItem() {
+function prevSlide() {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     updateCarousel();
-  }
+}
 
-  nextButton.addEventListener('click', showNextItem);
-  prevButton.addEventListener('click', showPrevItem);
+// Update carousel on window resize
+window.addEventListener('resize', updateCarousel);
 
-  // Optional: Auto-slide every 5 seconds
-  setInterval(showNextItem, 5000);
-});
+// Optional: Auto-slide every 5 seconds
+setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
