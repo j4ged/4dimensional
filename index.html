@@ -214,34 +214,35 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Next Button:', nextButton);
 
     function updateCarousel() {
-        const itemWidth = items[0].offsetWidth;
-        const translate = -currentIndex * itemWidth;
-        console.log('Updating carousel:', { currentIndex, itemWidth, translate });
-        carousel.style.transform = `translateX(${translate}px)`;
-    }
+    const containerWidth = carousel.offsetWidth;
+    const itemWidth = items[0].offsetWidth;
+    const visibleItems = Math.floor(containerWidth / itemWidth);
+    const maxIndex = items.length - visibleItems;
+    
+    currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+    const translate = -currentIndex * itemWidth;
+    
+    console.log('Updating carousel:', { currentIndex, itemWidth, translate, containerWidth, visibleItems, maxIndex });
+    carousel.style.transform = `translateX(${translate}px)`;
+}
 
     prevButton.addEventListener('click', () => {
-        console.log('Prev button clicked');
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
+    console.log('Prev button clicked');
+    currentIndex = Math.max(0, currentIndex - 1);
+    updateCarousel();
+});
 
-    nextButton.addEventListener('click', () => {
-        console.log('Next button clicked');
-        if (currentIndex < items.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
+nextButton.addEventListener('click', () => {
+    console.log('Next button clicked');
+    currentIndex = Math.min(currentIndex + 1, items.length - 1);
+    updateCarousel();
+});
 
     // Initial update
-    updateCarousel();
+window.addEventListener('load', updateCarousel);
 
-    // Update on window resize
-    window.addEventListener('resize', updateCarousel);
-});
+// Update on window resize
+window.addEventListener('resize', updateCarousel);
     </script>
 </body>
 </html>
