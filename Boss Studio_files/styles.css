@@ -414,15 +414,16 @@ footer {
     margin-bottom: 40px;
 }
 
+/* New Carousel Updates */
 .carousel-container {
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    display: block; /* Add this to ensure it's displayed */
+    display: block; /* Ensure it's visible */
+    min-height: 300px; /* Force minimum height to avoid disappearing carousel */
 }
-
 
 .carousel {
     display: flex;
@@ -435,11 +436,13 @@ footer {
     margin: 0 15px;
     text-align: center;
     transition: opacity 0.3s ease;
+    flex: 0 0 auto; /* Ensure the items are treated as fixed-width items */
 }
 
 .carousel-item img {
     width: 100%;
     border-radius: 10px;
+    display: block; /* Ensure images appear */
 }
 
 .carousel-item h3 {
