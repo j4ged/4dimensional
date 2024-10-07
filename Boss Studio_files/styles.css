@@ -295,7 +295,7 @@ body {
 
 /* Projects section */
 #projects {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     padding: 60px 0;
 }
 
@@ -304,26 +304,77 @@ body {
     font-weight: bold;
     color: #333;
     font-family: 'Outfit', sans-serif;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
-#projects h3 {
+.project-box {
+    background-color: #34e852;
+    border-radius: 15px;
+    padding: 30px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(52, 232, 82, 0.3);
+}
+
+.project-box h3 {
     font-size: 2rem;
     font-weight: bold;
-    color: #333;
-    font-family: 'Outfit', sans-serif;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
-#projects ul {
+.project-box h3 i {
+    margin-left: 10px;
+}
+
+.project-box ul {
     font-size: 1.2rem;
-    color: #6b6b6b;
-    font-family: 'Outfit', sans-serif;
+    list-style-type: none;
+    padding-left: 0;
+    position: relative;
+    z-index: 2;
 }
 
-#projects img {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+.project-box ul li {
+    margin-bottom: 10px;
+}
+
+.project-box ul li i {
+    margin-right: 10px;
+}
+
+.project-box img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.project-box::before {
+    content: '\F4B6';
+    font-family: 'Bootstrap-icons';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 200px;
+    opacity: 0.1;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+
+.project-box::after {
+    content: '\F4B6';
+    font-family: 'Bootstrap-icons';
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    font-size: 150px;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+    z-index: 1;
 }
 
 /* Footer */
@@ -395,7 +446,7 @@ footer {
         font-size: 1.75rem;
     }
     
-    #projects ul {
+    .project-box ul {
         font-size: 1.1rem;
     }
 }
