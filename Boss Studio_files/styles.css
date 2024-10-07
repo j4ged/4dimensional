@@ -430,12 +430,13 @@ footer {
 }
 
 .carousel-item {
-    min-width: 350px;
+    min-width: 450px; /* Adjust this to fit your design */
     margin: 0 15px;
     text-align: center;
     transition: opacity 0.3s ease;
     position: relative;
 }
+
 
 .carousel-item img {
     width: 100%;
