@@ -183,7 +183,7 @@
 
     function updateCarousel() {
         const containerWidth = document.querySelector('.carousel-container').offsetWidth;
-        const itemWidth = containerWidth;
+        const itemWidth = containerWidth / 3; // Show three items at once
         carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
         console.log('Updated carousel position:', currentIndex * itemWidth);
     }
