@@ -202,26 +202,36 @@
     <!-- Carousel Functionality -->
     <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.overflow-x-hidden.relative');
-    const items = carousel.querySelectorAll('.md\\:w-1\\/3');
-    const prevButton = document.querySelector('.bi-chevron-left').parentElement;
-    const nextButton = document.querySelector('.bi-chevron-right').parentElement;
+    const carousel = document.querySelector('.overflow-x-hidden');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
     let currentIndex = 0;
 
     function updateCarousel() {
-        const offset = -currentIndex * 100 / 3;
-        carousel.style.transform = `translateX(${offset}%)`;
+        const itemWidth = items[0].offsetWidth;
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
 
     prevButton.addEventListener('click', () => {
-        currentIndex = Math.max(currentIndex - 1, 0);
-        updateCarousel();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
     });
 
     nextButton.addEventListener('click', () => {
-        currentIndex = Math.min(currentIndex + 1, items.length - 3);
-        updateCarousel();
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
     });
+
+    // Initial update
+    updateCarousel();
+
+    // Update on window resize
+    window.addEventListener('resize', updateCarousel);
 });
     </script>
 </body>
