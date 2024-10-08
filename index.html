@@ -31,30 +31,27 @@
             width: 100%;
             overflow: hidden;
             margin-bottom: 40px;
+            padding: 20px 0; /* Add padding to show shadows */
         }
 
         .carousel-wrapper {
             display: flex;
-            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bouncy easing */
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            justify-content: center; /* Center the items */
         }
 
         .carousel-item {
-            min-width: 300px;
-            margin: 0 10px;
-            text-align: center;
-            height: 300px;
-            background-color: white;
+            min-width: 250px; /* Reduced width for better visibility */
+            height: 250px; /* Reduced height */
+            margin: 0 15px;
+            background-color: #f0f0f0; /* Light gray background */
             border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Smaller and more transparent shadow */
-            border: none; /* No borders */
-            opacity: 0.5; /* Default opacity for unselected */
-            transition: transform 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
         }
 
         .carousel-item.active {
-            transform: scale(1.1); /* Slightly enlarge the active item */
-            opacity: 1; /* Fully opaque when active */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Larger shadow when active */
+            transform: scale(1.1);
         }
 
         /* Arrow navigation styling */
@@ -171,10 +168,8 @@
                 <h2 class="text-center mb-2">Our Games</h2>
                 <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
 
-                <!-- Simplified Carousel with Placeholders -->
                 <div class="carousel-container">
                     <div class="carousel-wrapper">
-                        <!-- Placeholder items with solid white and shadows -->
                         <div class="carousel-item"></div>
                         <div class="carousel-item"></div>
                         <div class="carousel-item"></div>
@@ -244,19 +239,16 @@
             const items = document.querySelectorAll('.carousel-item');
             const prevButton = document.querySelector('.carousel-control.prev');
             const nextButton = document.querySelector('.carousel-control.next');
-            let currentIndex = 1; // Ensure first item is in the center
+            let currentIndex = 1; // Start with the middle item active
 
             function updateCarousel() {
                 items.forEach((item, index) => {
-                    item.classList.remove('active'); // Remove active class from all
-                    item.style.opacity = '0.5'; // Reduce opacity for all
-                    item.style.transform = 'scale(1)'; // Reset scale for all
+                    item.classList.remove('active');
+                    item.style.transform = index === currentIndex ? 'scale(1.1)' : 'scale(1)';
                 });
-                items[currentIndex].classList.add('active'); // Add active class to center
-                items[currentIndex].style.opacity = '1'; // Make center item fully visible
-                items[currentIndex].style.transform = 'scale(1.1)'; // Slightly enlarge center item
+                items[currentIndex].classList.add('active');
 
-                const itemWidth = items[0].offsetWidth + 20; // Include margin
+                const itemWidth = items[0].offsetWidth + 30; // Include margins
                 const translateX = -(currentIndex - 1) * itemWidth;
                 carousel.style.transform = `translateX(${translateX}px)`;
             }
