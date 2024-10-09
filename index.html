@@ -259,10 +259,10 @@ document.addEventListener('DOMContentLoaded', function () {
             let position, zIndex, scale, opacity;
 
             if (currentState === 0) {
-                // Red center, Blue right
+                // Red center, Blue right, Green off-screen right
                 if (index === 0) { position = 0; zIndex = 2; scale = 1.1; opacity = 1; }
                 else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 1; opacity = 0.7; }
-                else { position = -(itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
+                else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
             } else if (currentState === 1) {
                 // Red left, Blue center, Green right
                 position = (index - 1) * (itemWidth + itemSpacing);
@@ -270,8 +270,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 scale = index === 1 ? 1.1 : 1;
                 opacity = index === 1 ? 1 : 0.7;
             } else {
-                // Blue left, Green center, Red left (off-screen)
-                if (index === 0) { position = -(itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
+                // Blue left, Green center, Red off-screen left
+                if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
                 else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 1; opacity = 0.7; }
                 else { position = 0; zIndex = 2; scale = 1.1; opacity = 1; }
             }
