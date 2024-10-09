@@ -37,13 +37,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 800px; /* Significantly increased height */
+        height: 600px; /* Increased height */
         position: relative;
     }
 
     .carousel-item {
-        width: 1800px; /* Significantly increased width */
-        height: 750px; /* Significantly increased height */
+        width: 1300px; /* Significantly increased width */
+        height: 550px; /* Increased height */
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
@@ -52,15 +52,15 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy easing */
         left: 50%;
         transform: translateX(-50%);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
 
     .game-title {
-        padding: 20px;
-        font-size: 32px;
+        padding: 15px;
+        font-size: 24px;
         font-weight: bold;
         color: white;
     }
@@ -85,8 +85,8 @@
     }
 
     .game-icon {
-        width: 900px; /* Significantly increased width */
-        height: 680px; /* Significantly increased height */
+        width: 600px; /* Increased width */
+        height: 480px; /* Increased height */
         object-fit: cover;
         position: relative;
     }
@@ -96,20 +96,20 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 30px;
+        padding: 20px;
     }
 
     .stat-item {
         display: flex;
         align-items: center;
-        margin-bottom: 20px;
-        font-size: 24px;
+        margin-bottom: 12px;
+        font-size: 18px;
     }
 
     .stat-icon {
-        width: 36px;
-        height: 36px;
-        margin-right: 16px;
+        width: 28px;
+        height: 28px;
+        margin-right: 12px;
         animation: pulsate 1.5s ease-in-out infinite;
     }
 
@@ -427,27 +427,42 @@
     <!-- Carousel Functionality -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // ... (previous script content remains the same) ...
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
+        const viewOnRobloxBtn = document.getElementById('viewOnRobloxBtn');
+
+        const gameLinks = [
+            'https://www.roblox.com/games/15501353806/Swordmaster-Simulator-INFINITE',
+            'https://www.roblox.com/games/14400545236/Click-Simulator',
+            'https://www.roblox.com/games/12625568877/Punching-Simulator'
+        ];
+
+        let currentState = 0;
 
         function updateCarousel() {
-            const itemWidth = 1800; // Significantly increased width
-            const itemSpacing = 100; // Increased spacing
+            const itemWidth = 1300; // Updated width
+            const itemSpacing = 50; // Increased spacing
 
             carouselItems.forEach((item, index) => {
                 let position, zIndex, scale, opacity;
 
                 if (currentState === 0) {
+                    // Red center, Blue right, Green off-screen right
                     if (index === 0) { position = 0; zIndex = 2; scale = 1; opacity = 1; }
-                    else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 0.8; opacity = 0.7; }
-                    else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.8; opacity = 0; }
+                    else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 0.9; opacity = 0.7; }
+                    else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
                 } else if (currentState === 1) {
+                    // Red left, Blue center, Green right
                     position = (index - 1) * (itemWidth + itemSpacing);
                     zIndex = 2 - Math.abs(index - 1);
-                    scale = index === 1 ? 1 : 0.8;
+                    scale = index === 1 ? 1 : 0.9;
                     opacity = index === 1 ? 1 : 0.7;
                 } else {
-                    if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.8; opacity = 0; }
-                    else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 0.8; opacity = 0.7; }
+                    // Blue left, Green center, Red off-screen left
+                    if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
+                    else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 0.9; opacity = 0.7; }
                     else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
                 }
 
@@ -459,7 +474,24 @@
             viewOnRobloxBtn.href = gameLinks[currentState];
         }
 
-        // ... (rest of the script remains the same) ...
+        function moveRight() {
+            currentState = (currentState + 1) % 3;
+            updateCarousel();
+        }
+
+        function moveLeft() {
+            currentState = (currentState - 1 + 3) % 3;
+            updateCarousel();
+        }
+
+        prevButton.addEventListener('click', moveLeft);
+        nextButton.addEventListener('click', moveRight);
+
+        // Initial setup
+        updateCarousel();
+
+        // Update on window resize
+        window.addEventListener('resize', updateCarousel);
     });
     </script>
 </body>
