@@ -37,13 +37,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 500px;
+        height: 600px; /* Increased height */
         position: relative;
     }
 
     .carousel-item {
-        width: 1100px;
-        height: 450px;
+        width: 1300px; /* Significantly increased width */
+        height: 550px; /* Increased height */
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
@@ -52,7 +52,7 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy easing */
         left: 50%;
         transform: translateX(-50%);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -60,7 +60,7 @@
 
     .game-title {
         padding: 15px;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: bold;
         color: white;
     }
@@ -85,8 +85,8 @@
     }
 
     .game-icon {
-        width: 500px;
-        height: 380px;
+        width: 600px; /* Increased width */
+        height: 480px; /* Increased height */
         object-fit: cover;
         position: relative;
     }
@@ -103,20 +103,20 @@
         display: flex;
         align-items: center;
         margin-bottom: 12px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .stat-icon {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         margin-right: 12px;
         animation: pulsate 1.5s ease-in-out infinite;
     }
 
     /* Profile picture styling */
     .profile-pic {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         object-fit: cover;
         border: 4px solid white;
@@ -187,15 +187,15 @@
     }
 
     #about-us {
-        margin-top: 120px;
+        margin-top: 80px; /* Reduced top margin */
     }
 
     #team {
-        margin-top: 120px;
+        margin-top: 100px; /* Reduced top margin */
     }
 
     #team h1 {
-        margin-bottom: 50px;
+        margin-bottom: 60px; /* Increased bottom margin for the team title */
     }
 
     #about-us p.lead {
@@ -364,13 +364,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+</div>
                 <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
                 <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
             </div>
             
             <div class="d-flex justify-content-center mt-4 mb-3 py-2">
-<a class="btn roblox-btn" href="#" id="viewOnRobloxBtn">View on Roblox</a>
+                <a class="btn roblox-btn" href="#" id="viewOnRobloxBtn">View on Roblox</a>
             </div>
         </div>
     </section>
@@ -388,7 +388,7 @@
 
         <section id="team">
         <div class="container text-center">
-            <h1 class="fw-bold mb-4">Our Executive Team</h1>
+            <h1 class="fw-bold mb-5">Our Executive Team</h1>
             
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
@@ -442,22 +442,25 @@
         let currentState = 0;
 
         function updateCarousel() {
-            const itemWidth = 1100;
-            const itemSpacing = 50;
+            const itemWidth = 1300; // Updated width
+            const itemSpacing = 50; // Increased spacing
 
             carouselItems.forEach((item, index) => {
                 let position, zIndex, scale, opacity;
 
                 if (currentState === 0) {
+                    // Red center, Blue right, Green off-screen right
                     if (index === 0) { position = 0; zIndex = 2; scale = 1; opacity = 1; }
                     else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 0.9; opacity = 0.7; }
                     else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
                 } else if (currentState === 1) {
+                    // Red left, Blue center, Green right
                     position = (index - 1) * (itemWidth + itemSpacing);
                     zIndex = 2 - Math.abs(index - 1);
                     scale = index === 1 ? 1 : 0.9;
                     opacity = index === 1 ? 1 : 0.7;
                 } else {
+                    // Blue left, Green center, Red off-screen left
                     if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
                     else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 0.9; opacity = 0.7; }
                     else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
