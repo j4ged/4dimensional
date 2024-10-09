@@ -237,49 +237,68 @@
     <!-- Carousel Functionality -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.carousel-control.prev');
-        const nextButton = document.querySelector('.carousel-control.next');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
 
-        const games = [
-            { color: 'red', name: 'Red Game' },
-            { color: 'blue', name: 'Blue Game' },
-            { color: 'green', name: 'Green Game' }
-        ];
+    const games = [
+        { color: 'red', name: 'Red Game' },
+        { color: 'blue', name: 'Blue Game' },
+        { color: 'green', name: 'Green Game' }
+    ];
 
-        let currentIndex = 0;
+    let currentState = 0; // 0: Red center, 1: Blue center, 2: Green center
 
-        function updateCarousel() {
-            carouselItems.forEach((item, index) => {
-                const gameIndex = (currentIndex + index) % games.length;
-                if (index === 1 || (index === 2 && currentIndex === 0)) {
-                    item.style.display = 'flex';
-                    item.style.backgroundColor = games[gameIndex].color;
-                    item.textContent = games[gameIndex].name;
-                    item.style.transform = `scale(${index === 1 ? 1.1 : 1})`;
-                    item.style.opacity = index === 1 ? 1 : 0.7;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+    function updateCarousel() {
+        carouselItems.forEach((item, index) => {
+            item.style.display = 'none';
+        });
+
+        if (currentState === 0) {
+            // Red center, Blue right
+            setupItem(carouselItems[0], 0, true);  // Red center
+            setupItem(carouselItems[1], 1, false); // Blue right
+        } else if (currentState === 1) {
+            // Red left, Blue center, Green right
+            setupItem(carouselItems[0], 0, false); // Red left
+            setupItem(carouselItems[1], 1, true);  // Blue center
+            setupItem(carouselItems[2], 2, false); // Green right
+        } else {
+            // Blue left, Green center
+            setupItem(carouselItems[0], 1, false); // Blue left
+            setupItem(carouselItems[1], 2, true);  // Green center
         }
+    }
 
-        function moveRight() {
-            currentIndex = (currentIndex - 1 + games.length) % games.length;
-            updateCarousel();
+    function setupItem(item, gameIndex, isCenter) {
+        item.style.display = 'flex';
+        item.style.backgroundColor = games[gameIndex].color;
+        item.textContent = games[gameIndex].name;
+        if (isCenter) {
+            item.style.transform = 'scale(1.1)';
+            item.style.opacity = '1';
+        } else {
+            item.style.transform = 'scale(1)';
+            item.style.opacity = '0.7';
         }
+    }
 
-        function moveLeft() {
-            currentIndex = (currentIndex + 1) % games.length;
-            updateCarousel();
-        }
-
-        prevButton.addEventListener('click', moveLeft);
-        nextButton.addEventListener('click', moveRight);
-
-        // Initial setup
+    function moveRight() {
+        currentState = (currentState + 1) % 3;
         updateCarousel();
-    });
+    }
+
+    function moveLeft() {
+        currentState = (currentState - 1 + 3) % 3;
+        updateCarousel();
+    }
+
+    prevButton.addEventListener('click', moveLeft);
+    nextButton.addEventListener('click', moveRight);
+
+    // Initial setup
+    updateCarousel();
+});
     </script>
 </body>
 </html>
