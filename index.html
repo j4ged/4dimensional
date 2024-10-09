@@ -169,25 +169,25 @@
         </section>
 
         <section id="projects">
-            <div class="container mt-4">
-                <h2 class="text-center mb-2">Our Games</h2>
-                <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
+    <div class="container mt-4">
+        <h2 class="text-center mb-2">Our Games</h2>
+        <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
 
-                <div class="carousel-container">
-                    <div class="carousel-wrapper">
-                        <div class="carousel-item" style="background-color: red;">Red</div>
-                        <div class="carousel-item" style="background-color: green;">Green</div>
-                        <div class="carousel-item" style="background-color: blue;">Blue</div>
-                    </div>
-                    <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
-                </div>
-                
-                <div class="d-flex justify-content-center mt-4 mb-3 py-2">
-                    <a class="btn roblox-btn" href="#">View on Roblox</a>
-                </div>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-item" style="background-color: blue;">Blue</div>
+                <div class="carousel-item" style="background-color: red;">Red</div>
+                <div class="carousel-item" style="background-color: green;">Green</div>
             </div>
-        </section>
+            <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        
+        <div class="d-flex justify-content-center mt-4 mb-3 py-2">
+            <a class="btn roblox-btn" href="#">View on Roblox</a>
+        </div>
+    </div>
+</section>
         
         <section id="about-us">
             <div class="container text-center">
@@ -239,41 +239,42 @@
 
     <!-- Carousel Functionality -->
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const carousel = document.querySelector('.carousel-wrapper');
-        const items = carousel.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.carousel-control.prev');
-        const nextButton = document.querySelector('.carousel-control.next');
-        let currentIndex = 0;
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.carousel-wrapper');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+    let currentIndex = 1; // Start with red in the middle
 
-        function updateCarousel() {
-            const itemWidth = items[0].offsetWidth + 30; // Include margins
-            items.forEach((item, index) => {
-                let position = (index - currentIndex + items.length) % items.length;
-                item.style.transform = `translateX(${position * itemWidth}px) scale(${position === 1 ? 1.1 : 1})`;
-                item.style.zIndex = position === 1 ? 1 : 0;
-            });
-        }
+    function updateCarousel() {
+        const itemWidth = items[0].offsetWidth + 30; // Include margins
+        items.forEach((item, index) => {
+            let position = (index - currentIndex + items.length) % items.length;
+            item.style.transform = `translateX(${position * itemWidth}px) scale(${position === 1 ? 1.1 : 1})`;
+            item.style.zIndex = position === 1 ? 1 : 0;
+            item.style.opacity = position === 1 ? 1 : 0.7;
+        });
+    }
 
-        function moveRight() {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            updateCarousel();
-        }
-
-        function moveLeft() {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-        }
-
-        prevButton.addEventListener('click', moveLeft);
-        nextButton.addEventListener('click', moveRight);
-
-        // Initial setup
+    function moveRight() {
+        currentIndex = (currentIndex + 1) % items.length;
         updateCarousel();
+    }
 
-        // Update on window resize
-        window.addEventListener('resize', updateCarousel);
-    });
+    function moveLeft() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+    }
+
+    prevButton.addEventListener('click', moveLeft);
+    nextButton.addEventListener('click', moveRight);
+
+    // Initial setup
+    updateCarousel();
+
+    // Update on window resize
+    window.addEventListener('resize', updateCarousel);
+});
     </script>
 </body>
 </html>
