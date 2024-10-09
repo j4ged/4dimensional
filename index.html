@@ -37,13 +37,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 450px; /* Increased height */
+        height: 450px;
         position: relative;
     }
 
     .carousel-item {
-        width: 600px; /* Increased width */
-        height: 400px; /* Increased height */
+        width: 700px; /* Increased width */
+        height: 400px;
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
@@ -52,7 +52,7 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy easing */
         left: 50%;
         transform: translateX(-50%);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -81,11 +81,12 @@
     .game-content {
         display: flex;
         flex: 1;
+        position: relative;
     }
 
     .game-icon {
-        width: 320px; /* Increased width */
-        height: 320px; /* Increased height to touch bottom */
+        width: 320px;
+        height: 320px;
         object-fit: cover;
     }
 
@@ -108,6 +109,7 @@
         width: 24px;
         height: 24px;
         margin-right: 12px;
+        animation: pulsate 1.5s ease-in-out infinite;
     }
 
     /* Profile picture styling */
@@ -166,19 +168,10 @@
         box-shadow: 0 0 25px rgba(52, 196, 232, 1);
     }
 
-    @keyframes bounceSwap {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-    }
-
-    .carousel-item.swapping {
-        animation: bounceSwap 0.5s ease;
-    }
-
     .release-date {
         position: absolute;
         top: 10px;
-        left: 10px;
+        right: 10px;
         background-color: #34c4e8;
         color: white;
         padding: 5px 10px;
@@ -192,11 +185,21 @@
     }
 
     #about-us, #team {
-        margin-top: 80px;
+        margin-top: 120px; /* Increased top margin */
     }
 
     #about-us p.lead {
-        margin-top: 30px;
+        margin-top: 50px; /* Increased space after the "About Us" heading */
+    }
+
+    @keyframes pulsate {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    #pulsating-central-logo {
+        animation: pulsate 2s ease-in-out infinite;
     }
     </style>
 </head>
@@ -272,9 +275,9 @@
                 <div class="carousel-wrapper">
                     <div class="carousel-item" id="item0">
                         <div class="game-title">Swordmaster Simulator [INFINITE]</div>
-                        <div class="release-date">2024</div>
                         <div class="game-content">
                             <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
+                            <div class="release-date">2024</div>
                             <div class="game-stats">
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
@@ -297,9 +300,9 @@
                     </div>
                     <div class="carousel-item" id="item1">
                         <div class="game-title">Click Simulator!</div>
-                        <div class="release-date">2023</div>
                         <div class="game-content">
                             <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
+                            <div class="release-date">2023</div>
                             <div class="game-stats">
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
@@ -322,9 +325,9 @@
                     </div>
                     <div class="carousel-item" id="item2">
                         <div class="game-title">Punching Simulator</div>
-                        <div class="release-date">2023</div>
                         <div class="game-content">
                             <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
+                            <div class="release-date">2023</div>
                             <div class="game-stats">
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
@@ -355,11 +358,11 @@
             </div>
         </div>
     </section>
-        
+
         <section id="about-us">
             <div class="container text-center">
                 <h1 class="fw-bold">About Us</h1>
-<p class="lead mb-4">Founded in 2020, 4 Dimensional Inc. has quickly emerged as a leading indie game development team on the Roblox platform. With a strong focus on innovation and player experience, we constantly push the boundaries of what's possible in the metaverse.</p>
+                <p class="lead mb-4">Founded in 2020, 4 Dimensional Inc. has quickly emerged as a leading indie game development team on the Roblox platform. With a strong focus on innovation and player experience, we constantly push the boundaries of what's possible in the metaverse.</p>
                 <p><em>"We are dedicated to redefining the limits of the platform, delivering unparalleled experiences and leading the way in innovative, immersive gameplay."</em></p>
                 <p>- Jason "J4ged" (Founder - CEO)</p>
                 <p><em>"Our vision is to push boundaries and constantly redefine what immersive gameplay can be, creating innovative experiences that challenge the limits of possibility and set new standards for the entire industry."</em></p>
@@ -423,7 +426,7 @@
         let currentState = 0;
 
         function updateCarousel() {
-            const itemWidth = 600; // Updated width
+            const itemWidth = 700; // Updated width
             const itemSpacing = 30;
 
             carouselItems.forEach((item, index) => {
@@ -450,8 +453,6 @@
                 item.style.transform = `translateX(calc(-50% + ${position}px)) scale(${scale})`;
                 item.style.zIndex = zIndex;
                 item.style.opacity = opacity;
-                item.classList.add('swapping');
-                setTimeout(() => item.classList.remove('swapping'), 500);
             });
 
             viewOnRobloxBtn.href = gameLinks[currentState];
