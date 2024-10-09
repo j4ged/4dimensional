@@ -36,27 +36,24 @@
 
         .carousel-wrapper {
             display: flex;
-            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
             justify-content: center; /* Center the items */
+            align-items: center;
+            height: 300px;
         }
 
         .carousel-item {
-            min-width: 250px; /* Reduced width for better visibility */
-            height: 250px; /* Reduced height */
+            width: 250px;
+            height: 250px;
             margin: 0 15px;
             background-color: #f0f0f0; /* Light gray background */
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 24px;
             color: white;
-        }
-
-        .carousel-item.active {
-            transform: scale(1.1);
+            transition: all 0.3s ease;
         }
 
         /* Arrow navigation styling */
@@ -169,25 +166,25 @@
         </section>
 
         <section id="projects">
-    <div class="container mt-4">
-        <h2 class="text-center mb-2">Our Games</h2>
-        <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
+            <div class="container mt-4">
+                <h2 class="text-center mb-2">Our Games</h2>
+                <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
 
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
-                <div class="carousel-item" style="background-color: blue;">Blue</div>
-                <div class="carousel-item" style="background-color: red;">Red</div>
-                <div class="carousel-item" style="background-color: green;">Green</div>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-item" id="item0"></div>
+                        <div class="carousel-item" id="item1"></div>
+                        <div class="carousel-item" id="item2"></div>
+                    </div>
+                    <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
+                    <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
+                </div>
+                
+                <div class="d-flex justify-content-center mt-4 mb-3 py-2">
+                    <a class="btn roblox-btn" href="#">View on Roblox</a>
+                </div>
             </div>
-            <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
-            <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
-        </div>
-        
-        <div class="d-flex justify-content-center mt-4 mb-3 py-2">
-            <a class="btn roblox-btn" href="#">View on Roblox</a>
-        </div>
-    </div>
-</section>
+        </section>
         
         <section id="about-us">
             <div class="container text-center">
@@ -239,43 +236,50 @@
 
     <!-- Carousel Functionality -->
     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.carousel-wrapper');
-    const items = carousel.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.carousel-control.prev');
-    const nextButton = document.querySelector('.carousel-control.next');
-    let currentIndex = 1; // Start with red in the middle
+    document.addEventListener('DOMContentLoaded', function () {
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
 
-    function updateCarousel() {
-        const itemWidth = items[0].offsetWidth + 30; // Include margins
-        items.forEach((item, index) => {
-            let position = (index - currentIndex + items.length) % items.length;
-            if (position > 1) position -= 3; // This ensures items wrap correctly
-            item.style.transform = `translateX(${position * itemWidth}px) scale(${position === 0 ? 1.1 : 1})`;
-            item.style.zIndex = position === 0 ? 1 : 0;
-            item.style.opacity = position === 0 ? 1 : 0.7;
-        });
-    }
+        const games = [
+            { color: 'red', name: 'Red Game' },
+            { color: 'blue', name: 'Blue Game' },
+            { color: 'green', name: 'Green Game' }
+        ];
 
-    function moveRight() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            carouselItems.forEach((item, index) => {
+                const gameIndex = (currentIndex + index) % games.length;
+                if (index === 1 || (index === 2 && currentIndex === 0)) {
+                    item.style.display = 'flex';
+                    item.style.backgroundColor = games[gameIndex].color;
+                    item.textContent = games[gameIndex].name;
+                    item.style.transform = `scale(${index === 1 ? 1.1 : 1})`;
+                    item.style.opacity = index === 1 ? 1 : 0.7;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function moveRight() {
+            currentIndex = (currentIndex - 1 + games.length) % games.length;
+            updateCarousel();
+        }
+
+        function moveLeft() {
+            currentIndex = (currentIndex + 1) % games.length;
+            updateCarousel();
+        }
+
+        prevButton.addEventListener('click', moveLeft);
+        nextButton.addEventListener('click', moveRight);
+
+        // Initial setup
         updateCarousel();
-    }
-
-    function moveLeft() {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel();
-    }
-
-    prevButton.addEventListener('click', moveLeft);
-    nextButton.addEventListener('click', moveRight);
-
-    // Initial setup
-    updateCarousel();
-
-    // Update on window resize
-    window.addEventListener('resize', updateCarousel);
-});
+    });
     </script>
 </body>
 </html>
