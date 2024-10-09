@@ -37,13 +37,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 450px;
+        height: 500px; /* Increased height */
         position: relative;
     }
 
     .carousel-item {
-        width: 900px; /* Increased width */
-        height: 400px;
+        width: 1100px; /* Significantly increased width */
+        height: 450px; /* Increased height */
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
@@ -78,15 +78,15 @@
         box-shadow: 0 0 15px rgba(255, 67, 74, 0.7);
     }
 
-    .game-content {
+    game-content {
         display: flex;
         flex: 1;
         position: relative;
     }
 
     .game-icon {
-        width: 400px; /* Increased width */
-        height: 320px;
+        width: 500px; /* Increased width */
+        height: 380px; /* Increased height */
         object-fit: cover;
         position: relative;
     }
@@ -441,34 +441,38 @@
             const itemWidth = 900; // Updated width
             const itemSpacing = 30;
 
-            carouselItems.forEach((item, index) => {
-                let position, zIndex, scale, opacity;
+            function updateCarousel() {
+        const itemWidth = 1100; // Updated width
+        const itemSpacing = 50; // Increased spacing
 
-                if (currentState === 0) {
-                    // Red center, Blue right, Green off-screen right
-                    if (index === 0) { position = 0; zIndex = 2; scale = 1.1; opacity = 1; }
-                    else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 1; opacity = 0.7; }
-                    else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
-                } else if (currentState === 1) {
-                    // Red left, Blue center, Green right
-                    position = (index - 1) * (itemWidth + itemSpacing);
-                    zIndex = 2 - Math.abs(index - 1);
-                    scale = index === 1 ? 1.1 : 1;
-                    opacity = index === 1 ? 1 : 0.7;
-                } else {
-                    // Blue left, Green center, Red off-screen left
-                    if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
-                    else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 1; opacity = 0.7; }
-                    else { position = 0; zIndex = 2; scale = 1.1; opacity = 1; }
-                }
+        carouselItems.forEach((item, index) => {
+            let position, zIndex, scale, opacity;
 
-                item.style.transform = `translateX(calc(-50% + ${position}px)) scale(${scale})`;
-                item.style.zIndex = zIndex;
-                item.style.opacity = opacity;
-            });
+            if (currentState === 0) {
+                // Red center, Blue right, Green off-screen right
+                if (index === 0) { position = 0; zIndex = 2; scale = 1; opacity = 1; }
+                else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 0.9; opacity = 0.7; }
+                else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
+            } else if (currentState === 1) {
+                // Red left, Blue center, Green right
+                position = (index - 1) * (itemWidth + itemSpacing);
+                zIndex = 2 - Math.abs(index - 1);
+                scale = index === 1 ? 1 : 0.9;
+                opacity = index === 1 ? 1 : 0.7;
+            } else {
+                // Blue left, Green center, Red off-screen left
+                if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
+                else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 0.9; opacity = 0.7; }
+                else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
+            }
 
-            viewOnRobloxBtn.href = gameLinks[currentState];
-        }
+            item.style.transform = `translateX(calc(-50% + ${position}px)) scale(${scale})`;
+            item.style.zIndex = zIndex;
+            item.style.opacity = opacity;
+        });
+
+        viewOnRobloxBtn.href = gameLinks[currentState];
+    }
 
         function moveRight() {
             currentState = (currentState + 1) % 3;
