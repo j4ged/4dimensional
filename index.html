@@ -37,42 +37,51 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 300px;
+        height: 400px; /* Increased height */
         position: relative;
     }
 
     .carousel-item {
-        width: 400px;
-        height: 250px;
-        background-color: #2c2c2c;
-        border-radius: 12px;
+        width: 500px; /* Increased width */
+        height: 350px; /* Increased height */
+        background-color: white;
+        border-radius: 8px; /* Slightly less round */
         overflow: hidden;
-        color: white;
-        font-family: Arial, sans-serif;
+        color: #333333;
+        font-family: 'Outfit', sans-serif; /* Matching the site font */
         display: flex;
         flex-direction: column;
         position: absolute;
         transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
         left: 50%;
         transform: translateX(-50%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More visible shadow */
     }
 
     .game-title {
-        background-color: #1c1c1c;
-        padding: 10px;
-        font-size: 18px;
+        padding: 15px;
+        font-size: 20px;
         font-weight: bold;
+    }
+
+    #item0 .game-title { background-color: #34e852; }
+    #item1 .game-title { background-color: #34c4e8; }
+    #item2 .game-title { background-color: #ff434a; }
+
+    .game-title {
+        box-shadow: 0 0 10px rgba(52, 232, 82, 0.5); /* Glow effect */
     }
 
     .game-content {
         display: flex;
         flex: 1;
+        padding: 20px;
     }
 
     .game-icon {
-        width: 120px;
-        height: 120px;
-        margin: 15px;
+        width: 160px; /* Increased size */
+        height: 160px; /* Increased size */
+        margin-right: 20px;
         border-radius: 8px;
     }
 
@@ -81,20 +90,20 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 15px;
+        padding-left: 20px; /* Moved stats to the right */
     }
 
     .stat-item {
         display: flex;
         align-items: center;
-        margin-bottom: 8px;
-        font-size: 14px;
+        margin-bottom: 12px;
+        font-size: 16px;
     }
 
     .stat-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
     }
 
         /* Arrow navigation styling */
@@ -207,94 +216,94 @@
         </section>
 
         <section id="projects">
-            <div class="container mt-4">
-                <h2 class="text-center mb-2">Our Games</h2>
-                <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
+        <div class="container mt-4">
+            <h2 class="text-center mb-2">Our Games</h2>
+            <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
 
-                <div class="carousel-container">
-                    <div class="carousel-wrapper">
-                        <div class="carousel-item" id="item0">
-                            <div class="game-title">Swordmaster Simulator [INFINITE]</div>
-                            <div class="game-content">
-                                <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
-                                <div class="game-stats">
-                                    <div class="stat-item">
-                                        <i class="bi bi-eye-fill stat-icon"></i>
-                                        <span>7.5M+ Visits</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-people-fill stat-icon"></i>
-                                        <span>61k+ Members</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
-                                        <span>93%</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-controller stat-icon"></i>
-                                        <span>Adventure Simulator</span>
-                                    </div>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-item" id="item0">
+                        <div class="game-title">Swordmaster Simulator [INFINITE]</div>
+                        <div class="game-content">
+                            <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-eye-fill stat-icon"></i>
+                                    <span>7.5M+ Visits</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" id="item1">
-                            <div class="game-title">Click Simulator!</div>
-                            <div class="game-content">
-                                <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
-                                <div class="game-stats">
-                                    <div class="stat-item">
-                                        <i class="bi bi-eye-fill stat-icon"></i>
-                                        <span>10.3M+ Visits</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-people-fill stat-icon"></i>
-                                        <span>110k+ Members</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
-                                        <span>92%</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-controller stat-icon"></i>
-                                        <span>Simulator</span>
-                                    </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-people-fill stat-icon"></i>
+                                    <span>61k+ Members</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" id="item2">
-                            <div class="game-title">Punching Simulator</div>
-                            <div class="game-content">
-                                <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
-                                <div class="game-stats">
-                                    <div class="stat-item">
-                                        <i class="bi bi-eye-fill stat-icon"></i>
-                                        <span>43.8M+ Visits</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-people-fill stat-icon"></i>
-                                        <span>40K+ Members</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
-                                        <span>84%</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="bi bi-controller stat-icon"></i>
-                                        <span>Incremental Simulator</span>
-                                    </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
+                                    <span>93%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-controller stat-icon"></i>
+                                    <span>Adventure Simulator</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
-                    <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
+                    <div class="carousel-item" id="item1">
+                        <div class="game-title">Click Simulator!</div>
+                        <div class="game-content">
+                            <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-eye-fill stat-icon"></i>
+                                    <span>10.3M+ Visits</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-people-fill stat-icon"></i>
+                                    <span>110k+ Members</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
+                                    <span>92%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-controller stat-icon"></i>
+                                    <span>Simulator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="item2">
+                        <div class="game-title">Punching Simulator</div>
+                        <div class="game-content">
+                            <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <i class="bi bi-eye-fill stat-icon"></i>
+                                    <span>43.8M+ Visits</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-people-fill stat-icon"></i>
+                                    <span>40K+ Members</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
+                                    <span>84%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="bi bi-controller stat-icon"></i>
+                                    <span>Incremental Simulator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="d-flex justify-content-center mt-4 mb-3 py-2">
-                    <a class="btn roblox-btn" href="#">View on Roblox</a>
-                </div>
+                <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
+                <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
             </div>
-        </section>
+            
+            <div class="d-flex justify-content-center mt-4 mb-3 py-2">
+                <a class="btn roblox-btn" href="#">View on Roblox</a>
+            </div>
+        </div>
+    </section>
         
         <section id="about-us">
             <div class="container text-center">
@@ -355,25 +364,25 @@
         let currentState = 0;
 
         function updateCarousel() {
-            const itemWidth = 400;
+            const itemWidth = 500; // Updated width
             const itemSpacing = 30;
 
             carouselItems.forEach((item, index) => {
                 let position, zIndex, scale, opacity;
 
                 if (currentState === 0) {
-                    // Red center, Blue right, Green off-screen right
+                    // Green center, Blue right, Red off-screen right
                     if (index === 0) { position = 0; zIndex = 2; scale = 1.1; opacity = 1; }
                     else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 1; opacity = 0.7; }
                     else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
                 } else if (currentState === 1) {
-                    // Red left, Blue center, Green right
+                    // Green left, Blue center, Red right
                     position = (index - 1) * (itemWidth + itemSpacing);
                     zIndex = 2 - Math.abs(index - 1);
                     scale = index === 1 ? 1.1 : 1;
                     opacity = index === 1 ? 1 : 0.7;
                 } else {
-                    // Blue left, Green center, Red off-screen left
+                    // Blue left, Red center, Green off-screen left
                     if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 1; opacity = 0; }
                     else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 1; opacity = 0.7; }
                     else { position = 0; zIndex = 2; scale = 1.1; opacity = 1; }
