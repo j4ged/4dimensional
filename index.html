@@ -37,52 +37,56 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 400px; /* Increased height */
+        height: 400px;
         position: relative;
     }
 
     .carousel-item {
-        width: 500px; /* Increased width */
-        height: 350px; /* Increased height */
+        width: 550px; /* Slightly wider */
+        height: 350px;
         background-color: white;
-        border-radius: 8px; /* Slightly less round */
+        border-radius: 8px;
         overflow: hidden;
         color: #333333;
-        font-family: 'Outfit', sans-serif; /* Matching the site font */
+        font-family: 'Outfit', sans-serif;
         display: flex;
         flex-direction: column;
         position: absolute;
         transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
         left: 50%;
         transform: translateX(-50%);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More visible shadow */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Slightly reduced opacity */
     }
 
     .game-title {
         padding: 15px;
         font-size: 20px;
         font-weight: bold;
+        color: white;
     }
 
-    #item0 .game-title { background-color: #34e852; }
-    #item1 .game-title { background-color: #34c4e8; }
-    #item2 .game-title { background-color: #ff434a; }
-
-    .game-title {
-        box-shadow: 0 0 10px rgba(52, 232, 82, 0.5); /* Glow effect */
+    #item0 .game-title { 
+        background-color: #34e852;
+        box-shadow: 0 0 15px rgba(52, 232, 82, 0.7); /* Larger glow, matching color */
+    }
+    #item1 .game-title { 
+        background-color: #34c4e8;
+        box-shadow: 0 0 15px rgba(52, 196, 232, 0.7);
+    }
+    #item2 .game-title { 
+        background-color: #ff434a;
+        box-shadow: 0 0 15px rgba(255, 67, 74, 0.7);
     }
 
     .game-content {
         display: flex;
         flex: 1;
-        padding: 20px;
     }
 
     .game-icon {
-        width: 160px; /* Increased size */
-        height: 160px; /* Increased size */
-        margin-right: 20px;
-        border-radius: 8px;
+        width: 270px; /* Larger icon */
+        height: 270px; /* Larger icon */
+        object-fit: cover;
     }
 
     .game-stats {
@@ -90,7 +94,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 20px; /* Moved stats to the right */
+        padding: 20px;
     }
 
     .stat-item {
@@ -104,6 +108,17 @@
         width: 24px;
         height: 24px;
         margin-right: 12px;
+    }
+
+    /* Profile picture styling */
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
     }
 
         /* Arrow navigation styling */
@@ -215,10 +230,10 @@
             </div>
         </section>
 
-        <section id="projects">
+       <section id="projects">
         <div class="container mt-4">
             <h2 class="text-center mb-2">Our Games</h2>
-            <p class="text-center mb-5 light-gray-text">Check out our ever-expanding library of games here:</p>
+            <p class="text-center mb-5 light-gray-text">Check out our past and future projects here:</p>
 
             <div class="carousel-container">
                 <div class="carousel-wrapper">
@@ -317,22 +332,23 @@
         </section>
 
         <section id="team">
-            <div class="container text-center">
-                <h1 class="fw-bold mb-4">Our Executive Team</h1>
-                
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4">
-                        <h3>Jason</h3>
-                        <p>Founder - CEO</p>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <h3>David</h3>
-                        <p>Co-Founder - COO</p>
-                    </div>
+        <div class="container text-center">
+            <h1 class="fw-bold mb-4">Our Executive Team</h1>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <img src="Boss Studio_files/anshul.png" alt="Jason" class="profile-pic">
+                    <h3>Jason</h3>
+                    <p>Founder - CEO</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="Boss Studio_files/caleb.png" alt="David" class="profile-pic">
+                    <h3>David</h3>
+                    <p>Co-Founder - COO</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer class="text-center p-3">
         <p>© 2020 4 Dimensional Inc. - All Rights Reserved</p>
