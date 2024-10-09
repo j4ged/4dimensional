@@ -31,21 +31,22 @@
             width: 100%;
             overflow: hidden;
             margin-bottom: 40px;
-            padding: 20px 0; /* Add padding to show shadows */
+            padding: 20px 0;
         }
 
         .carousel-wrapper {
             display: flex;
-            justify-content: center; /* Center the items */
+            justify-content: center;
             align-items: center;
             height: 300px;
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Elastic easing */
         }
 
         .carousel-item {
             width: 250px;
             height: 250px;
             margin: 0 15px;
-            background-color: #f0f0f0; /* Light gray background */
+            background-color: #f0f0f0;
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             display: flex;
@@ -53,7 +54,8 @@
             align-items: center;
             font-size: 24px;
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Elastic easing */
+            position: absolute;
         }
 
         /* Arrow navigation styling */
@@ -63,13 +65,13 @@
             transform: translateY(-50%);
             background-color: #34c4e8;
             color: white;
-            border: 4px solid white; /* Thicker white stroke */
-            font-size: 1.5rem; /* Slightly smaller arrow icons */
+            border: 4px solid white;
+            font-size: 1.5rem;
             padding: 10px;
             cursor: pointer;
             z-index: 10;
             border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for buttons */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .carousel-control.prev {
@@ -81,7 +83,7 @@
         }
 
         .carousel-control:hover {
-            background-color: #288fb6; /* Darker blue on hover */
+            background-color: #288fb6;
         }
 
         /* View on Roblox button */
@@ -91,14 +93,14 @@
             padding: 10px 20px;
             font-size: 18px;
             border: none;
-            border-radius: 50px; /* Fully rounded corners */
+            border-radius: 50px;
             text-align: center;
-            box-shadow: 0 0 15px rgba(52, 196, 232, 0.7); /* Blue glow */
+            box-shadow: 0 0 15px rgba(52, 196, 232, 0.7);
             transition: box-shadow 0.3s ease;
         }
 
         .roblox-btn:hover {
-            box-shadow: 0 0 25px rgba(52, 196, 232, 1); /* Larger blue glow on hover */
+            box-shadow: 0 0 25px rgba(52, 196, 232, 1);
         }
     </style>
 </head>
@@ -237,68 +239,73 @@
     <!-- Carousel Functionality -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.carousel-control.prev');
-    const nextButton = document.querySelector('.carousel-control.next');
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
 
-    const games = [
-        { color: 'red', name: 'Red Game' },
-        { color: 'blue', name: 'Blue Game' },
-        { color: 'green', name: 'Green Game' }
-    ];
+        const games = [
+            { color: 'red', name: 'Red Game' },
+            { color: 'blue', name: 'Blue Game' },
+            { color: 'green', name: 'Green Game' }
+        ];
 
-    let currentState = 0; // 0: Red center, 1: Blue center, 2: Green center
+        let currentState = 0; // 0: Red center, 1: Blue center, 2: Green center
 
-    function updateCarousel() {
-        carouselItems.forEach((item, index) => {
-            item.style.display = 'none';
-        });
+        function updateCarousel() {
+            const centerOffset = carouselWrapper.offsetWidth / 2;
+            const itemWidth = 280; // 250px width + 30px margin
 
-        if (currentState === 0) {
-            // Red center, Blue right
-            setupItem(carouselItems[0], 0, true);  // Red center
-            setupItem(carouselItems[1], 1, false); // Blue right
-        } else if (currentState === 1) {
-            // Red left, Blue center, Green right
-            setupItem(carouselItems[0], 0, false); // Red left
-            setupItem(carouselItems[1], 1, true);  // Blue center
-            setupItem(carouselItems[2], 2, false); // Green right
-        } else {
-            // Blue left, Green center
-            setupItem(carouselItems[0], 1, false); // Blue left
-            setupItem(carouselItems[1], 2, true);  // Green center
+            carouselItems.forEach((item, index) => {
+                let position, zIndex, scale, opacity;
+
+                if (currentState === 1) { // Three items visible
+                    position = (index - 1) * itemWidth;
+                    zIndex = 2 - Math.abs(index - 1);
+                    scale = index === 1 ? 1.1 : 1;
+                    opacity = index === 1 ? 1 : 0.7;
+                } else { // Two items visible
+                    if (index === currentState || index === (currentState + 1) % 3) {
+                        position = index === currentState ? -itemWidth / 2 : itemWidth / 2;
+                        zIndex = index === currentState ? 2 : 1;
+                        scale = index === currentState ? 1.1 : 1;
+                        opacity = index === currentState ? 1 : 0.7;
+                    } else {
+                        position = itemWidth * 2; // Move off-screen
+                        zIndex = 0;
+                        scale = 1;
+                        opacity = 0;
+                    }
+                }
+
+                const gameIndex = (currentState + index) % 3;
+                item.style.backgroundColor = games[gameIndex].color;
+                item.textContent = games[gameIndex].name;
+                item.style.transform = `translateX(${centerOffset + position}px) scale(${scale})`;
+                item.style.zIndex = zIndex;
+                item.style.opacity = opacity;
+            });
         }
-    }
 
-    function setupItem(item, gameIndex, isCenter) {
-        item.style.display = 'flex';
-        item.style.backgroundColor = games[gameIndex].color;
-        item.textContent = games[gameIndex].name;
-        if (isCenter) {
-            item.style.transform = 'scale(1.1)';
-            item.style.opacity = '1';
-        } else {
-            item.style.transform = 'scale(1)';
-            item.style.opacity = '0.7';
+        function moveRight() {
+            currentState = (currentState + 1) % 3;
+            updateCarousel();
         }
-    }
 
-    function moveRight() {
-        currentState = (currentState + 1) % 3;
+        function moveLeft() {
+            currentState = (currentState - 1 + 3) % 3;
+            updateCarousel();
+        }
+
+        prevButton.addEventListener('click', moveLeft);
+        nextButton.addEventListener('click', moveRight);
+
+        // Initial setup
         updateCarousel();
-    }
 
-    function moveLeft() {
-        currentState = (currentState - 1 + 3) % 3;
-        updateCarousel();
-    }
-
-    prevButton.addEventListener('click', moveLeft);
-    nextButton.addEventListener('click', moveRight);
-
-    // Initial setup
-    updateCarousel();
-});
+        // Update on window resize
+        window.addEventListener('resize', updateCarousel);
+    });
     </script>
 </body>
 </html>
