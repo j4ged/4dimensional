@@ -37,13 +37,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 500px; /* Increased height */
+        height: 500px;
         position: relative;
     }
 
     .carousel-item {
-        width: 1100px; /* Significantly increased width */
-        height: 450px; /* Increased height */
+        width: 1100px;
+        height: 450px;
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
@@ -52,7 +52,7 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy easing */
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         left: 50%;
         transform: translateX(-50%);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -78,15 +78,15 @@
         box-shadow: 0 0 15px rgba(255, 67, 74, 0.7);
     }
 
-    game-content {
+    .game-content {
         display: flex;
         flex: 1;
         position: relative;
     }
 
     .game-icon {
-        width: 500px; /* Increased width */
-        height: 380px; /* Increased height */
+        width: 500px;
+        height: 380px;
         object-fit: cover;
         position: relative;
     }
@@ -191,7 +191,11 @@
     }
 
     #team {
-        margin-top: 180px; /* Increased top margin for more spacing */
+        margin-top: 120px;
+    }
+
+    #team h1 {
+        margin-bottom: 50px;
     }
 
     #about-us p.lead {
@@ -438,41 +442,34 @@
         let currentState = 0;
 
         function updateCarousel() {
-            const itemWidth = 900; // Updated width
-            const itemSpacing = 30;
+            const itemWidth = 1100;
+            const itemSpacing = 50;
 
-            function updateCarousel() {
-        const itemWidth = 1100; // Updated width
-        const itemSpacing = 50; // Increased spacing
+            carouselItems.forEach((item, index) => {
+                let position, zIndex, scale, opacity;
 
-        carouselItems.forEach((item, index) => {
-            let position, zIndex, scale, opacity;
+                if (currentState === 0) {
+                    if (index === 0) { position = 0; zIndex = 2; scale = 1; opacity = 1; }
+                    else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 0.9; opacity = 0.7; }
+                    else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
+                } else if (currentState === 1) {
+                    position = (index - 1) * (itemWidth + itemSpacing);
+                    zIndex = 2 - Math.abs(index - 1);
+                    scale = index === 1 ? 1 : 0.9;
+                    opacity = index === 1 ? 1 : 0.7;
+                } else {
+                    if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
+                    else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 0.9; opacity = 0.7; }
+                    else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
+                }
 
-            if (currentState === 0) {
-                // Red center, Blue right, Green off-screen right
-                if (index === 0) { position = 0; zIndex = 2; scale = 1; opacity = 1; }
-                else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 0.9; opacity = 0.7; }
-                else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
-            } else if (currentState === 1) {
-                // Red left, Blue center, Green right
-                position = (index - 1) * (itemWidth + itemSpacing);
-                zIndex = 2 - Math.abs(index - 1);
-                scale = index === 1 ? 1 : 0.9;
-                opacity = index === 1 ? 1 : 0.7;
-            } else {
-                // Blue left, Green center, Red off-screen left
-                if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
-                else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 0.9; opacity = 0.7; }
-                else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
-            }
+                item.style.transform = `translateX(calc(-50% + ${position}px)) scale(${scale})`;
+                item.style.zIndex = zIndex;
+                item.style.opacity = opacity;
+            });
 
-            item.style.transform = `translateX(calc(-50% + ${position}px)) scale(${scale})`;
-            item.style.zIndex = zIndex;
-            item.style.opacity = opacity;
-        });
-
-        viewOnRobloxBtn.href = gameLinks[currentState];
-    }
+            viewOnRobloxBtn.href = gameLinks[currentState];
+        }
 
         function moveRight() {
             currentState = (currentState + 1) % 3;
