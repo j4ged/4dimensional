@@ -37,13 +37,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 600px; /* Increased height */
+        height: auto;
         position: relative;
     }
 
     .carousel-item {
-        width: 1300px; /* Significantly increased width */
-        height: 550px; /* Increased height */
+        width: 90vw; /* Use viewport width for responsiveness */
+        max-width: 1200px; /* Set a maximum width */
+        height: auto; /* Allow height to adjust based on content */
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
@@ -52,7 +53,7 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy easing */
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         left: 50%;
         transform: translateX(-50%);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -80,36 +81,36 @@
 
     .game-content {
         display: flex;
-        flex: 1;
-        position: relative;
+        flex-direction: column;
+        align-items: center;
     }
 
     .game-icon {
-        width: 600px; /* Increased width */
-        height: 480px; /* Increased height */
+        width: 100%;
+        max-width: 600px;
+        height: auto;
         object-fit: cover;
-        position: relative;
     }
 
     .game-stats {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        width: 100%;
         padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
     .stat-item {
         display: flex;
         align-items: center;
-        margin-bottom: 12px;
-        font-size: 18px;
+        margin: 10px;
+        font-size: 16px;
     }
 
     .stat-icon {
-        width: 28px;
-        height: 28px;
-        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
         animation: pulsate 1.5s ease-in-out infinite;
     }
 
@@ -210,6 +211,21 @@
 
     #pulsating-central-logo {
         animation: pulsate 2s ease-in-out infinite;
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+        .game-content {
+            flex-direction: row;
+        }
+
+        .game-icon {
+            width: 50%;
+        }
+
+        .game-stats {
+            width: 50%;
+        }
     }
     </style>
 </head>
@@ -357,14 +373,14 @@
                                     <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
                                     <span>84%</span>
                                 </div>
-                                <div class="stat-item">
+<div class="stat-item">
                                     <i class="bi bi-controller stat-icon"></i>
                                     <span>Incremental Simulator</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-</div>
+                </div>
                 <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
                 <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
             </div>
@@ -442,25 +458,22 @@
         let currentState = 0;
 
         function updateCarousel() {
-            const itemWidth = 1000; // Updated width
-            const itemSpacing = 25; // Increased spacing
+            const itemWidth = carouselItems[0].offsetWidth;
+            const itemSpacing = 20;
 
             carouselItems.forEach((item, index) => {
                 let position, zIndex, scale, opacity;
 
                 if (currentState === 0) {
-                    // Red center, Blue right, Green off-screen right
                     if (index === 0) { position = 0; zIndex = 2; scale = 1; opacity = 1; }
                     else if (index === 1) { position = itemWidth + itemSpacing; zIndex = 1; scale = 0.9; opacity = 0.7; }
                     else { position = 2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
                 } else if (currentState === 1) {
-                    // Red left, Blue center, Green right
                     position = (index - 1) * (itemWidth + itemSpacing);
                     zIndex = 2 - Math.abs(index - 1);
                     scale = index === 1 ? 1 : 0.9;
                     opacity = index === 1 ? 1 : 0.7;
                 } else {
-                    // Blue left, Green center, Red off-screen left
                     if (index === 0) { position = -2 * (itemWidth + itemSpacing); zIndex = 0; scale = 0.9; opacity = 0; }
                     else if (index === 1) { position = -(itemWidth + itemSpacing); zIndex = 1; scale = 0.9; opacity = 0.7; }
                     else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
