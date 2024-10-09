@@ -250,19 +250,20 @@
         const itemWidth = items[0].offsetWidth + 30; // Include margins
         items.forEach((item, index) => {
             let position = (index - currentIndex + items.length) % items.length;
-            item.style.transform = `translateX(${position * itemWidth}px) scale(${position === 1 ? 1.1 : 1})`;
-            item.style.zIndex = position === 1 ? 1 : 0;
-            item.style.opacity = position === 1 ? 1 : 0.7;
+            if (position > 1) position -= 3; // This ensures items wrap correctly
+            item.style.transform = `translateX(${position * itemWidth}px) scale(${position === 0 ? 1.1 : 1})`;
+            item.style.zIndex = position === 0 ? 1 : 0;
+            item.style.opacity = position === 0 ? 1 : 0.7;
         });
     }
 
     function moveRight() {
-        currentIndex = (currentIndex + 1) % items.length;
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
         updateCarousel();
     }
 
     function moveLeft() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        currentIndex = (currentIndex + 1) % items.length;
         updateCarousel();
     }
 
