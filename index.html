@@ -42,7 +42,7 @@
     }
 
     .carousel-item {
-        width: 700px; /* Increased width */
+        width: 900px; /* Increased width */
         height: 400px;
         background-color: white;
         border-radius: 8px;
@@ -85,9 +85,10 @@
     }
 
     .game-icon {
-        width: 320px;
+        width: 400px; /* Increased width */
         height: 320px;
         object-fit: cover;
+        position: relative;
     }
 
     .game-stats {
@@ -171,25 +172,30 @@
     .release-date {
         position: absolute;
         top: 10px;
-        right: 10px;
+        left: 10px;
         background-color: #34c4e8;
         color: white;
         padding: 5px 10px;
         border-radius: 20px;
         font-size: 14px;
         font-weight: bold;
+        z-index: 1;
     }
 
     .projects-text {
         font-size: 1.25rem;
     }
 
-    #about-us, #team {
-        margin-top: 120px; /* Increased top margin */
+    #about-us {
+        margin-top: 120px;
+    }
+
+    #team {
+        margin-top: 180px; /* Increased top margin for more spacing */
     }
 
     #about-us p.lead {
-        margin-top: 50px; /* Increased space after the "About Us" heading */
+        margin-top: 50px;
     }
 
     @keyframes pulsate {
@@ -276,8 +282,10 @@
                     <div class="carousel-item" id="item0">
                         <div class="game-title">Swordmaster Simulator [INFINITE]</div>
                         <div class="game-content">
-                            <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
-                            <div class="release-date">2024</div>
+                            <div style="position: relative;">
+                                <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
+                                <div class="release-date">2024</div>
+                            </div>
                             <div class="game-stats">
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
@@ -301,8 +309,10 @@
                     <div class="carousel-item" id="item1">
                         <div class="game-title">Click Simulator!</div>
                         <div class="game-content">
-                            <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
-                            <div class="release-date">2023</div>
+                            <div style="position: relative;">
+                                <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
+                                <div class="release-date">2023</div>
+                            </div>
                             <div class="game-stats">
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
@@ -326,8 +336,10 @@
                     <div class="carousel-item" id="item2">
                         <div class="game-title">Punching Simulator</div>
                         <div class="game-content">
-                            <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
-                            <div class="release-date">2023</div>
+                            <div style="position: relative;">
+                                <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
+                                <div class="release-date">2023</div>
+                            </div>
                             <div class="game-stats">
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
@@ -354,7 +366,7 @@
             </div>
             
             <div class="d-flex justify-content-center mt-4 mb-3 py-2">
-                <a class="btn roblox-btn" href="#" id="viewOnRobloxBtn">View on Roblox</a>
+<a class="btn roblox-btn" href="#" id="viewOnRobloxBtn">View on Roblox</a>
             </div>
         </div>
     </section>
@@ -426,7 +438,7 @@
         let currentState = 0;
 
         function updateCarousel() {
-            const itemWidth = 700; // Updated width
+            const itemWidth = 900; // Updated width
             const itemSpacing = 30;
 
             carouselItems.forEach((item, index) => {
