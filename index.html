@@ -42,8 +42,8 @@
     }
 
     .carousel-item {
-        width: 50vw; /* Further reduced width */
-        max-width: 550px; /* Further reduced maximum width */
+        width: 50vw;
+        max-width: 550px;
         height: 270px;
         background-color: white;
         border-radius: 6px;
@@ -83,35 +83,36 @@
         display: flex;
         flex-direction: row;
         height: calc(100% - 32px);
-        align-items: center; /* Center content vertically */
+        align-items: center;
     }
 
     .game-icon {
-        width: 230px;
-        height: 230px;
+        width: 45%;
+        height: 100%;
         object-fit: cover;
     }
 
     .game-stats {
-        flex: 1;
-        padding: 10px;
+        width: 55%;
+        height: 100%;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start; /* Align text to the left */
+        align-items: flex-start;
     }
 
     .stat-item {
         display: flex;
         align-items: center;
-        margin: 6px 0; /* Adjust vertical margin */
-        font-size: 12px;
+        margin: 8px 0;
+        font-size: 14px;
     }
 
     .stat-icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
         animation: iconPulse 1.5s infinite;
     }
 
@@ -191,11 +192,11 @@
     }
 
     #projects {
-        margin-bottom: 20px; /* Reduce bottom margin */
+        margin-bottom: 20px;
     }
 
     #about-us {
-        margin-top: 40px; /* Reduce top margin */
+        margin-top: 40px;
     }
 
     #team {
@@ -255,12 +256,12 @@
 
         .game-icon {
             width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1;
+            height: 50%;
         }
 
         .game-stats {
             width: 100%;
+            height: 50%;
         }
     }
     </style>
@@ -338,11 +339,9 @@
                     <div class="carousel-item" id="item0">
                         <div class="game-title">Swordmaster Simulator [INFINITE]</div>
                         <div class="game-content">
-                            <div style="position: relative;">
-                                <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
-                                <div class="release-date">2024</div>
-                            </div>
+                            <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
                             <div class="game-stats">
+                                <div class="release-date">2024</div>
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
                                     <span>7.5M+ Visits</span>
@@ -365,11 +364,9 @@
                     <div class="carousel-item" id="item1">
                         <div class="game-title">Click Simulator!</div>
                         <div class="game-content">
-                            <div style="position: relative;">
-                                <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
-                                <div class="release-date">2023</div>
-                            </div>
+                            <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
                             <div class="game-stats">
+                                <div class="release-date">2023</div>
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
                                     <span>10.3M+ Visits</span>
@@ -391,13 +388,11 @@
                     </div>
                     <div class="carousel-item" id="item2">
                         <div class="game-title">Punching Simulator</div>
-<div class="game-content">
-                            <div style="position: relative;">
-                                <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
-                                <div class="release-date">2023</div>
-                            </div>
+                        <div class="game-content">
+                            <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
                             <div class="game-stats">
-                                <div class="stat-item">
+                                <div class="release-date">2023</div>
+<div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
                                     <span>43.8M+ Visits</span>
                                 </div>
@@ -495,7 +490,7 @@
 
         function updateCarousel() {
             const itemWidth = carouselItems[0].offsetWidth;
-            const itemSpacing = Math.min(window.innerWidth * 0.05, 50); // Further reduced spacing
+            const itemSpacing = Math.min(window.innerWidth * 0.05, 50);
             const isMobile = window.innerWidth <= 768;
 
             carouselItems.forEach((item, index) => {
