@@ -60,8 +60,8 @@
     }
 
     .game-title {
-        padding: 8px;
-        font-size: 16px;
+        padding: 10px;
+        font-size: 18px;
         font-weight: bold;
         color: white;
     }
@@ -82,8 +82,9 @@
     .game-content {
         display: flex;
         flex-direction: row;
-        height: calc(100% - 32px);
+        height: calc(100% - 38px);
         align-items: center;
+        position: relative;
     }
 
     .game-icon {
@@ -105,28 +106,28 @@
     .stat-item {
         display: flex;
         align-items: center;
-        margin: 8px 0;
-        font-size: 14px;
+        margin: 10px 0;
+        font-size: 16px;
     }
 
     .stat-icon {
-        width: 18px;
-        height: 18px;
-        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
         animation: iconPulse 1.5s infinite;
     }
 
     .release-date {
         position: absolute;
-        top: 8px;
+        bottom: 8px;
         left: 8px;
-        background-color: #34c4e8;
+        background-color: rgba(52, 196, 232, 0.8);
         color: white;
         padding: 4px 8px;
         border-radius: 16px;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: bold;
-        z-index: 1;
+        z-index: 2;
         animation: float 3s ease-in-out infinite;
     }
 
@@ -247,7 +248,7 @@
 
         .carousel-item {
             width: 80vw;
-            height: 330px;
+            height: 350px;
         }
 
         .game-content {
@@ -262,6 +263,12 @@
         .game-stats {
             width: 100%;
             height: 50%;
+            padding: 10px;
+        }
+
+        .stat-item {
+            font-size: 14px;
+            margin: 5px 0;
         }
     }
     </style>
@@ -340,8 +347,8 @@
                         <div class="game-title">Swordmaster Simulator [INFINITE]</div>
                         <div class="game-content">
                             <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
+                            <div class="release-date">2024</div>
                             <div class="game-stats">
-                                <div class="release-date">2024</div>
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
                                     <span>7.5M+ Visits</span>
@@ -365,8 +372,8 @@
                         <div class="game-title">Click Simulator!</div>
                         <div class="game-content">
                             <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
+                            <div class="release-date">2023</div>
                             <div class="game-stats">
-                                <div class="release-date">2023</div>
                                 <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
                                     <span>10.3M+ Visits</span>
@@ -389,10 +396,10 @@
                     <div class="carousel-item" id="item2">
                         <div class="game-title">Punching Simulator</div>
                         <div class="game-content">
-                            <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
+<img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
+                            <div class="release-date">2023</div>
                             <div class="game-stats">
-                                <div class="release-date">2023</div>
-<div class="stat-item">
+                                <div class="stat-item">
                                     <i class="bi bi-eye-fill stat-icon"></i>
                                     <span>43.8M+ Visits</span>
                                 </div>
