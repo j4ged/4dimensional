@@ -37,14 +37,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: auto;
+        height: 600px; /* Increased fixed height */
         position: relative;
     }
 
     .carousel-item {
-        width: 90vw; /* Use viewport width for responsiveness */
-        max-width: 1200px; /* Set a maximum width */
-        height: auto; /* Allow height to adjust based on content */
+        width: 90vw;
+        max-width: 1200px;
+        height: 550px; /* Fixed height */
         background-color: white;
         border-radius: 8px;
         overflow: hidden;
@@ -81,23 +81,23 @@
 
     .game-content {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        height: calc(100% - 60px); /* Subtract title height */
     }
 
     .game-icon {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
+        width: 50%;
+        height: 100%;
         object-fit: cover;
     }
 
     .game-stats {
-        width: 100%;
+        width: 50%;
+        height: 100%;
         padding: 20px;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .stat-item {
@@ -214,17 +214,22 @@
     }
 
     /* Responsive adjustments */
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
+        .carousel-wrapper {
+            height: 700px; /* Increased height for mobile */
+        }
+
+        .carousel-item {
+            height: 650px; /* Increased height for mobile */
+        }
+
         .game-content {
-            flex-direction: row;
+            flex-direction: column;
         }
 
-        .game-icon {
-            width: 50%;
-        }
-
-        .game-stats {
-            width: 50%;
+        .game-icon, .game-stats {
+            width: 100%;
+            height: 50%;
         }
     }
     </style>
@@ -369,11 +374,11 @@
                                     <i class="bi bi-people-fill stat-icon"></i>
                                     <span>40K+ Members</span>
                                 </div>
-                                <div class="stat-item">
+<div class="stat-item">
                                     <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
                                     <span>84%</span>
                                 </div>
-<div class="stat-item">
+                                <div class="stat-item">
                                     <i class="bi bi-controller stat-icon"></i>
                                     <span>Incremental Simulator</span>
                                 </div>
@@ -460,6 +465,7 @@
         function updateCarousel() {
             const itemWidth = carouselItems[0].offsetWidth;
             const itemSpacing = 20;
+            const isMobile = window.innerWidth <= 768;
 
             carouselItems.forEach((item, index) => {
                 let position, zIndex, scale, opacity;
@@ -479,7 +485,7 @@
                     else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
                 }
 
-                item.style.transform = `translateX(calc(-50% + ${position}px)) scale(${scale})`;
+                item.style.transform = `translateX(calc(-50% + ${position}px)) scale(${isMobile ? 1 : scale})`;
                 item.style.zIndex = zIndex;
                 item.style.opacity = opacity;
             });
