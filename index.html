@@ -37,14 +37,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 300px; /* Further reduced height */
+        height: 300px;
         position: relative;
     }
 
     .carousel-item {
-        width: 55vw; /* Further reduced width */
-        max-width: 600px; /* Further reduced maximum width */
-        height: 270px; /* Further reduced height */
+        width: 50vw; /* Further reduced width */
+        max-width: 550px; /* Further reduced maximum width */
+        height: 270px;
         background-color: white;
         border-radius: 6px;
         overflow: hidden;
@@ -60,8 +60,8 @@
     }
 
     .game-title {
-        padding: 8px; /* Further reduced padding */
-        font-size: 16px; /* Further reduced font size */
+        padding: 8px;
+        font-size: 16px;
         font-weight: bold;
         color: white;
     }
@@ -82,34 +82,51 @@
     .game-content {
         display: flex;
         flex-direction: row;
-        height: calc(100% - 32px); /* Adjust for reduced title height */
+        height: calc(100% - 32px);
+        align-items: center; /* Center content vertically */
     }
 
     .game-icon {
-        width: 230px; /* Further reduced width */
-        height: 230px; /* Further reduced height */
+        width: 230px;
+        height: 230px;
         object-fit: cover;
     }
 
     .game-stats {
         flex: 1;
-        padding: 10px; /* Further reduced padding */
+        padding: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-start; /* Align text to the left */
     }
 
     .stat-item {
         display: flex;
         align-items: center;
-        margin: 6px; /* Further reduced margin */
-        font-size: 12px; /* Further reduced font size */
+        margin: 6px 0; /* Adjust vertical margin */
+        font-size: 12px;
     }
 
     .stat-icon {
-        width: 16px; /* Further reduced size */
-        height: 16px; /* Further reduced size */
-        margin-right: 5px; /* Further reduced margin */
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        animation: iconPulse 1.5s infinite;
+    }
+
+    .release-date {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background-color: #34c4e8;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 16px;
+        font-size: 11px;
+        font-weight: bold;
+        z-index: 1;
+        animation: float 3s ease-in-out infinite;
     }
 
     /* Profile picture styling */
@@ -162,39 +179,31 @@
         text-align: center;
         box-shadow: 0 0 12px rgba(52, 196, 232, 0.7);
         transition: box-shadow 0.3s ease;
+        animation: btnPulsate 2s infinite;
     }
 
     .roblox-btn:hover {
         box-shadow: 0 0 20px rgba(52, 196, 232, 1);
     }
 
-    .release-date {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        background-color: #34c4e8;
-        color: white;
-        padding: 4px 8px;
-        border-radius: 16px;
-        font-size: 11px;
-        font-weight: bold;
-        z-index: 1;
-    }
-
     .projects-text {
         font-size: 1.1rem;
     }
 
+    #projects {
+        margin-bottom: 20px; /* Reduce bottom margin */
+    }
+
     #about-us {
-        margin-top: 60px; /* Further reduced top margin */
+        margin-top: 40px; /* Reduce top margin */
     }
 
     #team {
-        margin-top: 80px; /* Further reduced top margin */
+        margin-top: 80px;
     }
 
     #team h1 {
-        margin-bottom: 50px; /* Reduced bottom margin for the team title */
+        margin-bottom: 50px;
     }
 
     #about-us p.lead {
@@ -211,15 +220,33 @@
         animation: pulsate 2s ease-in-out infinite;
     }
 
+    @keyframes iconPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0px); }
+    }
+
+    @keyframes btnPulsate {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .carousel-wrapper {
-            height: 360px; /* Adjusted height for mobile */
+            height: 360px;
         }
 
         .carousel-item {
-            width: 80vw; /* Slightly wider on mobile */
-            height: 330px; /* Adjusted height for mobile */
+            width: 80vw;
+            height: 330px;
         }
 
         .game-content {
@@ -229,7 +256,7 @@
         .game-icon {
             width: 100%;
             height: auto;
-            aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+            aspect-ratio: 1 / 1;
         }
 
         .game-stats {
@@ -364,7 +391,7 @@
                     </div>
                     <div class="carousel-item" id="item2">
                         <div class="game-title">Punching Simulator</div>
-                        <div class="game-content">
+<div class="game-content">
                             <div style="position: relative;">
                                 <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
                                 <div class="release-date">2023</div>
@@ -375,7 +402,7 @@
                                     <span>43.8M+ Visits</span>
                                 </div>
                                 <div class="stat-item">
-<i class="bi bi-people-fill stat-icon"></i>
+                                    <i class="bi bi-people-fill stat-icon"></i>
                                     <span>40K+ Members</span>
                                 </div>
                                 <div class="stat-item">
@@ -395,7 +422,7 @@
             </div>
             
             <div class="d-flex justify-content-center mt-4 mb-3 py-2">
-                <a class="btn roblox-btn" href="#" id="viewOnRobloxBtn">View on Roblox</a>
+                <a class="btn roblox-btn" href="#" id="viewOnRobloxBtn" target="_blank">View on Roblox</a>
             </div>
         </div>
     </section>
@@ -468,7 +495,7 @@
 
         function updateCarousel() {
             const itemWidth = carouselItems[0].offsetWidth;
-            const itemSpacing = Math.min(window.innerWidth * 0.06, 60); // Further reduced spacing
+            const itemSpacing = Math.min(window.innerWidth * 0.05, 50); // Further reduced spacing
             const isMobile = window.innerWidth <= 768;
 
             carouselItems.forEach((item, index) => {
@@ -476,16 +503,16 @@
 
                 if (currentState === 0) {
                     if (index === 0) { position = 0; zIndex = 2; scale = 1; opacity = 1; }
-                    else if (index === 1) { position = itemWidth * 0.65 + itemSpacing; zIndex = 1; scale = 0.8; opacity = 0.7; }
-                    else { position = 2 * (itemWidth * 0.65 + itemSpacing); zIndex = 0; scale = 0.8; opacity = 0; }
+                    else if (index === 1) { position = itemWidth * 0.6 + itemSpacing; zIndex = 1; scale = 0.75; opacity = 0.7; }
+                    else { position = 2 * (itemWidth * 0.6 + itemSpacing); zIndex = 0; scale = 0.75; opacity = 0; }
                 } else if (currentState === 1) {
-                    position = (index - 1) * (itemWidth * 0.65 + itemSpacing);
+                    position = (index - 1) * (itemWidth * 0.6 + itemSpacing);
                     zIndex = 2 - Math.abs(index - 1);
-                    scale = index === 1 ? 1 : 0.8;
+                    scale = index === 1 ? 1 : 0.75;
                     opacity = index === 1 ? 1 : 0.7;
                 } else {
-                    if (index === 0) { position = -2 * (itemWidth * 0.65 + itemSpacing); zIndex = 0; scale = 0.8; opacity = 0; }
-                    else if (index === 1) { position = -(itemWidth * 0.65 + itemSpacing); zIndex = 1; scale = 0.8; opacity = 0.7; }
+                    if (index === 0) { position = -2 * (itemWidth * 0.6 + itemSpacing); zIndex = 0; scale = 0.75; opacity = 0; }
+                    else if (index === 1) { position = -(itemWidth * 0.6 + itemSpacing); zIndex = 1; scale = 0.75; opacity = 0.7; }
                     else { position = 0; zIndex = 2; scale = 1; opacity = 1; }
                 }
 
