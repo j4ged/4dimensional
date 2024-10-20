@@ -273,12 +273,12 @@
     }
          #home {
         position: relative;
-        height: 100vh;
+        height: 80vh; /* Reduced height to end sooner */
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        margin-bottom: 60px; /* Decreased spacing */
+        margin-bottom: 0; /* Removed bottom margin */
     }
 
     .video-background {
@@ -300,14 +300,14 @@
         left: 50%;
         transform: translate(-50%, -50%);
         object-fit: cover;
-        filter: blur(15px); /* Increased blur effect */
+        filter: blur(12px); /* Slightly reduced blur effect */
     }
 
     .logo-container {
         position: relative;
         z-index: 1;
         padding: 2rem;
-        background-color: transparent; /* Removed white background */
+        background-color: transparent;
     }
 
     #pulsating-central-logo {
@@ -315,9 +315,14 @@
         height: auto;
     }
 
-    /* Adjust the next section to remove any unwanted space */
+    /* Adjust the next section to create a slight overlap */
     #about {
-        padding-top: 0;
+        padding-top: 50px; /* Add some top padding */
+        margin-top: -50px; /* Pull the section up slightly */
+        position: relative; /* Ensure it's above the video section */
+        background-color: #fff; /* Add a background color to ensure text is readable */
+        border-top-left-radius: 20px; /* Optional: add rounded corners for a smoother transition */
+        border-top-right-radius: 20px;
     }
     </style>
 </head>
