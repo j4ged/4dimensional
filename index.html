@@ -273,12 +273,12 @@
     }
          #home {
         position: relative;
-        height: 80vh; /* Reduced height to end sooner */
+        height: 85vh; /* Slightly extended */
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        margin-bottom: 0; /* Removed bottom margin */
+        margin-bottom: 0;
     }
 
     .video-background {
@@ -300,12 +300,15 @@
         left: 50%;
         transform: translate(-50%, -50%);
         object-fit: cover;
-        filter: blur(12px); /* Slightly reduced blur effect */
+        filter: blur(12px);
     }
 
     .logo-container {
-        position: relative;
-        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
         padding: 2rem;
         background-color: transparent;
     }
@@ -315,13 +318,45 @@
         height: auto;
     }
 
+    .fade-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+        z-index: 1;
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        color: #333;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: translateX(-50%) scale(1);
+        }
+        50% {
+            transform: translateX(-50%) scale(1.1);
+        }
+        100% {
+            transform: translateX(-50%) scale(1);
+        }
+    }
+
     /* Adjust the next section to create a slight overlap */
     #about {
-        padding-top: 50px; /* Add some top padding */
-        margin-top: -50px; /* Pull the section up slightly */
-        position: relative; /* Ensure it's above the video section */
-        background-color: #fff; /* Add a background color to ensure text is readable */
-        border-top-left-radius: 20px; /* Optional: add rounded corners for a smoother transition */
+        padding-top: 50px;
+        position: relative;
+        background-color: #fff;
+        border-top-left-radius: 20px;
         border-top-right-radius: 20px;
     }
     </style>
@@ -351,16 +386,19 @@
     <!-- Main Content -->
     <main>
          <section id="home">
-            <div class="video-background">
-                <video autoplay loop muted playsinline>
-                    <source src="Boss Studio_files/video.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="logo-container">
-                <img src="Boss Studio_files/logo.png" alt="4 Dimensional Inc." width="300" id="pulsating-central-logo" class="img-fluid">
-            </div>
-        </section>
-
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="Boss Studio_files/video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="logo-container">
+        <img src="Boss Studio_files/logo.png" alt="4 Dimensional Inc." width="300" id="pulsating-central-logo" class="img-fluid">
+    </div>
+    <div class="fade-overlay"></div>
+    <a href="#about" class="scroll-down">
+        <i class="bi bi-chevron-down"></i>
+    </a>
+</section>
         <section id="about">
             <div class="container mt-4">
                 <h2 class="text-center mb-4">Our Numbers</h2>
@@ -604,5 +642,14 @@
         window.addEventListener('resize', updateCarousel);
     });
     </script>
+
+<script>
+document.querySelector('.scroll-down').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#about').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+</script>
 </body>
 </html>
