@@ -197,15 +197,15 @@
     }
 
     #about-us {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 
     #team {
-        margin-top: 80px;
+        margin-top: 40px;
     }
 
     #team h1 {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
 
     #about-us p.lead {
@@ -370,7 +370,7 @@
     <main>
         <section id="home">
             <div class="video-background">
-                <video autoplay loop muted playsinline>
+                <video autoplay loop muted playsinline poster="Boss Studio_files/video-poster.jpg">
                     <source src="Boss Studio_files/video.mp4" type="video/mp4">
                 </video>
             </div>
@@ -429,7 +429,7 @@
                             <div class="release-date">2024</div>
                             <div class="game-stats">
                                 <div class="stat-item">
-                                   <i class="bi bi-eye-fill stat-icon"></i>
+                                  <i class="bi bi-eye-fill stat-icon"></i>
                                     <span>7.5M+ Visits</span>
                                 </div>
                                 <div class="stat-item">
@@ -647,7 +647,7 @@
         e.preventDefault();
         const aboutSection = document.querySelector('#about');
         const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const scrollToPosition = aboutSection.offsetTop - navbarHeight;
+        const scrollToPosition = aboutSection.offsetTop - navbarHeight - 20; // Scroll less by subtracting 20px
         
         window.scrollTo({
             top: scrollToPosition,
