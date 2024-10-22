@@ -190,9 +190,8 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="Boss Studio_files/styles.css">
 
-    <style>
-   /* Base Carousel Styles */
-   .carousel-container {
+  /* Base Carousel Styles */
+.carousel-container {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -209,10 +208,9 @@
 }
 
 .carousel-item {
-    width: 55vw; /* Increased width */
-    max-width: 600px; /* Adjusted max width */
-    margin-right: 60px; /* Added more space between items */
-    height: 380px; /* Adjusted height */
+    width: 50vw;
+    max-width: 550px;
+    height: 370px;
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
@@ -229,37 +227,84 @@
 
 /* Social Stats Styles */
 .social-stats-section {
-    background: rgba(0,0,0,0.02);
-    padding: 1.5rem 0; /* Reduced section padding */
+    background: rgba(0, 0, 0, 0.02);
+    padding: 2rem 0;
     margin: 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .social-stat-box {
     background: white;
     border-radius: 10px;
-    padding: 1.5rem; /* Reduced padding */
-    margin: 0.75rem; /* Reduced margin */
+    padding: 2rem;
+    margin: 1rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .social-stat-box:hover {
     transform: translateY(-5px);
 }
 
-.social-stat-box img {
-    width: 35px; /* Slightly reduced icon size */
+/* Text size adjustment */
+.social-stat-box h3, .social-stat-box p {
+    font-size: 24px;
+}
+
+.social-stat-box span {
+    font-size: 16px;
+    display: block;
+    margin-top: 8px;
+}
+
+/* Discord and Roblox floating icons */
+.social-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 35px;
     height: 35px;
-    margin-bottom: 0.75rem; /* Reduced margin bottom */
+    opacity: 0.9;
+}
+
+/* Discord and Roblox colored blocks */
+#discord-box {
+    background-color: #7289DA !important; /* Discord Blue */
+    color: white;
+    box-shadow: 0 0 15px rgba(114, 137, 218, 0.7); /* Add glowing effect */
+}
+
+#roblox-box {
+    background-color: rgb(109, 110, 108) !important; /* Roblox Gray */
+    color: white;
+    box-shadow: 0 0 15px rgba(109, 110, 108, 0.7); /* Add glowing effect */
+}
+
+/* Stat Item Adjustments */
+.stat-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.game-stats {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Section Dividers */
 .section-divider {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
     margin: 0;
     padding: 0;
 }
@@ -276,15 +321,18 @@
     background-color: #34e852;
     box-shadow: 0 0 10px rgba(52, 232, 82, 0.7);
 }
+
 #item1 .game-title { 
     background-color: #34c4e8;
     box-shadow: 0 0 10px rgba(52, 196, 232, 0.7);
 }
+
 #item2 .game-title { 
     background-color: #ff434a;
     box-shadow: 0 0 10px rgba(255, 67, 74, 0.7);
 }
 
+/* Game Content Styles */
 .game-content {
     display: flex;
     flex-direction: row;
@@ -294,34 +342,15 @@
     padding: 10px;
 }
 
+.stat-item {
+    font-size: 15px;
+    margin: 8px 0;
+}
+
 .game-icon {
     width: 45%;
     height: 100%;
     object-fit: cover;
-}
-
-.game-stats {
-    width: 55%;
-    height: 100%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    font-size: 15px; /* Slightly smaller */
-}
-
-.stat-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    animation: iconPulse 1.5s infinite;
 }
 
 .release-date {
@@ -418,10 +447,6 @@
     margin-bottom: 30px;
 }
 
-#about-us p.lead {
-    margin-top: 40px;
-}
-
 /* Animations */
 @keyframes pulsate {
     0% { transform: scale(1); }
@@ -433,33 +458,10 @@
     animation: pulsate 2s ease-in-out infinite;
 }
 
-@keyframes iconPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
     100% { transform: translateY(0px); }
-}
-
-@keyframes btnPulsate {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* Specific Button Color Adjustments */
-#discord-button {
-    background-color: #7289DA !important; /* Discord Blue */
-    color: white;
-}
-
-#roblox-button {
-    background-color: rgb(109, 110, 108) !important; /* Roblox Gray */
-    color: white;
 }
 
 /* Responsive Design */
@@ -469,10 +471,10 @@
     }
 
     .carousel-item {
-        width: 55vw; /* Increased width */
-        max-width: 600px; /* Adjusted max width */
-        margin-right: 60px; /* Added more space between items */
-        height: 380px; /* Adjusted height */
+        width: 55vw;
+        max-width: 600px;
+        margin-right: 60px;
+        height: 380px;
     }
 
     .game-content {
@@ -496,10 +498,10 @@
     }
 
     .social-stat-box {
-        padding: 1.5rem; /* Reduced padding */
-        margin: 0.75rem; /* Reduced margin */
+        padding: 1.5rem;
+        margin: 0.75rem;
         text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
     }
 }
@@ -578,10 +580,10 @@
 
 /* Enhanced Footer */
 footer {
-    background: rgba(0,0,0,0.02);
+    background: rgba(0, 0, 0, 0.02);
     padding: 2rem 0;
     margin-top: 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-links {
@@ -600,7 +602,7 @@ footer {
 .footer-links a:hover {
     color: #34c4e8;
 }
-</style>
+
 </head>
 <body>
 
@@ -673,34 +675,36 @@ footer {
             </div>
         </section>
 
-        <!-- New Social Stats Section -->
-      <!-- New Social Stats Section with Button IDs -->
+     <!-- New Social Stats Section -->
 <section class="social-stats-section">
     <div class="container">
         <div class="row justify-content-center">
+            <!-- Discord Stats Box -->
             <div class="col-md-6">
-                <div class="social-stat-box">
-                    <img src="Boss Studio_files/discord.png" alt="Discord" class="mb-3">
-                    <h3>1.5 Million +</h3>
-                    <p>Discord Members</p>
-                    <span class="badge bg-info">Accumulative (Multiple)</span>
-                    <!-- Discord Button -->
-                    <a id="discord-button" class="btn roblox-btn" href="https://discord.gg/peakentertainment" target="_blank">Discord</a>
-                </div>
+                <a href="https://discord.com/invite/peakentertainment" target="_blank">
+                    <div class="social-stat-box" id="discord-box">
+                        <h3>1.5 Million +</h3>
+                        <p>Discord Members</p>
+                        <span class="small-text">Accumulative (Multiple)</span>
+                        <img src="Boss Studio_files/discord.png" alt="Discord" class="social-icon">
+                    </div>
+                </a>
             </div>
+
+            <!-- Roblox Stats Box -->
             <div class="col-md-6">
-                <div class="social-stat-box">
-                    <img src="Boss Studio_files/roblox.png" alt="Roblox" class="mb-3">
-                    <h3>8 Million +</h3>
-                    <p>Roblox Members</p>
-                    <span class="badge bg-info">Accumulative (Multiple)</span>
-                    <!-- Roblox Button -->
-                    <a id="roblox-button" class="btn roblox-btn" href="https://www.roblox.com/groups/33450316" target="_blank">Roblox</a>
-                </div>
+                <a href="https://www.roblox.com/groups/33450316/Peak-Entertainment#!/about" target="_blank">
+                    <div class="social-stat-box" id="roblox-box">
+                        <h3>8 Million +</h3>
+                        <p>Roblox Members</p>
+                        <span class="small-text">Accumulative (Multiple)</span>
+                        <img src="Boss Studio_files/roblox.png" alt="Roblox" class="social-icon">
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-</section>
+</section
 
         <div class="section-divider"></div>
 
