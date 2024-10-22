@@ -209,8 +209,8 @@
 }
 
 .carousel-item {
-    width: 60vw; /* Scaled down from 65vw */
-    max-width: 700px; /* Scaled down from 800px */
+    width: 60vw;
+    max-width: 700px;
     margin-right: 60px;
     height: 380px;
     background-color: white;
@@ -234,7 +234,7 @@
     margin: 0;
     border-top: 1px solid rgba(0,0,0,0.1);
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 .social-stat-box {
@@ -242,10 +242,9 @@
     overflow: hidden;
     border-radius: 10px;
     padding: 1.5rem;
-    height: 70vh;
-    max-height: 300px;
-    margin: 0.5rem auto;
-    width: 65%;
+    height: 200px; /* Reduced height */
+    margin: 0.5rem 0.75rem; /* Reduced margin */
+    width: 85%; /* Increased width */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -277,6 +276,13 @@
     box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
 }
 
+/* Updated Floating Icon Animation */
+@keyframes floatIcon {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
 .social-stat-box::after {
     content: '';
     position: absolute;
@@ -287,7 +293,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.15;
-    transform: rotate(-15deg);
     z-index: 1;
     animation: floatIcon 3s ease-in-out infinite;
 }
@@ -319,7 +324,7 @@
 
 .social-stat-box .badge {
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
     background: #34c4e8 !important;
@@ -401,7 +406,7 @@
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    animation: iconPulse 1.5s infinite;
+    animation: floatIcon 3s ease-in-out infinite;
 }
 
 .release-date {
@@ -474,6 +479,12 @@
     box-shadow: 0 0 20px rgba(52, 196, 232, 1);
 }
 
+/* Our Numbers Icon Fix */
+.stat-box i {
+    animation: floatIcon 3s ease-in-out infinite;
+    transform: none;
+}
+
 /* Section Spacing */
 .projects-text {
     font-size: 1.1rem;
@@ -513,12 +524,6 @@
     animation: pulsate 2s ease-in-out infinite;
 }
 
-@keyframes iconPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
@@ -529,12 +534,6 @@
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
-}
-
-@keyframes floatIcon {
-    0% { transform: translate(0, 0) rotate(-15deg); }
-    50% { transform: translate(-5px, -5px) rotate(-15deg); }
-    100% { transform: translate(0, 0) rotate(-15deg); }
 }
 
 /* Specific Button Color Adjustments */
@@ -577,10 +576,9 @@
     }
 
     .social-stat-box {
+        height: 180px;
+        width: 90%;
         margin: 0.75rem auto;
-        max-width: 90%;
-        height: auto;
-        padding: 1.2rem;
     }
 
     .social-stat-box h3 {
