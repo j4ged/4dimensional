@@ -249,13 +249,11 @@
         transform: translateY(-5px);
     }
 
-    .social-stat-box img {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 1rem;
-        animation: iconPulse 1.5s infinite;
-    }
-
+   .social-stat-box img {
+    width: 35px; /* Slightly reduced icon size */
+    height: 35px;
+    margin-bottom: 0.75rem; /* Reduced margin bottom */
+}
     /* Section Dividers */
     .section-divider {
         height: 1px;
@@ -456,9 +454,11 @@
         }
 
         .carousel-item {
-            width: 80vw;
-            height: 350px;
-        }
+    width: 55vw; /* Increased width */
+    max-width: 600px; /* Adjusted max width */
+    margin-right: 60px; /* Added more space between items */
+    height: 380px; /* Adjusted height */
+}
 
         .game-content {
             flex-direction: column;
@@ -481,8 +481,13 @@
         }
 
         .social-stat-box {
-            margin: 0.5rem;
-        }
+    padding: 1.5rem; /* Reduced padding */
+    margin: 0.75rem; /* Reduced margin */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
     }
     
     /* Video Background */
@@ -685,7 +690,7 @@
                 <h2 class="text-center mb-2">Our Games</h2>
                 <p class="text-center mb-5 light-gray-text projects-text">Check out our past and future projects here:</p>
 
-              <div class="carousel-container">
+ <div class="carousel-container">
     <div class="carousel-wrapper">
         <div class="carousel-item" id="item0">
             <div class="game-title">Swordmaster Simulator [INFINITE]</div>
