@@ -98,7 +98,7 @@
           "@type": "EntryPoint",
           "urlTemplate": [
             "https://www.4-dimensional.org/#about",
-            "https://www.4-dimensional.org/#projects",
+            "https://www.4-dimensional.org/#<style>",
             "https://www.4-dimensional.org/#team"
           ]
         }
@@ -120,7 +120,7 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Games",
-        "item": "https://www.4-dimensional.org/#projects"
+        "item": "https://www.4-dimensional.org/#<style>"
       },
       {
         "@type": "ListItem",
@@ -191,296 +191,54 @@
     <link rel="stylesheet" href="Boss Studio_files/styles.css">
 
     <style>
-       /* Base Carousel Styles */
-       .carousel-container {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        margin-bottom: 20px;
-        padding: 10px 0;
-    }
-
-    .carousel-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 400px;
-        position: relative;
-    }
-
-    .carousel-item {
-        width: 50vw;
-        max-width: 550px;
-        height: 370px;
-        background-color: white;
-        border-radius: 6px;
-        overflow: hidden;
-        color: #333333;
-        font-family: 'Outfit', sans-serif;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Social Stats Styles */
-    .social-stats-section {
-        background: rgba(0,0,0,0.02);
-        padding: 2rem 0;
-        margin: 0;
-        border-top: 1px solid rgba(0,0,0,0.1);
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .social-stat-box {
-        background: white;
-        border-radius: 10px;
-        padding: 2rem;
-        margin: 1rem;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .social-stat-box:hover {
-        transform: translateY(-5px);
-    }
-
-   .social-stat-box img {
-    width: 35px; /* Slightly reduced icon size */
-    height: 35px;
-    margin-bottom: 0.75rem; /* Reduced margin bottom */
+   /* Base Carousel Styles */
+   .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 10px 0;
 }
-    /* Section Dividers */
-    .section-divider {
-        height: 1px;
-        background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
-        margin: 0;
-        padding: 0;
-    }
-/* Game Title Styles */
-    .game-title {
-        padding: 10px;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-    }
 
-    #item0 .game-title { 
-        background-color: #34e852;
-        box-shadow: 0 0 10px rgba(52, 232, 82, 0.7);
-    }
-    #item1 .game-title { 
-        background-color: #34c4e8;
-        box-shadow: 0 0 10px rgba(52, 196, 232, 0.7);
-    }
-    #item2 .game-title { 
-        background-color: #ff434a;
-        box-shadow: 0 0 10px rgba(255, 67, 74, 0.7);
-    }
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    position: relative;
+}
 
-    .game-content {
-        display: flex;
-        flex-direction: row;
-        height: calc(100% - 38px);
-        align-items: center;
-        position: relative;
-    }
-
-    .game-icon {
-        width: 45%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .game-stats {
-        width: 55%;
-        height: 100%;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    .stat-item {
-        display: flex;
-        align-items: center;
-        margin: 10px 0;
-        font-size: 16px;
-    }
-
-    .stat-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        animation: iconPulse 1.5s infinite;
-    }
-
-    .release-date {
-        position: absolute;
-        bottom: 8px;
-        left: 8px;
-        background-color: rgba(52, 196, 232, 0.8);
-        color: white;
-        padding: 4px 8px;
-        border-radius: 16px;
-        font-size: 12px;
-        font-weight: bold;
-        z-index: 2;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    /* Profile and Navigation Styles */
-    .profile-pic {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 15px;
-    }
-
-    .carousel-control {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: #34c4e8;
-        color: white;
-        border: 3px solid white;
-        font-size: 1.2rem;
-        padding: 8px;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 50%;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    .carousel-control.prev {
-        left: 8px;
-    }
-
-    .carousel-control.next {
-        right: 8px;
-    }
-
-    .carousel-control:hover {
-        background-color: #288fb6;
-    }
-
-    /* Button Styles */
-    .roblox-btn {
-        background-color: #34c4e8;
-        color: white;
-        padding: 8px 16px;
-        font-size: 14px;
-        border: none;
-        border-radius: 40px;
-        text-align: center;
-        box-shadow: 0 0 12px rgba(52, 196, 232, 0.7);
-        transition: box-shadow 0.3s ease;
-        animation: btnPulsate 2s infinite;
-    }
-
-    .roblox-btn:hover {
-        box-shadow: 0 0 20px rgba(52, 196, 232, 1);
-    }
-
-    /* Section Spacing */
-    .projects-text {
-        font-size: 1.1rem;
-    }
-
-    #projects {
-        padding-top: 1rem;
-        margin-bottom: 0;
-    }
-
-    #about-us {
-        padding-top: 2rem;
-        margin-top: 0;
-    }
-
-    #team {
-        margin-top: 0;
-        padding-top: 2rem;
-    }
-
-    #team h1 {
-        margin-bottom: 30px;
-    }
-
-    #about-us p.lead {
-        margin-top: 40px;
-    }
-
-    /* Animations */
-    @keyframes pulsate {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
-
-    #pulsating-central-logo {
-        animation: pulsate 2s ease-in-out infinite;
-    }
-
-    @keyframes iconPulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1); }
-    }
-
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-        100% { transform: translateY(0px); }
-    }
-
-    @keyframes btnPulsate {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .carousel-wrapper {
-            height: 360px;
-        }
-
-        .carousel-item {
+.carousel-item {
     width: 55vw; /* Increased width */
     max-width: 600px; /* Adjusted max width */
     margin-right: 60px; /* Added more space between items */
     height: 380px; /* Adjusted height */
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    color: #333333;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-        .game-content {
-            flex-direction: column;
-        }
+/* Social Stats Styles */
+.social-stats-section {
+    background: rgba(0,0,0,0.02);
+    padding: 1.5rem 0; /* Reduced section padding */
+    margin: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
 
-        .game-icon {
-            width: 100%;
-            height: 50%;
-        }
-
-        .game-stats {
-            width: 100%;
-            height: 50%;
-            padding: 10px;
-        }
-
-        .stat-item {
-            font-size: 14px;
-            margin: 5px 0;
-        }
-
-        .social-stat-box {
+.social-stat-box {
+    background: white;
+    border-radius: 10px;
     padding: 1.5rem; /* Reduced padding */
     margin: 0.75rem; /* Reduced margin */
     text-align: center;
@@ -488,105 +246,361 @@
     transition: transform 0.3s ease;
 }
 
-    }
-    
-    /* Video Background */
-    #home {
-        position: relative;
-        height: 85vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        margin-bottom: 0;
+.social-stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.social-stat-box img {
+    width: 35px; /* Slightly reduced icon size */
+    height: 35px;
+    margin-bottom: 0.75rem; /* Reduced margin bottom */
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+    margin: 0;
+    padding: 0;
+}
+
+/* Game Title Styles */
+.game-title {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+#item0 .game-title { 
+    background-color: #34e852;
+    box-shadow: 0 0 10px rgba(52, 232, 82, 0.7);
+}
+#item1 .game-title { 
+    background-color: #34c4e8;
+    box-shadow: 0 0 10px rgba(52, 196, 232, 0.7);
+}
+#item2 .game-title { 
+    background-color: #ff434a;
+    box-shadow: 0 0 10px rgba(255, 67, 74, 0.7);
+}
+
+.game-content {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 38px);
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}
+
+.game-icon {
+    width: 45%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-stats {
+    width: 55%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 15px; /* Slightly smaller */
+}
+
+.stat-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    animation: iconPulse 1.5s infinite;
+}
+
+.release-date {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: rgba(52, 196, 232, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Profile and Navigation Styles */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #34c4e8;
+    color: white;
+    border: 3px solid white;
+    font-size: 1.2rem;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control.prev {
+    left: 8px;
+}
+
+.carousel-control.next {
+    right: 8px;
+}
+
+.carousel-control:hover {
+    background-color: #288fb6;
+}
+
+/* Button Styles */
+.roblox-btn {
+    background-color: #34c4e8;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(52, 196, 232, 0.7);
+    transition: box-shadow 0.3s ease;
+    animation: btnPulsate 2s infinite;
+}
+
+.roblox-btn:hover {
+    box-shadow: 0 0 20px rgba(52, 196, 232, 1);
+}
+
+/* Section Spacing */
+.projects-text {
+    font-size: 1.1rem;
+}
+
+#projects {
+    padding-top: 1rem;
+    margin-bottom: 0;
+}
+
+#about-us {
+    padding-top: 2rem;
+    margin-top: 0;
+}
+
+#team {
+    margin-top: 0;
+    padding-top: 2rem;
+}
+
+#team h1 {
+    margin-bottom: 30px;
+}
+
+#about-us p.lead {
+    margin-top: 40px;
+}
+
+/* Animations */
+@keyframes pulsate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#pulsating-central-logo {
+    animation: pulsate 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes btnPulsate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Specific Button Color Adjustments */
+#discord-button {
+    background-color: #7289DA !important; /* Discord Blue */
+    color: white;
+}
+
+#roblox-button {
+    background-color: rgb(109, 110, 108) !important; /* Roblox Gray */
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        height: 360px;
     }
 
-    .video-background {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .carousel-item {
+        width: 55vw; /* Increased width */
+        max-width: 600px; /* Adjusted max width */
+        margin-right: 60px; /* Added more space between items */
+        height: 380px; /* Adjusted height */
+    }
+
+    .game-content {
+        flex-direction: column;
+    }
+
+    .game-icon {
         width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: #000;
+        height: 50%;
     }
 
-    .video-background video {
+    .game-stats {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: blur(7.5px) brightness(0.7);
+        height: 50%;
+        padding: 10px;
     }
 
-    .logo-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        padding: 2rem;
-        background-color: transparent;
+    .stat-item {
+        font-size: 14px;
+        margin: 5px 0;
     }
 
-    .scroll-down {
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 3;
-        color: #ffffff;
-        font-size: 2rem;
-        animation: pulse 2s infinite;
-        transition: color 0.3s ease;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    .social-stat-box {
+        padding: 1.5rem; /* Reduced padding */
+        margin: 0.75rem; /* Reduced margin */
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
     }
+}
 
-    .scroll-down:hover {
-        color: #000000;
-    }
+/* Video Background */
+#home {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
 
-    #about {
-        position: relative;
-        background-color: #fff;
-        margin-top: -1px;
-        padding-top: 40px;
-        z-index: 2;
-        box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
-    }
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
 
-    .navbar {
-        transition: box-shadow 0.3s ease;
-    }
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(7.5px) brightness(0.7);
+}
 
-    .navbar.scrolled {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 2rem;
+    background-color: transparent;
+}
 
-    /* Enhanced Footer */
-    footer {
-        background: rgba(0,0,0,0.02);
-        padding: 2rem 0;
-        margin-top: 0;
-        border-top: 1px solid rgba(0,0,0,0.1);
-    }
+.scroll-down {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #ffffff;
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+    transition: color 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-    .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 1rem;
-    }
+.scroll-down:hover {
+    color: #000000;
+}
 
-    .footer-links a {
-        color: #666;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
+#about {
+    position: relative;
+    background-color: #fff;
+    margin-top: -1px;
+    padding-top: 40px;
+    z-index: 2;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+}
 
-    .footer-links a:hover {
-        color: #34c4e8;
-    }
-    </style>
+.navbar {
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Footer */
+footer {
+    background: rgba(0,0,0,0.02);
+    padding: 2rem 0;
+    margin-top: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #34c4e8;
+}
+</style>
 </head>
 <body>
 
@@ -660,126 +674,132 @@
         </section>
 
         <!-- New Social Stats Section -->
-        <section class="social-stats-section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="social-stat-box">
-                            <img src="Boss Studio_files/discord.png" alt="Discord" class="mb-3">
-                            <h3>1.5 Million +</h3>
-                            <p>Discord Members</p>
-                            <span class="badge bg-info">Accumulative (Multiple)</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="social-stat-box">
-                            <img src="Boss Studio_files/roblox.png" alt="Roblox" class="mb-3">
-                            <h3>8 Million +</h3>
-                            <p>Roblox Members</p>
-                            <span class="badge bg-info">Accumulative (Multiple)</span>
-                        </div>
-                    </div>
+      <!-- New Social Stats Section with Button IDs -->
+<section class="social-stats-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="social-stat-box">
+                    <img src="Boss Studio_files/discord.png" alt="Discord" class="mb-3">
+                    <h3>1.5 Million +</h3>
+                    <p>Discord Members</p>
+                    <span class="badge bg-info">Accumulative (Multiple)</span>
+                    <!-- Discord Button -->
+                    <a id="discord-button" class="btn roblox-btn" href="https://discord.gg/peakentertainment" target="_blank">Discord</a>
                 </div>
             </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section id="projects">
-            <div class="container mt-4">
-                <h2 class="text-center mb-2">Our Games</h2>
-                <p class="text-center mb-5 light-gray-text projects-text">Check out our past and future projects here:</p>
-
- <div class="carousel-container">
-    <div class="carousel-wrapper">
-        <div class="carousel-item" id="item0">
-            <div class="game-title">Swordmaster Simulator [INFINITE]</div>
-            <div class="game-content">
-                <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
-                <div class="release-date">2024</div>
-                <div class="game-stats">
-                    <div class="stat-item">
-                        <i class="bi bi-eye-fill stat-icon"></i>
-                        <span>7.5M+ Visits</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-people-fill stat-icon"></i>
-                        <span>61k+ Members</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
-                        <span>93%</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-controller stat-icon"></i>
-                        <span>Adventure Simulator</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-item" id="item1">
-            <div class="game-title">Click Simulator!</div>
-            <div class="game-content">
-                <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
-                <div class="release-date">2023</div>
-                <div class="game-stats">
-                    <div class="stat-item">
-                        <i class="bi bi-eye-fill stat-icon"></i>
-                        <span>10.3M+ Visits</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-people-fill stat-icon"></i>
-                        <span>110k+ Members</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
-                        <span>92%</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-controller stat-icon"></i>
-                        <span>Simulator</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-item" id="item2">
-            <div class="game-title">Punching Simulator</div>
-            <div class="game-content">
-                <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
-                <div class="release-date">2023</div>
-                <div class="game-stats">
-                    <div class="stat-item">
-                        <i class="bi bi-eye-fill stat-icon"></i>
-                        <span>43.8M+ Visits</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-people-fill stat-icon"></i>
-                        <span>40K+ Members</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
-                        <span>84%</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="bi bi-controller stat-icon"></i>
-                        <span>Incremental Simulator</span>
-                    </div>
+            <div class="col-md-6">
+                <div class="social-stat-box">
+                    <img src="Boss Studio_files/roblox.png" alt="Roblox" class="mb-3">
+                    <h3>8 Million +</h3>
+                    <p>Roblox Members</p>
+                    <span class="badge bg-info">Accumulative (Multiple)</span>
+                    <!-- Roblox Button -->
+                    <a id="roblox-button" class="btn roblox-btn" href="https://www.roblox.com/groups/33450316" target="_blank">Roblox</a>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
-    <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
-</div>
-                
-                <div class="d-flex justify-content-center mt-4 mb-3">
-                    <a class="btn roblox-btn" href="#" id="viewOnRobloxBtn" target="_blank">View on Roblox</a>
+        <div class="section-divider"></div>
+
+        <!-- Updated Carousel Section -->
+<section id="projects">
+    <div class="container mt-4">
+        <h2 class="text-center mb-2">Our Games</h2>
+        <p class="text-center mb-5 light-gray-text projects-text">Check out our past and future projects here:</p>
+
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-item" id="item0">
+                    <div class="game-title">Swordmaster Simulator [INFINITE]</div>
+                    <div class="game-content">
+                        <img src="https://tr.rbxcdn.com/180DAY-51a83d216600e8d0a64b3b88f315a676/256/256/Image/Webp/noFilter" alt="Swordmaster Simulator" class="game-icon">
+                        <div class="release-date">2024</div>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <i class="bi bi-eye-fill stat-icon"></i>
+                                <span>7.5M+ Visits</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-people-fill stat-icon"></i>
+                                <span>61k+ Members</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
+                                <span>93%</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-controller stat-icon"></i>
+                                <span>Adventure Simulator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" id="item1">
+                    <div class="game-title">Click Simulator!</div>
+                    <div class="game-content">
+                        <img src="https://tr.rbxcdn.com/180DAY-067084023f7021ae377f49cbf558ebbf/512/512/Image/Webp/noFilter" alt="Click Simulator" class="game-icon">
+                        <div class="release-date">2023</div>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <i class="bi bi-eye-fill stat-icon"></i>
+                                <span>10.3M+ Visits</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-people-fill stat-icon"></i>
+                                <span>110k+ Members</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
+                                <span>92%</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-controller stat-icon"></i>
+                                <span>Simulator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" id="item2">
+                    <div class="game-title">Punching Simulator</div>
+                    <div class="game-content">
+                        <img src="https://tr.rbxcdn.com/180DAY-bb9c4362ebc86cb47b7b24ea502e78d2/256/256/Image/Webp/noFilter" alt="Punching Simulator" class="game-icon">
+                        <div class="release-date">2023</div>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <i class="bi bi-eye-fill stat-icon"></i>
+                                <span>43.8M+ Visits</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-people-fill stat-icon"></i>
+                                <span>40K+ Members</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-hand-thumbs-up-fill stat-icon"></i>
+                                <span>84%</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="bi bi-controller stat-icon"></i>
+                                <span>Incremental Simulator</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <button class="carousel-control prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="carousel-control next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        
+        <div class="d-flex justify-content-center mt-4 mb-3">
+            <a class="btn roblox-btn" href="#" id="viewOnRobloxBtn" target="_blank">View on Roblox</a>
+        </div>
+    </div>
+</section>
 
         <div class="section-divider"></div>
 
@@ -824,7 +844,7 @@
                 <a href="https://discord.gg/peakentertainment">Discord</a>
                 <a href="https://www.roblox.com/groups/33450316">Roblox Group</a>
                 <a href="#about">About Us</a>
-                <a href="#projects">Our Games</a>
+                <a href="#<style>">Our Games</a>
                 <a href="#team">Team</a>
             </div>
             <p class="text-center">© 2024 4-Dimensional Inc. - All Rights Reserved</p>
