@@ -190,9 +190,9 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="Boss Studio_files/styles.css">
 
-    <style>
-   /* Base Carousel Styles */
-   .carousel-container {
+   <style>
+/* Base Carousel Styles */
+.carousel-container {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -209,10 +209,9 @@
 }
 
 .carousel-item {
-    width: 55vw; /* Increased width */
-    max-width: 600px; /* Adjusted max width */
-    margin-right: 60px; /* Added more space between items */
-    height: 380px; /* Adjusted height */
+    width: 50vw;
+    max-width: 550px;
+    height: 370px;
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
@@ -227,22 +226,40 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Adjust stat item styles to make text larger and center it */
+.stat-item {
+    display: flex;
+    justify-content: center; /* Center the items */
+    align-items: center; /* Center items vertically */
+    margin: 10px 0;
+    font-size: 18px; /* Increase text size */
+}
+
+.game-stats {
+    width: 100%; /* Make the stats container take full width */
+    padding: 20px; /* Add padding around the stats */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center stats */
+    align-items: center; /* Center items horizontally */
+}
+
 /* Social Stats Styles */
 .social-stats-section {
-    background: rgba(0,0,0,0.02);
-    padding: 1.5rem 0; /* Reduced section padding */
+    background: rgba(0, 0, 0, 0.02);
+    padding: 2rem 0;
     margin: 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .social-stat-box {
     background: white;
     border-radius: 10px;
-    padding: 1.5rem; /* Reduced padding */
-    margin: 0.75rem; /* Reduced margin */
+    padding: 2rem;
+    margin: 1rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -256,10 +273,35 @@
     margin-bottom: 0.75rem; /* Reduced margin bottom */
 }
 
+/* Discord and Roblox colored blocks */
+#discord-box .social-stat-box {
+    background-color: #7289DA !important; /* Discord Blue */
+    color: white;
+    box-shadow: 0 0 15px rgba(114, 137, 218, 0.7); /* Add glowing effect */
+}
+
+#roblox-box .social-stat-box {
+    background-color: rgb(109, 110, 108) !important; /* Roblox Gray */
+    color: white;
+    box-shadow: 0 0 15px rgba(109, 110, 108, 0.7); /* Add glowing effect */
+}
+
+/* Adjust the text size and centering within these blocks */
+.social-stat-box h3, .social-stat-box p {
+    font-size: 20px; /* Increase font size */
+    text-align: center; /* Center text */
+}
+
+.social-stat-box span {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px; /* Slightly smaller for extra text */
+}
+
 /* Section Dividers */
 .section-divider {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
     margin: 0;
     padding: 0;
 }
@@ -285,59 +327,6 @@
     box-shadow: 0 0 10px rgba(255, 67, 74, 0.7);
 }
 
-.game-content {
-    display: flex;
-    flex-direction: row;
-    height: calc(100% - 38px);
-    align-items: center;
-    position: relative;
-    padding: 10px;
-}
-
-.game-icon {
-    width: 45%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.game-stats {
-    width: 55%;
-    height: 100%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    font-size: 15px; /* Slightly smaller */
-}
-
-.stat-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    animation: iconPulse 1.5s infinite;
-}
-
-.release-date {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    background-color: rgba(52, 196, 232, 0.8);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 16px;
-    font-size: 12px;
-    font-weight: bold;
-    z-index: 2;
-    animation: float 3s ease-in-out infinite;
-}
-
 /* Profile and Navigation Styles */
 .profile-pic {
     width: 200px;
@@ -347,33 +336,6 @@
     border: 4px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #34c4e8;
-    color: white;
-    border: 3px solid white;
-    font-size: 1.2rem;
-    padding: 8px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-control.prev {
-    left: 8px;
-}
-
-.carousel-control.next {
-    right: 8px;
-}
-
-.carousel-control:hover {
-    background-color: #288fb6;
 }
 
 /* Button Styles */
@@ -418,10 +380,6 @@
     margin-bottom: 30px;
 }
 
-#about-us p.lead {
-    margin-top: 40px;
-}
-
 /* Animations */
 @keyframes pulsate {
     0% { transform: scale(1); }
@@ -449,17 +407,6 @@
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
-}
-
-/* Specific Button Color Adjustments */
-#discord-button {
-    background-color: #7289DA !important; /* Discord Blue */
-    color: white;
-}
-
-#roblox-button {
-    background-color: rgb(109, 110, 108) !important; /* Roblox Gray */
-    color: white;
 }
 
 /* Responsive Design */
@@ -499,7 +446,7 @@
         padding: 1.5rem; /* Reduced padding */
         margin: 0.75rem; /* Reduced margin */
         text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
     }
 }
@@ -578,10 +525,10 @@
 
 /* Enhanced Footer */
 footer {
-    background: rgba(0,0,0,0.02);
+    background: rgba(0, 0, 0, 0.02);
     padding: 2rem 0;
     margin-top: 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-links {
@@ -601,6 +548,7 @@ footer {
     color: #34c4e8;
 }
 </style>
+
 </head>
 <body>
 
@@ -673,29 +621,22 @@ footer {
             </div>
         </section>
 
-        <!-- New Social Stats Section -->
-      <!-- New Social Stats Section with Button IDs -->
+       <!-- New Social Stats Section -->
 <section class="social-stats-section">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div id="discord-box" class="col-md-6">
                 <div class="social-stat-box">
-                    <img src="Boss Studio_files/discord.png" alt="Discord" class="mb-3">
                     <h3>1.5 Million +</h3>
                     <p>Discord Members</p>
                     <span class="badge bg-info">Accumulative (Multiple)</span>
-                    <!-- Discord Button -->
-                    <a id="discord-button" class="btn roblox-btn" href="https://discord.gg/peakentertainment" target="_blank">Discord</a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div id="roblox-box" class="col-md-6">
                 <div class="social-stat-box">
-                    <img src="Boss Studio_files/roblox.png" alt="Roblox" class="mb-3">
                     <h3>8 Million +</h3>
                     <p>Roblox Members</p>
                     <span class="badge bg-info">Accumulative (Multiple)</span>
-                    <!-- Roblox Button -->
-                    <a id="roblox-button" class="btn roblox-btn" href="https://www.roblox.com/groups/33450316" target="_blank">Roblox</a>
                 </div>
             </div>
         </div>
