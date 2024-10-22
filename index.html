@@ -192,7 +192,7 @@
 
     <style>
    /* Base Carousel Styles */
-   .carousel-container {
+.carousel-container {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -209,8 +209,8 @@
 }
 
 .carousel-item {
-    width: 65vw; /* Increased width */
-    max-width: 800px; /* Increased max width */
+    width: 60vw; /* Scaled down from 65vw */
+    max-width: 700px; /* Scaled down from 800px */
     margin-right: 60px;
     height: 380px;
     background-color: white;
@@ -230,18 +230,22 @@
 /* Social Stats Styles */
 .social-stats-section {
     background: rgba(0,0,0,0.02);
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     margin: 0;
     border-top: 1px solid rgba(0,0,0,0.1);
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    transform: scale(0.9);
 }
 
 .social-stat-box {
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 0.75rem;
+    border-radius: 10px;
+    padding: 1.5rem;
+    height: 70vh;
+    max-height: 300px;
+    margin: 0.5rem auto;
+    width: 65%;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -252,39 +256,40 @@
 /* Discord Box Styles */
 .social-stat-box.discord-box {
     background-color: #7289da;
-    box-shadow: 0 0 20px rgba(114, 137, 218, 0.3);
+    box-shadow: 0 0 40px rgba(114, 137, 218, 0.25);
     color: white;
 }
 
 .social-stat-box.discord-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(114, 137, 218, 0.6);
+    box-shadow: 0 0 50px rgba(114, 137, 218, 0.4);
 }
 
 /* Roblox Box Styles */
 .social-stat-box.roblox-box {
     background-color: #424549;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
     color: white;
 }
 
 .social-stat-box.roblox-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
 }
 
 .social-stat-box::after {
     content: '';
     position: absolute;
-    right: -20px;
-    bottom: -20px;
-    width: 100px;
-    height: 100px;
+    right: 15%;
+    top: 40%;
+    width: 120px;
+    height: 120px;
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.2;
+    opacity: 0.15;
     transform: rotate(-15deg);
     z-index: 1;
+    animation: floatIcon 3s ease-in-out infinite;
 }
 
 .social-stat-box.discord-box::after {
@@ -298,26 +303,33 @@
 .social-stat-box h3 {
     position: relative;
     z-index: 2;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
     color: white;
 }
 
 .social-stat-box p {
     position: relative;
     z-index: 2;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .social-stat-box .badge {
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #34c4e8 !important;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     color: white;
-    border: none;
-    margin-bottom: 1rem;
+    z-index: 2;
 }
 
 /* Section Dividers */
@@ -372,22 +384,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center align contents */
+    align-items: center;
 }
 
 .stat-item {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center align items */
-    margin: 8px 0;
-    font-size: 15px;
-    width: 100%; /* Full width for center alignment */
-    text-align: center; /* Center text */
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
 }
 
 .stat-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     margin-right: 10px;
     animation: iconPulse 1.5s infinite;
 }
@@ -519,6 +531,12 @@
     100% { transform: scale(1); }
 }
 
+@keyframes floatIcon {
+    0% { transform: translate(0, 0) rotate(-15deg); }
+    50% { transform: translate(-5px, -5px) rotate(-15deg); }
+    100% { transform: translate(0, 0) rotate(-15deg); }
+}
+
 /* Specific Button Color Adjustments */
 #discord-button,
 #roblox-button {
@@ -561,6 +579,19 @@
     .social-stat-box {
         margin: 0.75rem auto;
         max-width: 90%;
+        height: auto;
+        padding: 1.2rem;
+    }
+
+    .social-stat-box h3 {
+        font-size: 2.5rem;
+    }
+
+    .social-stat-box::after {
+        width: 100px;
+        height: 100px;
+        right: 10%;
+        top: 45%;
     }
 }
 
