@@ -227,31 +227,30 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Social Stats Styles */
 .social-stats-section {
     background: rgba(0,0,0,0.02);
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Reduced padding */
     margin: 0;
     border-top: 1px solid rgba(0,0,0,0.1);
     border-bottom: 1px solid rgba(0,0,0,0.1);
     transform: scale(0.95);
 }
 
+
 .social-stat-box {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    padding: 1.5rem;
-    height: 200px; /* Reduced height */
-    margin: 0.5rem 0.75rem; /* Reduced margin */
-    width: 85%; /* Increased width */
+    padding: 1rem 1.25rem; /* Reduced padding */
+    height: 160px; /* Further reduced height */
+    margin: 0.5rem auto; /* Centered margin */
+    width: 90%; /* Adjusted width */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     display: block;
 }
-
 /* Discord Box Styles */
 .social-stat-box.discord-box {
     background-color: #7289da;
@@ -283,17 +282,17 @@
     100% { transform: translateY(0); }
 }
 
+/* Updated Icon Positioning */
 .social-stat-box::after {
     content: '';
     position: absolute;
     right: 15%;
-    top: 40%;
-    width: 120px;
-    height: 120px;
+    top: 30%; /* Moved up */
+    width: 100px; /* Slightly smaller */
+    height: 100px;
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.15;
-    z-index: 1;
     animation: floatIcon 3s ease-in-out infinite;
 }
 
@@ -308,28 +307,28 @@
 .social-stat-box h3 {
     position: relative;
     z-index: 2;
-    font-size: 3rem;
+    font-size: 2.75rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: white;
 }
 
 .social-stat-box p {
     position: relative;
     z-index: 2;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .social-stat-box .badge {
     position: absolute;
-    bottom: -12px;
+    bottom: -15px; /* Moved down further */
     left: 50%;
     transform: translateX(-50%);
     background: #34c4e8 !important;
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 6px 14px; /* Slightly smaller padding */
+    font-size: 0.85rem;
     border-radius: 20px;
     white-space: nowrap;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -576,7 +575,7 @@
     }
 
     .social-stat-box {
-        height: 180px;
+        height: 140px;
         width: 90%;
         margin: 0.75rem auto;
     }
@@ -586,10 +585,10 @@
     }
 
     .social-stat-box::after {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         right: 10%;
-        top: 45%;
+        top: 35%;
     }
 }
 
